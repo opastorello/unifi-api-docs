@@ -1,0 +1,366 @@
+{
+  "source": "https://developer.ui.com",
+  "source_lastmod": "2026-06-02T09:19:13.019Z",
+  "apps": {
+    "mobility": {
+      "latest": "v1.0.0",
+      "versions": [
+        {
+          "version": "v1.0.0",
+          "openapi": "mobility/v1.0.0/openapi.json",
+          "reference": "mobility/v1.0.0/reference.md",
+          "operations": 8,
+          "paths": 7,
+          "categories": 4,
+          "spec_version": "1.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        }
+      ]
+    },
+    "network": {
+      "latest": "v10.3.58",
+      "versions": [
+        {
+          "version": "v10.3.58",
+          "openapi": "network/v10.3.58/openapi.json",
+          "reference": "network/v10.3.58/reference.md",
+          "operations": 73,
+          "paths": 44,
+          "categories": 13,
+          "spec_version": "10.3.58",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v10.1.84",
+          "openapi": "network/v10.1.84/openapi.json",
+          "reference": "network/v10.1.84/reference.md",
+          "operations": 67,
+          "paths": 38,
+          "categories": 12,
+          "spec_version": "10.1.84",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v10.0.162",
+          "openapi": "network/v10.0.162/openapi.json",
+          "reference": "network/v10.0.162/reference.md",
+          "operations": 50,
+          "paths": 32,
+          "categories": 11,
+          "spec_version": "10.0.162",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v9.5.21",
+          "openapi": "network/v9.5.21/openapi.json",
+          "reference": "network/v9.5.21/reference.md",
+          "operations": 15,
+          "paths": 12,
+          "categories": 5,
+          "spec_version": "9.5.21",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v9.4.19",
+          "openapi": "network/v9.4.19/openapi.json",
+          "reference": "network/v9.4.19/reference.md",
+          "operations": 15,
+          "paths": 12,
+          "categories": 5,
+          "spec_version": "9.4.19",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v9.4.17",
+          "openapi": "network/v9.4.17/openapi.json",
+          "reference": "network/v9.4.17/reference.md",
+          "operations": 15,
+          "paths": 12,
+          "categories": 5,
+          "spec_version": "9.4.17",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v9.3.45",
+          "openapi": "network/v9.3.45/openapi.json",
+          "reference": "network/v9.3.45/reference.md",
+          "operations": 15,
+          "paths": 12,
+          "categories": 5,
+          "spec_version": "9.3.45",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v9.3.43",
+          "openapi": "network/v9.3.43/openapi.json",
+          "reference": "network/v9.3.43/reference.md",
+          "operations": 15,
+          "paths": 12,
+          "categories": 5,
+          "spec_version": "9.3.43",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v9.2.87",
+          "openapi": "network/v9.2.87/openapi.json",
+          "reference": "network/v9.2.87/reference.md",
+          "operations": 15,
+          "paths": 12,
+          "categories": 5,
+          "spec_version": "9.2.87",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v9.2.86",
+          "openapi": "network/v9.2.86/openapi.json",
+          "reference": "network/v9.2.86/reference.md",
+          "operations": 15,
+          "paths": 12,
+          "categories": 5,
+          "spec_version": "9.2.86",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v9.1.120",
+          "openapi": "network/v9.1.120/openapi.json",
+          "reference": "network/v9.1.120/reference.md",
+          "operations": 15,
+          "paths": 12,
+          "categories": 5,
+          "spec_version": "9.1.120",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        }
+      ]
+    },
+    "protect": {
+      "latest": "v7.1.46",
+      "versions": [
+        {
+          "version": "v7.1.46",
+          "openapi": "protect/v7.1.46/openapi.json",
+          "reference": "protect/v7.1.46/reference.md",
+          "operations": 73,
+          "paths": 54,
+          "categories": 22,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v7.1.42",
+          "openapi": "protect/v7.1.42/openapi.json",
+          "reference": "protect/v7.1.42/reference.md",
+          "operations": 73,
+          "paths": 54,
+          "categories": 22,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v7.0.107",
+          "openapi": "protect/v7.0.107/openapi.json",
+          "reference": "protect/v7.0.107/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v7.0.104",
+          "openapi": "protect/v7.0.104/openapi.json",
+          "reference": "protect/v7.0.104/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v7.0.94",
+          "openapi": "protect/v7.0.94/openapi.json",
+          "reference": "protect/v7.0.94/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v6.2.88",
+          "openapi": "protect/v6.2.88/openapi.json",
+          "reference": "protect/v6.2.88/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v6.2.87",
+          "openapi": "protect/v6.2.87/openapi.json",
+          "reference": "protect/v6.2.87/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v6.2.83",
+          "openapi": "protect/v6.2.83/openapi.json",
+          "reference": "protect/v6.2.83/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v6.2.72",
+          "openapi": "protect/v6.2.72/openapi.json",
+          "reference": "protect/v6.2.72/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v6.1.79",
+          "openapi": "protect/v6.1.79/openapi.json",
+          "reference": "protect/v6.1.79/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v6.1.78",
+          "openapi": "protect/v6.1.78/openapi.json",
+          "reference": "protect/v6.1.78/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v6.1.75",
+          "openapi": "protect/v6.1.75/openapi.json",
+          "reference": "protect/v6.1.75/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v6.1.68",
+          "openapi": "protect/v6.1.68/openapi.json",
+          "reference": "protect/v6.1.68/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v6.1.65",
+          "openapi": "protect/v6.1.65/openapi.json",
+          "reference": "protect/v6.1.65/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v6.0.53",
+          "openapi": "protect/v6.0.53/openapi.json",
+          "reference": "protect/v6.0.53/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v6.0.47",
+          "openapi": "protect/v6.0.47/openapi.json",
+          "reference": "protect/v6.0.47/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v6.0.41",
+          "openapi": "protect/v6.0.41/openapi.json",
+          "reference": "protect/v6.0.41/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v5.3.48",
+          "openapi": "protect/v5.3.48/openapi.json",
+          "reference": "protect/v5.3.48/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v5.3.45",
+          "openapi": "protect/v5.3.45/openapi.json",
+          "reference": "protect/v5.3.45/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v5.3.41",
+          "openapi": "protect/v5.3.41/openapi.json",
+          "reference": "protect/v5.3.41/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        },
+        {
+          "version": "v5.3.38",
+          "openapi": "protect/v5.3.38/openapi.json",
+          "reference": "protect/v5.3.38/reference.md",
+          "operations": 35,
+          "paths": 25,
+          "categories": 12,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        }
+      ]
+    },
+    "site-manager": {
+      "latest": "v1.0.0",
+      "versions": [
+        {
+          "version": "v1.0.0",
+          "openapi": "site-manager/v1.0.0/openapi.json",
+          "reference": "site-manager/v1.0.0/reference.md",
+          "operations": 9,
+          "paths": 9,
+          "categories": 1,
+          "spec_version": "1.0.0",
+          "lastmod": "2026-06-02T09:19:13.019Z"
+        }
+      ]
+    }
+  }
+}

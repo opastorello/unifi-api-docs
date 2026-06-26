@@ -21,9 +21,14 @@ Modos de acesso: **Local** (`https://<console>/proxy/<app>/integration/...`, hea
 - [network v9.2.86](https://developer.ui.com/network/v9.2.86): 15 operações - OpenAPI `network/v9.2.86/openapi.json` · referência `network/v9.2.86/reference.md`
 - [network v9.1.120](https://developer.ui.com/network/v9.1.120): 15 operações - OpenAPI `network/v9.1.120/openapi.json` · referência `network/v9.1.120/reference.md`
 
-## protect (mais recente: v7.1.46)
-- [protect v7.1.46 (latest)](https://developer.ui.com/protect/v7.1.46): 73 operações - OpenAPI `protect/v7.1.46/openapi.json` · referência `protect/v7.1.46/reference.md`
-- [protect v7.1.42](https://developer.ui.com/protect/v7.1.42): 73 operações - OpenAPI `protect/v7.1.42/openapi.json` · referência `protect/v7.1.42/reference.md`
+## protect (mais recente: v7.1.83)
+- [protect v7.1.83 (latest)](https://developer.ui.com/protect/v7.1.83): 73 operações - OpenAPI `protect/v7.1.83/openapi.json` · referência `protect/v7.1.83/reference.md`
+- [protect v7.1.77](https://developer.ui.com/protect/v7.1.77): 73 operações - OpenAPI `protect/v7.1.77/openapi.json` · referência `protect/v7.1.77/reference.md`
+- [protect v7.1.76](https://developer.ui.com/protect/v7.1.76): 73 operações - OpenAPI `protect/v7.1.76/openapi.json` · referência `protect/v7.1.76/reference.md`
+- [protect v7.1.75](https://developer.ui.com/protect/v7.1.75): 73 operações - OpenAPI `protect/v7.1.75/openapi.json` · referência `protect/v7.1.75/reference.md`
+- [protect v7.1.74](https://developer.ui.com/protect/v7.1.74): 73 operações - OpenAPI `protect/v7.1.74/openapi.json` · referência `protect/v7.1.74/reference.md`
+- [protect v7.1.73](https://developer.ui.com/protect/v7.1.73): 73 operações - OpenAPI `protect/v7.1.73/openapi.json` · referência `protect/v7.1.73/reference.md`
+- [protect v7.1.69](https://developer.ui.com/protect/v7.1.69): 73 operações - OpenAPI `protect/v7.1.69/openapi.json` · referência `protect/v7.1.69/reference.md`
 - [protect v7.0.107](https://developer.ui.com/protect/v7.0.107): 35 operações - OpenAPI `protect/v7.0.107/openapi.json` · referência `protect/v7.0.107/reference.md`
 - [protect v7.0.104](https://developer.ui.com/protect/v7.0.104): 35 operações - OpenAPI `protect/v7.0.104/openapi.json` · referência `protect/v7.0.104/reference.md`
 - [protect v7.0.94](https://developer.ui.com/protect/v7.0.94): 35 operações - OpenAPI `protect/v7.0.94/openapi.json` · referência `protect/v7.0.94/reference.md`
@@ -38,11 +43,7 @@ Modos de acesso: **Local** (`https://<console>/proxy/<app>/integration/...`, hea
 - [protect v6.1.65](https://developer.ui.com/protect/v6.1.65): 35 operações - OpenAPI `protect/v6.1.65/openapi.json` · referência `protect/v6.1.65/reference.md`
 - [protect v6.0.53](https://developer.ui.com/protect/v6.0.53): 35 operações - OpenAPI `protect/v6.0.53/openapi.json` · referência `protect/v6.0.53/reference.md`
 - [protect v6.0.47](https://developer.ui.com/protect/v6.0.47): 35 operações - OpenAPI `protect/v6.0.47/openapi.json` · referência `protect/v6.0.47/reference.md`
-- [protect v6.0.41](https://developer.ui.com/protect/v6.0.41): 35 operações - OpenAPI `protect/v6.0.41/openapi.json` · referência `protect/v6.0.41/reference.md`
 - [protect v5.3.48](https://developer.ui.com/protect/v5.3.48): 35 operações - OpenAPI `protect/v5.3.48/openapi.json` · referência `protect/v5.3.48/reference.md`
-- [protect v5.3.45](https://developer.ui.com/protect/v5.3.45): 35 operações - OpenAPI `protect/v5.3.45/openapi.json` · referência `protect/v5.3.45/reference.md`
-- [protect v5.3.41](https://developer.ui.com/protect/v5.3.41): 35 operações - OpenAPI `protect/v5.3.41/openapi.json` · referência `protect/v5.3.41/reference.md`
-- [protect v5.3.38](https://developer.ui.com/protect/v5.3.38): 35 operações - OpenAPI `protect/v5.3.38/openapi.json` · referência `protect/v5.3.38/reference.md`
 
 ## site-manager (mais recente: v1.0.0)
 - [site-manager v1.0.0 (latest)](https://developer.ui.com/site-manager/v1.0.0): 9 operações - OpenAPI `site-manager/v1.0.0/openapi.json` · referência `site-manager/v1.0.0/reference.md`

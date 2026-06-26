@@ -12,10 +12,6 @@
     {
       "url": "https://api.ui.com",
       "description": "Production"
-    },
-    {
-      "url": "https://api.stg.ui.com",
-      "description": "Staging"
     }
   ],
   "tags": [

@@ -36,7 +36,7 @@
           },
           {
             "description": "Last processed timestamp of devices in RFC3339 format",
-            "example": "2026-03-12T10:42:00Z",
+            "example": "2026-06-15T07:21:27Z",
             "in": "query",
             "name": "time",
             "schema": {
@@ -102,7 +102,7 @@
                               }
                             }
                           ],
-                          "updatedAt": "2026-03-12T10:42:00Z"
+                          "updatedAt": "2026-06-15T07:21:27Z"
                         }
                       ],
                       "httpStatusCode": 200,
@@ -2391,7 +2391,7 @@
     },
     "/v1/sd-wan-configs": {
       "get": {
-        "description": "Retrieves a list of all SD-WAN configurations associated with the UI account making the API call.",
+        "description": "Retrieves a list of all hub-and-spoke SD-WAN configurations associated with the UI account making the API call.",
         "operationId": "listSDWanConfigs",
         "responses": {
           "200": {

@@ -205,6 +205,7 @@
             "example": true
           },
           "permissions": {
+            "type": "object",
             "nullable": true,
             "allOf": [
               {
@@ -225,7 +226,7 @@
                 "title": "AdminPermission"
               }
             ],
-            "description": "`null` when admin has no role bindings (e.g. pending invitation)."
+            "description": "Mobility permissions for the admin. `null` when the admin has no role bindings (e.g. pending invitation)."
           }
         },
         "required": [
@@ -748,6 +749,748 @@
           "ssid",
           "password"
         ]
+      },
+      "PaginationMeta": {
+        "type": "object",
+        "description": "Common envelope fields shared by all paginated collection responses.",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "description": "Total number of records matching the query, ignoring pagination."
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Number of records skipped (echoes the `offset` query parameter)."
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Page size applied (echoes the `limit` query parameter)."
+          },
+          "httpStatusCode": {
+            "type": "integer",
+            "description": "HTTP status code."
+          },
+          "traceId": {
+            "type": "string",
+            "description": "Matches `X-Request-ID` if provided, otherwise auto-generated."
+          }
+        },
+        "required": [
+          "httpStatusCode",
+          "traceId"
+        ]
+      },
+      "WorkspaceListResponse": {
+        "description": "Paginated list of workspaces.",
+        "allOf": [
+          {
+            "type": "object",
+            "description": "Common envelope fields shared by all paginated collection responses.",
+            "properties": {
+              "total": {
+                "type": "integer",
+                "description": "Total number of records matching the query, ignoring pagination."
+              },
+              "offset": {
+                "type": "integer",
+                "description": "Number of records skipped (echoes the `offset` query parameter)."
+              },
+              "limit": {
+                "type": "integer",
+                "description": "Page size applied (echoes the `limit` query parameter)."
+              },
+              "httpStatusCode": {
+                "type": "integer",
+                "description": "HTTP status code."
+              },
+              "traceId": {
+                "type": "string",
+                "description": "Matches `X-Request-ID` if provided, otherwise auto-generated."
+              }
+            },
+            "required": [
+              "httpStatusCode",
+              "traceId"
+            ],
+            "title": "PaginationMeta"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "description": "A workspace (mobility cloud site) visible to the authenticated user.",
+                  "properties": {
+                    "workspace_id": {
+                      "type": "string",
+                      "format": "uuid",
+                      "example": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+                    },
+                    "workspace_name": {
+                      "type": "string",
+                      "example": "John's Cloud"
+                    },
+                    "is_owner": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "ACTIVE",
+                        "PENDING",
+                        "INACTIVE",
+                        "DECLINED"
+                      ],
+                      "example": "ACTIVE"
+                    }
+                  },
+                  "required": [
+                    "workspace_id",
+                    "workspace_name",
+                    "is_owner",
+                    "status"
+                  ],
+                  "title": "WorkspaceSummary"
+                }
+              }
+            },
+            "required": [
+              "data"
+            ]
+          }
+        ]
+      },
+      "AdminListResponse": {
+        "description": "Paginated list of workspace admins.",
+        "allOf": [
+          {
+            "type": "object",
+            "description": "Common envelope fields shared by all paginated collection responses.",
+            "properties": {
+              "total": {
+                "type": "integer",
+                "description": "Total number of records matching the query, ignoring pagination."
+              },
+              "offset": {
+                "type": "integer",
+                "description": "Number of records skipped (echoes the `offset` query parameter)."
+              },
+              "limit": {
+                "type": "integer",
+                "description": "Page size applied (echoes the `limit` query parameter)."
+              },
+              "httpStatusCode": {
+                "type": "integer",
+                "description": "HTTP status code."
+              },
+              "traceId": {
+                "type": "string",
+                "description": "Matches `X-Request-ID` if provided, otherwise auto-generated."
+              }
+            },
+            "required": [
+              "httpStatusCode",
+              "traceId"
+            ],
+            "title": "PaginationMeta"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "description": "An admin of a workspace, with only mobility permissions exposed.",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "example": "John Doe"
+                    },
+                    "email": {
+                      "type": "string",
+                      "format": "email",
+                      "example": "john@example.com"
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "ACTIVE",
+                        "PENDING",
+                        "INACTIVE",
+                        "DECLINED"
+                      ],
+                      "example": "ACTIVE"
+                    },
+                    "is_owner": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "permissions": {
+                      "type": "object",
+                      "nullable": true,
+                      "allOf": [
+                        {
+                          "type": "object",
+                          "description": "Permission levels for the admin. Only mobility permissions are exposed.\nThe `umr` field is omitted if the admin has no role binding.\n",
+                          "properties": {
+                            "umr": {
+                              "type": "string",
+                              "description": "Mobile Routing permission level.\n- `ALL` — can view and configure devices (admin)\n- `VIEW_ONLY` — read-only access (viewer)\n- `NONE` — no access\n",
+                              "enum": [
+                                "ALL",
+                                "VIEW_ONLY",
+                                "NONE"
+                              ],
+                              "example": "ALL"
+                            }
+                          },
+                          "title": "AdminPermission"
+                        }
+                      ],
+                      "description": "Mobility permissions for the admin. `null` when the admin has no role bindings (e.g. pending invitation)."
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "email",
+                    "status",
+                    "is_owner",
+                    "permissions"
+                  ],
+                  "title": "AdminSummary"
+                }
+              }
+            },
+            "required": [
+              "data"
+            ]
+          }
+        ]
+      },
+      "DeviceListResponse": {
+        "description": "Paginated list of devices.",
+        "allOf": [
+          {
+            "type": "object",
+            "description": "Common envelope fields shared by all paginated collection responses.",
+            "properties": {
+              "total": {
+                "type": "integer",
+                "description": "Total number of records matching the query, ignoring pagination."
+              },
+              "offset": {
+                "type": "integer",
+                "description": "Number of records skipped (echoes the `offset` query parameter)."
+              },
+              "limit": {
+                "type": "integer",
+                "description": "Page size applied (echoes the `limit` query parameter)."
+              },
+              "httpStatusCode": {
+                "type": "integer",
+                "description": "HTTP status code."
+              },
+              "traceId": {
+                "type": "string",
+                "description": "Matches `X-Request-ID` if provided, otherwise auto-generated."
+              }
+            },
+            "required": [
+              "httpStatusCode",
+              "traceId"
+            ],
+            "title": "PaginationMeta"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "description": "Lightweight device representation returned in the device list.",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid",
+                      "example": "550e8400-e29b-41d4-a716-446655440000"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "Office Router"
+                    },
+                    "model": {
+                      "type": "string",
+                      "description": "Hardware model name.\n- `UMR` — UMR Flex EU/US\n- `UMR Industrial` — UMR Industrial EU/US\n- `UMR Ultra` — UMR Ultra EU/US/ROW\n",
+                      "enum": [
+                        "UMR",
+                        "UMR Industrial",
+                        "UMR Ultra"
+                      ],
+                      "example": "UMR"
+                    },
+                    "state": {
+                      "type": "string",
+                      "description": "Current device state.\n\n| Value | Description |\n|-------|-------------|\n| `CONNECTED` | Online and communicating normally |\n| `DISCONNECTED` | Lost connection to the cloud |\n| `ADOPTING` | Adoption in progress |\n| `ADOPTING_TIMEOUT` | Adoption timed out |\n| `DOWNLOADING` | Downloading firmware update |\n| `UPGRADING` | Applying firmware update |\n| `RESTARTING` | Rebooting |\n| `FACTORY_RESET` | Performing factory reset |\n| `GETTING_READY` | Initialising after adoption |\n| `RESTORING` | Restoring from backup |\n| `NULL` | Record exists but adoption not started |\n| `DELETING` | Cloud-side deletion in progress |\n",
+                      "enum": [
+                        "CONNECTED",
+                        "DISCONNECTED",
+                        "ADOPTING",
+                        "ADOPTING_TIMEOUT",
+                        "DOWNLOADING",
+                        "UPGRADING",
+                        "RESTARTING",
+                        "FACTORY_RESET",
+                        "GETTING_READY",
+                        "RESTORING",
+                        "NULL",
+                        "DELETING"
+                      ],
+                      "example": "CONNECTED"
+                    },
+                    "firmware_version": {
+                      "type": "string",
+                      "example": "3.1.14"
+                    },
+                    "mac_address": {
+                      "type": "string",
+                      "description": "Primary MAC address in upper-case colon-separated format.\nEmpty string when not yet initialised.\n",
+                      "example": "00:1A:2B:3C:4D:5E"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "model",
+                    "state",
+                    "firmware_version",
+                    "mac_address"
+                  ],
+                  "title": "DeviceSummary"
+                }
+              }
+            },
+            "required": [
+              "data"
+            ]
+          }
+        ]
+      },
+      "DeviceClientListResponse": {
+        "description": "Paginated list of device clients.",
+        "allOf": [
+          {
+            "type": "object",
+            "description": "Common envelope fields shared by all paginated collection responses.",
+            "properties": {
+              "total": {
+                "type": "integer",
+                "description": "Total number of records matching the query, ignoring pagination."
+              },
+              "offset": {
+                "type": "integer",
+                "description": "Number of records skipped (echoes the `offset` query parameter)."
+              },
+              "limit": {
+                "type": "integer",
+                "description": "Page size applied (echoes the `limit` query parameter)."
+              },
+              "httpStatusCode": {
+                "type": "integer",
+                "description": "HTTP status code."
+              },
+              "traceId": {
+                "type": "string",
+                "description": "Matches `X-Request-ID` if provided, otherwise auto-generated."
+              }
+            },
+            "required": [
+              "httpStatusCode",
+              "traceId"
+            ],
+            "title": "PaginationMeta"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "description": "A client associated with a device.",
+                  "properties": {
+                    "mac": {
+                      "type": "string",
+                      "description": "MAC address in upper-case colon-separated format.",
+                      "example": "AA:BB:CC:DD:EE:FF"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "John's iPhone"
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "WIRED",
+                        "WIRELESS"
+                      ],
+                      "example": "WIRELESS"
+                    },
+                    "connection_status": {
+                      "type": "string",
+                      "description": "- `ONLINE` — actively connected\n- `OFFLINE` — previously connected, no longer seen\n- `BLOCKED` — network access blocked; `is_blocked` will be `true`\n",
+                      "enum": [
+                        "ONLINE",
+                        "OFFLINE",
+                        "BLOCKED"
+                      ],
+                      "example": "ONLINE"
+                    },
+                    "ip_address": {
+                      "type": "string",
+                      "description": "Empty when unknown.",
+                      "example": "192.168.1.100"
+                    },
+                    "is_blocked": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "wifi_experience": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 100,
+                      "nullable": true,
+                      "description": "WiFi experience score (0-100). **Omitted** for wired clients.\n",
+                      "example": 85
+                    }
+                  },
+                  "required": [
+                    "mac",
+                    "name",
+                    "type",
+                    "connection_status",
+                    "ip_address",
+                    "is_blocked"
+                  ],
+                  "title": "DeviceClient"
+                }
+              }
+            },
+            "required": [
+              "data"
+            ]
+          }
+        ]
+      },
+      "DeviceDetailResponse": {
+        "type": "object",
+        "description": "Single device detail response.",
+        "properties": {
+          "data": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Lightweight device representation returned in the device list.",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "example": "550e8400-e29b-41d4-a716-446655440000"
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "Office Router"
+                  },
+                  "model": {
+                    "type": "string",
+                    "description": "Hardware model name.\n- `UMR` — UMR Flex EU/US\n- `UMR Industrial` — UMR Industrial EU/US\n- `UMR Ultra` — UMR Ultra EU/US/ROW\n",
+                    "enum": [
+                      "UMR",
+                      "UMR Industrial",
+                      "UMR Ultra"
+                    ],
+                    "example": "UMR"
+                  },
+                  "state": {
+                    "type": "string",
+                    "description": "Current device state.\n\n| Value | Description |\n|-------|-------------|\n| `CONNECTED` | Online and communicating normally |\n| `DISCONNECTED` | Lost connection to the cloud |\n| `ADOPTING` | Adoption in progress |\n| `ADOPTING_TIMEOUT` | Adoption timed out |\n| `DOWNLOADING` | Downloading firmware update |\n| `UPGRADING` | Applying firmware update |\n| `RESTARTING` | Rebooting |\n| `FACTORY_RESET` | Performing factory reset |\n| `GETTING_READY` | Initialising after adoption |\n| `RESTORING` | Restoring from backup |\n| `NULL` | Record exists but adoption not started |\n| `DELETING` | Cloud-side deletion in progress |\n",
+                    "enum": [
+                      "CONNECTED",
+                      "DISCONNECTED",
+                      "ADOPTING",
+                      "ADOPTING_TIMEOUT",
+                      "DOWNLOADING",
+                      "UPGRADING",
+                      "RESTARTING",
+                      "FACTORY_RESET",
+                      "GETTING_READY",
+                      "RESTORING",
+                      "NULL",
+                      "DELETING"
+                    ],
+                    "example": "CONNECTED"
+                  },
+                  "firmware_version": {
+                    "type": "string",
+                    "example": "3.1.14"
+                  },
+                  "mac_address": {
+                    "type": "string",
+                    "description": "Primary MAC address in upper-case colon-separated format.\nEmpty string when not yet initialised.\n",
+                    "example": "00:1A:2B:3C:4D:5E"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "model",
+                  "state",
+                  "firmware_version",
+                  "mac_address"
+                ],
+                "title": "DeviceSummary"
+              },
+              {
+                "type": "object",
+                "description": "Full device detail including WAN, cellular, WiFi, VPN, subscription, and GPS.",
+                "properties": {
+                  "wan_source": {
+                    "type": "string",
+                    "description": "Active WAN interface. Empty when no WAN connected.",
+                    "enum": [
+                      "LTE",
+                      "WAN",
+                      "WIFIWAN",
+                      ""
+                    ],
+                    "example": "LTE"
+                  },
+                  "wan_ip": {
+                    "type": "string",
+                    "description": "Public WAN IP. Empty when not connected.",
+                    "example": "203.0.113.42"
+                  },
+                  "enabled_wans": {
+                    "type": "array",
+                    "description": "Enabled WAN interfaces sorted by priority (index 0 = highest).",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "LTE",
+                        "WAN",
+                        "WIFIWAN"
+                      ]
+                    },
+                    "example": [
+                      "LTE",
+                      "WAN"
+                    ]
+                  },
+                  "isp": {
+                    "type": "string",
+                    "example": "AT&T"
+                  },
+                  "lte_signal_level": {
+                    "type": "string",
+                    "description": "LTE signal quality derived from RSSI (dBm).\n\n| Value | RSSI range | Description |\n|-------|-----------|-------------|\n| `NO_SIGNAL` | < -111 dBm | No usable signal |\n| `POOR` | -111 to -100 dBm | Weak signal |\n| `FAIR` | -99 to -89 dBm | Moderate signal |\n| `STRONG` | -88 dBm or better | Good signal |\n| `\"\"` | N/A | RSSI not yet reported |\n",
+                    "enum": [
+                      "NO_SIGNAL",
+                      "POOR",
+                      "FAIR",
+                      "STRONG",
+                      ""
+                    ],
+                    "example": "FAIR"
+                  },
+                  "cellular_data_usage_bytes": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Data consumed in the current billing cycle, in bytes.",
+                    "example": 524288000
+                  },
+                  "cellular_data_limit_bytes": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Data cap in bytes for the current billing cycle.\n`-1` means unlimited. `0` is not a valid value.\n",
+                    "example": 5368709120
+                  },
+                  "memory_usage_percent": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 100,
+                    "example": 42
+                  },
+                  "uptime_seconds": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Seconds since last boot. `0` when state is not `CONNECTED`.",
+                    "example": 86400
+                  },
+                  "client_count": {
+                    "type": "integer",
+                    "example": 5
+                  },
+                  "host_address": {
+                    "type": "string",
+                    "description": "LAN gateway IP. Contains WAN IP in `WANBRIDGE` mode.",
+                    "example": "192.168.1.1"
+                  },
+                  "poe_passthrough": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "device_mode": {
+                    "type": "string",
+                    "description": "- `ROUTER` — standard NAT router\n- `WANBRIDGE` — WAN bridge mode\n- `LTEPASS` — LTE passthrough\n",
+                    "enum": [
+                      "ROUTER",
+                      "WANBRIDGE",
+                      "LTEPASS"
+                    ],
+                    "example": "ROUTER"
+                  },
+                  "wifi_enabled": {
+                    "type": "boolean",
+                    "example": true
+                  },
+                  "wifi_ssid": {
+                    "type": "string",
+                    "example": "UniFi-LTE"
+                  },
+                  "tx_power_level": {
+                    "type": "string",
+                    "description": "Empty when Wireless record is not initialised.",
+                    "enum": [
+                      "HIGH",
+                      "MEDIUM",
+                      "LOW",
+                      ""
+                    ],
+                    "example": "HIGH"
+                  },
+                  "vpn_profile_name": {
+                    "type": "string",
+                    "description": "Empty when no VPN is configured.",
+                    "example": "HQ-VPN"
+                  },
+                  "vpn_status": {
+                    "type": "string",
+                    "description": "- `CONNECTING` — tunnel being established\n- `CONNECTED` — tunnel active\n- `DISCONNECTED` — configured but not connected\n- `FAILED` — connection failed\n- `\"\"` — no VPN session\n",
+                    "enum": [
+                      "CONNECTING",
+                      "CONNECTED",
+                      "DISCONNECTED",
+                      "FAILED",
+                      ""
+                    ],
+                    "example": "CONNECTED"
+                  },
+                  "firewall_rule_names": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "example": [
+                      "Block-IoT-Outbound"
+                    ]
+                  },
+                  "routing_rule_names": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "example": []
+                  },
+                  "ddns_profile_names": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "example": []
+                  },
+                  "subscription_plan": {
+                    "type": "string",
+                    "description": "Active data plan. Empty when no subscription.\n\n| Value | Description |\n|-------|-------------|\n| `FREE_TRIAL` | Free trial |\n| `1GB` | Monthly 1 GB |\n| `5GB` | Monthly 5 GB |\n| `20GB` | Monthly 20 GB |\n| `2GB` | Daily 2 GB (QA/test) |\n| `CLOUD` | Cloud plan (daily/yearly/3-year) |\n| `\"\"` | No subscription |\n",
+                    "enum": [
+                      "FREE_TRIAL",
+                      "1GB",
+                      "5GB",
+                      "20GB",
+                      "2GB",
+                      "CLOUD",
+                      ""
+                    ],
+                    "example": "5GB"
+                  },
+                  "subscription_status": {
+                    "type": "string",
+                    "description": "Derived priority: FAILED > PENDING > ACTIVE > INACTIVE.\nA subscription cancelled at period end remains `ACTIVE` until expiry.\n",
+                    "enum": [
+                      "ACTIVE",
+                      "INACTIVE",
+                      "PENDING",
+                      "FAILED"
+                    ],
+                    "example": "ACTIVE"
+                  },
+                  "location": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "description": "GPS location. This field is **omitted** (not `null`) when no GPS fix\nis available — check for key presence rather than null check.\n",
+                        "properties": {
+                          "latitude": {
+                            "type": "number",
+                            "format": "float",
+                            "description": "WGS-84 latitude in decimal degrees.",
+                            "example": 37.7749
+                          },
+                          "longitude": {
+                            "type": "number",
+                            "format": "float",
+                            "description": "WGS-84 longitude in decimal degrees.",
+                            "example": -122.4194
+                          },
+                          "last_updated": {
+                            "type": "integer",
+                            "format": "int64",
+                            "description": "Unix timestamp in milliseconds of the last GPS fix.",
+                            "example": 1709712000000
+                          }
+                        },
+                        "required": [
+                          "latitude",
+                          "longitude",
+                          "last_updated"
+                        ],
+                        "title": "DeviceLocation"
+                      }
+                    ],
+                    "description": "Omitted (not null) when no GPS fix is available."
+                  }
+                }
+              }
+            ],
+            "title": "DeviceDetail"
+          },
+          "httpStatusCode": {
+            "type": "integer",
+            "description": "HTTP status code."
+          },
+          "traceId": {
+            "type": "string",
+            "description": "Matches `X-Request-ID` if provided, otherwise auto-generated."
+          }
+        },
+        "required": [
+          "data",
+          "httpStatusCode",
+          "traceId"
+        ]
       }
     }
   },
@@ -765,6 +1508,90 @@
             "description": "Workspace list.",
             "content": {
               "application/json": {
+                "schema": {
+                  "description": "Paginated list of workspaces.",
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "description": "Common envelope fields shared by all paginated collection responses.",
+                      "properties": {
+                        "total": {
+                          "type": "integer",
+                          "description": "Total number of records matching the query, ignoring pagination."
+                        },
+                        "offset": {
+                          "type": "integer",
+                          "description": "Number of records skipped (echoes the `offset` query parameter)."
+                        },
+                        "limit": {
+                          "type": "integer",
+                          "description": "Page size applied (echoes the `limit` query parameter)."
+                        },
+                        "httpStatusCode": {
+                          "type": "integer",
+                          "description": "HTTP status code."
+                        },
+                        "traceId": {
+                          "type": "string",
+                          "description": "Matches `X-Request-ID` if provided, otherwise auto-generated."
+                        }
+                      },
+                      "required": [
+                        "httpStatusCode",
+                        "traceId"
+                      ],
+                      "title": "PaginationMeta"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "data": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "description": "A workspace (mobility cloud site) visible to the authenticated user.",
+                            "properties": {
+                              "workspace_id": {
+                                "type": "string",
+                                "format": "uuid",
+                                "example": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+                              },
+                              "workspace_name": {
+                                "type": "string",
+                                "example": "John's Cloud"
+                              },
+                              "is_owner": {
+                                "type": "boolean",
+                                "example": true
+                              },
+                              "status": {
+                                "type": "string",
+                                "enum": [
+                                  "ACTIVE",
+                                  "PENDING",
+                                  "INACTIVE",
+                                  "DECLINED"
+                                ],
+                                "example": "ACTIVE"
+                              }
+                            },
+                            "required": [
+                              "workspace_id",
+                              "workspace_name",
+                              "is_owner",
+                              "status"
+                            ],
+                            "title": "WorkspaceSummary"
+                          }
+                        }
+                      },
+                      "required": [
+                        "data"
+                      ]
+                    }
+                  ],
+                  "title": "WorkspaceListResponse"
+                },
                 "example": {
                   "data": [
                     {
@@ -1057,6 +1884,115 @@
             "description": "Admin list.",
             "content": {
               "application/json": {
+                "schema": {
+                  "description": "Paginated list of workspace admins.",
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "description": "Common envelope fields shared by all paginated collection responses.",
+                      "properties": {
+                        "total": {
+                          "type": "integer",
+                          "description": "Total number of records matching the query, ignoring pagination."
+                        },
+                        "offset": {
+                          "type": "integer",
+                          "description": "Number of records skipped (echoes the `offset` query parameter)."
+                        },
+                        "limit": {
+                          "type": "integer",
+                          "description": "Page size applied (echoes the `limit` query parameter)."
+                        },
+                        "httpStatusCode": {
+                          "type": "integer",
+                          "description": "HTTP status code."
+                        },
+                        "traceId": {
+                          "type": "string",
+                          "description": "Matches `X-Request-ID` if provided, otherwise auto-generated."
+                        }
+                      },
+                      "required": [
+                        "httpStatusCode",
+                        "traceId"
+                      ],
+                      "title": "PaginationMeta"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "data": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "description": "An admin of a workspace, with only mobility permissions exposed.",
+                            "properties": {
+                              "name": {
+                                "type": "string",
+                                "example": "John Doe"
+                              },
+                              "email": {
+                                "type": "string",
+                                "format": "email",
+                                "example": "john@example.com"
+                              },
+                              "status": {
+                                "type": "string",
+                                "enum": [
+                                  "ACTIVE",
+                                  "PENDING",
+                                  "INACTIVE",
+                                  "DECLINED"
+                                ],
+                                "example": "ACTIVE"
+                              },
+                              "is_owner": {
+                                "type": "boolean",
+                                "example": true
+                              },
+                              "permissions": {
+                                "type": "object",
+                                "nullable": true,
+                                "allOf": [
+                                  {
+                                    "type": "object",
+                                    "description": "Permission levels for the admin. Only mobility permissions are exposed.\nThe `umr` field is omitted if the admin has no role binding.\n",
+                                    "properties": {
+                                      "umr": {
+                                        "type": "string",
+                                        "description": "Mobile Routing permission level.\n- `ALL` — can view and configure devices (admin)\n- `VIEW_ONLY` — read-only access (viewer)\n- `NONE` — no access\n",
+                                        "enum": [
+                                          "ALL",
+                                          "VIEW_ONLY",
+                                          "NONE"
+                                        ],
+                                        "example": "ALL"
+                                      }
+                                    },
+                                    "title": "AdminPermission"
+                                  }
+                                ],
+                                "description": "Mobility permissions for the admin. `null` when the admin has no role bindings (e.g. pending invitation)."
+                              }
+                            },
+                            "required": [
+                              "name",
+                              "email",
+                              "status",
+                              "is_owner",
+                              "permissions"
+                            ],
+                            "title": "AdminSummary"
+                          }
+                        }
+                      },
+                      "required": [
+                        "data"
+                      ]
+                    }
+                  ],
+                  "title": "AdminListResponse"
+                },
                 "example": {
                   "data": [
                     {
@@ -1385,6 +2321,116 @@
             "description": "Paginated device list.",
             "content": {
               "application/json": {
+                "schema": {
+                  "description": "Paginated list of devices.",
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "description": "Common envelope fields shared by all paginated collection responses.",
+                      "properties": {
+                        "total": {
+                          "type": "integer",
+                          "description": "Total number of records matching the query, ignoring pagination."
+                        },
+                        "offset": {
+                          "type": "integer",
+                          "description": "Number of records skipped (echoes the `offset` query parameter)."
+                        },
+                        "limit": {
+                          "type": "integer",
+                          "description": "Page size applied (echoes the `limit` query parameter)."
+                        },
+                        "httpStatusCode": {
+                          "type": "integer",
+                          "description": "HTTP status code."
+                        },
+                        "traceId": {
+                          "type": "string",
+                          "description": "Matches `X-Request-ID` if provided, otherwise auto-generated."
+                        }
+                      },
+                      "required": [
+                        "httpStatusCode",
+                        "traceId"
+                      ],
+                      "title": "PaginationMeta"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "data": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "description": "Lightweight device representation returned in the device list.",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "format": "uuid",
+                                "example": "550e8400-e29b-41d4-a716-446655440000"
+                              },
+                              "name": {
+                                "type": "string",
+                                "example": "Office Router"
+                              },
+                              "model": {
+                                "type": "string",
+                                "description": "Hardware model name.\n- `UMR` — UMR Flex EU/US\n- `UMR Industrial` — UMR Industrial EU/US\n- `UMR Ultra` — UMR Ultra EU/US/ROW\n",
+                                "enum": [
+                                  "UMR",
+                                  "UMR Industrial",
+                                  "UMR Ultra"
+                                ],
+                                "example": "UMR"
+                              },
+                              "state": {
+                                "type": "string",
+                                "description": "Current device state.\n\n| Value | Description |\n|-------|-------------|\n| `CONNECTED` | Online and communicating normally |\n| `DISCONNECTED` | Lost connection to the cloud |\n| `ADOPTING` | Adoption in progress |\n| `ADOPTING_TIMEOUT` | Adoption timed out |\n| `DOWNLOADING` | Downloading firmware update |\n| `UPGRADING` | Applying firmware update |\n| `RESTARTING` | Rebooting |\n| `FACTORY_RESET` | Performing factory reset |\n| `GETTING_READY` | Initialising after adoption |\n| `RESTORING` | Restoring from backup |\n| `NULL` | Record exists but adoption not started |\n| `DELETING` | Cloud-side deletion in progress |\n",
+                                "enum": [
+                                  "CONNECTED",
+                                  "DISCONNECTED",
+                                  "ADOPTING",
+                                  "ADOPTING_TIMEOUT",
+                                  "DOWNLOADING",
+                                  "UPGRADING",
+                                  "RESTARTING",
+                                  "FACTORY_RESET",
+                                  "GETTING_READY",
+                                  "RESTORING",
+                                  "NULL",
+                                  "DELETING"
+                                ],
+                                "example": "CONNECTED"
+                              },
+                              "firmware_version": {
+                                "type": "string",
+                                "example": "3.1.14"
+                              },
+                              "mac_address": {
+                                "type": "string",
+                                "description": "Primary MAC address in upper-case colon-separated format.\nEmpty string when not yet initialised.\n",
+                                "example": "00:1A:2B:3C:4D:5E"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "name",
+                              "model",
+                              "state",
+                              "firmware_version",
+                              "mac_address"
+                            ],
+                            "title": "DeviceSummary"
+                          }
+                        }
+                      },
+                      "required": [
+                        "data"
+                      ]
+                    }
+                  ],
+                  "title": "DeviceListResponse"
+                },
                 "example": {
                   "data": [
                     {
@@ -1691,6 +2737,313 @@
             "description": "Full device detail.",
             "content": {
               "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "Single device detail response.",
+                  "properties": {
+                    "data": {
+                      "allOf": [
+                        {
+                          "type": "object",
+                          "description": "Lightweight device representation returned in the device list.",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "format": "uuid",
+                              "example": "550e8400-e29b-41d4-a716-446655440000"
+                            },
+                            "name": {
+                              "type": "string",
+                              "example": "Office Router"
+                            },
+                            "model": {
+                              "type": "string",
+                              "description": "Hardware model name.\n- `UMR` — UMR Flex EU/US\n- `UMR Industrial` — UMR Industrial EU/US\n- `UMR Ultra` — UMR Ultra EU/US/ROW\n",
+                              "enum": [
+                                "UMR",
+                                "UMR Industrial",
+                                "UMR Ultra"
+                              ],
+                              "example": "UMR"
+                            },
+                            "state": {
+                              "type": "string",
+                              "description": "Current device state.\n\n| Value | Description |\n|-------|-------------|\n| `CONNECTED` | Online and communicating normally |\n| `DISCONNECTED` | Lost connection to the cloud |\n| `ADOPTING` | Adoption in progress |\n| `ADOPTING_TIMEOUT` | Adoption timed out |\n| `DOWNLOADING` | Downloading firmware update |\n| `UPGRADING` | Applying firmware update |\n| `RESTARTING` | Rebooting |\n| `FACTORY_RESET` | Performing factory reset |\n| `GETTING_READY` | Initialising after adoption |\n| `RESTORING` | Restoring from backup |\n| `NULL` | Record exists but adoption not started |\n| `DELETING` | Cloud-side deletion in progress |\n",
+                              "enum": [
+                                "CONNECTED",
+                                "DISCONNECTED",
+                                "ADOPTING",
+                                "ADOPTING_TIMEOUT",
+                                "DOWNLOADING",
+                                "UPGRADING",
+                                "RESTARTING",
+                                "FACTORY_RESET",
+                                "GETTING_READY",
+                                "RESTORING",
+                                "NULL",
+                                "DELETING"
+                              ],
+                              "example": "CONNECTED"
+                            },
+                            "firmware_version": {
+                              "type": "string",
+                              "example": "3.1.14"
+                            },
+                            "mac_address": {
+                              "type": "string",
+                              "description": "Primary MAC address in upper-case colon-separated format.\nEmpty string when not yet initialised.\n",
+                              "example": "00:1A:2B:3C:4D:5E"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "name",
+                            "model",
+                            "state",
+                            "firmware_version",
+                            "mac_address"
+                          ],
+                          "title": "DeviceSummary"
+                        },
+                        {
+                          "type": "object",
+                          "description": "Full device detail including WAN, cellular, WiFi, VPN, subscription, and GPS.",
+                          "properties": {
+                            "wan_source": {
+                              "type": "string",
+                              "description": "Active WAN interface. Empty when no WAN connected.",
+                              "enum": [
+                                "LTE",
+                                "WAN",
+                                "WIFIWAN",
+                                ""
+                              ],
+                              "example": "LTE"
+                            },
+                            "wan_ip": {
+                              "type": "string",
+                              "description": "Public WAN IP. Empty when not connected.",
+                              "example": "203.0.113.42"
+                            },
+                            "enabled_wans": {
+                              "type": "array",
+                              "description": "Enabled WAN interfaces sorted by priority (index 0 = highest).",
+                              "items": {
+                                "type": "string",
+                                "enum": [
+                                  "LTE",
+                                  "WAN",
+                                  "WIFIWAN"
+                                ]
+                              },
+                              "example": [
+                                "LTE",
+                                "WAN"
+                              ]
+                            },
+                            "isp": {
+                              "type": "string",
+                              "example": "AT&T"
+                            },
+                            "lte_signal_level": {
+                              "type": "string",
+                              "description": "LTE signal quality derived from RSSI (dBm).\n\n| Value | RSSI range | Description |\n|-------|-----------|-------------|\n| `NO_SIGNAL` | < -111 dBm | No usable signal |\n| `POOR` | -111 to -100 dBm | Weak signal |\n| `FAIR` | -99 to -89 dBm | Moderate signal |\n| `STRONG` | -88 dBm or better | Good signal |\n| `\"\"` | N/A | RSSI not yet reported |\n",
+                              "enum": [
+                                "NO_SIGNAL",
+                                "POOR",
+                                "FAIR",
+                                "STRONG",
+                                ""
+                              ],
+                              "example": "FAIR"
+                            },
+                            "cellular_data_usage_bytes": {
+                              "type": "integer",
+                              "format": "int64",
+                              "description": "Data consumed in the current billing cycle, in bytes.",
+                              "example": 524288000
+                            },
+                            "cellular_data_limit_bytes": {
+                              "type": "integer",
+                              "format": "int64",
+                              "description": "Data cap in bytes for the current billing cycle.\n`-1` means unlimited. `0` is not a valid value.\n",
+                              "example": 5368709120
+                            },
+                            "memory_usage_percent": {
+                              "type": "integer",
+                              "minimum": 0,
+                              "maximum": 100,
+                              "example": 42
+                            },
+                            "uptime_seconds": {
+                              "type": "integer",
+                              "format": "int64",
+                              "description": "Seconds since last boot. `0` when state is not `CONNECTED`.",
+                              "example": 86400
+                            },
+                            "client_count": {
+                              "type": "integer",
+                              "example": 5
+                            },
+                            "host_address": {
+                              "type": "string",
+                              "description": "LAN gateway IP. Contains WAN IP in `WANBRIDGE` mode.",
+                              "example": "192.168.1.1"
+                            },
+                            "poe_passthrough": {
+                              "type": "boolean",
+                              "example": false
+                            },
+                            "device_mode": {
+                              "type": "string",
+                              "description": "- `ROUTER` — standard NAT router\n- `WANBRIDGE` — WAN bridge mode\n- `LTEPASS` — LTE passthrough\n",
+                              "enum": [
+                                "ROUTER",
+                                "WANBRIDGE",
+                                "LTEPASS"
+                              ],
+                              "example": "ROUTER"
+                            },
+                            "wifi_enabled": {
+                              "type": "boolean",
+                              "example": true
+                            },
+                            "wifi_ssid": {
+                              "type": "string",
+                              "example": "UniFi-LTE"
+                            },
+                            "tx_power_level": {
+                              "type": "string",
+                              "description": "Empty when Wireless record is not initialised.",
+                              "enum": [
+                                "HIGH",
+                                "MEDIUM",
+                                "LOW",
+                                ""
+                              ],
+                              "example": "HIGH"
+                            },
+                            "vpn_profile_name": {
+                              "type": "string",
+                              "description": "Empty when no VPN is configured.",
+                              "example": "HQ-VPN"
+                            },
+                            "vpn_status": {
+                              "type": "string",
+                              "description": "- `CONNECTING` — tunnel being established\n- `CONNECTED` — tunnel active\n- `DISCONNECTED` — configured but not connected\n- `FAILED` — connection failed\n- `\"\"` — no VPN session\n",
+                              "enum": [
+                                "CONNECTING",
+                                "CONNECTED",
+                                "DISCONNECTED",
+                                "FAILED",
+                                ""
+                              ],
+                              "example": "CONNECTED"
+                            },
+                            "firewall_rule_names": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              },
+                              "example": [
+                                "Block-IoT-Outbound"
+                              ]
+                            },
+                            "routing_rule_names": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              },
+                              "example": []
+                            },
+                            "ddns_profile_names": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              },
+                              "example": []
+                            },
+                            "subscription_plan": {
+                              "type": "string",
+                              "description": "Active data plan. Empty when no subscription.\n\n| Value | Description |\n|-------|-------------|\n| `FREE_TRIAL` | Free trial |\n| `1GB` | Monthly 1 GB |\n| `5GB` | Monthly 5 GB |\n| `20GB` | Monthly 20 GB |\n| `2GB` | Daily 2 GB (QA/test) |\n| `CLOUD` | Cloud plan (daily/yearly/3-year) |\n| `\"\"` | No subscription |\n",
+                              "enum": [
+                                "FREE_TRIAL",
+                                "1GB",
+                                "5GB",
+                                "20GB",
+                                "2GB",
+                                "CLOUD",
+                                ""
+                              ],
+                              "example": "5GB"
+                            },
+                            "subscription_status": {
+                              "type": "string",
+                              "description": "Derived priority: FAILED > PENDING > ACTIVE > INACTIVE.\nA subscription cancelled at period end remains `ACTIVE` until expiry.\n",
+                              "enum": [
+                                "ACTIVE",
+                                "INACTIVE",
+                                "PENDING",
+                                "FAILED"
+                              ],
+                              "example": "ACTIVE"
+                            },
+                            "location": {
+                              "allOf": [
+                                {
+                                  "type": "object",
+                                  "description": "GPS location. This field is **omitted** (not `null`) when no GPS fix\nis available — check for key presence rather than null check.\n",
+                                  "properties": {
+                                    "latitude": {
+                                      "type": "number",
+                                      "format": "float",
+                                      "description": "WGS-84 latitude in decimal degrees.",
+                                      "example": 37.7749
+                                    },
+                                    "longitude": {
+                                      "type": "number",
+                                      "format": "float",
+                                      "description": "WGS-84 longitude in decimal degrees.",
+                                      "example": -122.4194
+                                    },
+                                    "last_updated": {
+                                      "type": "integer",
+                                      "format": "int64",
+                                      "description": "Unix timestamp in milliseconds of the last GPS fix.",
+                                      "example": 1709712000000
+                                    }
+                                  },
+                                  "required": [
+                                    "latitude",
+                                    "longitude",
+                                    "last_updated"
+                                  ],
+                                  "title": "DeviceLocation"
+                                }
+                              ],
+                              "description": "Omitted (not null) when no GPS fix is available."
+                            }
+                          }
+                        }
+                      ],
+                      "title": "DeviceDetail"
+                    },
+                    "httpStatusCode": {
+                      "type": "integer",
+                      "description": "HTTP status code."
+                    },
+                    "traceId": {
+                      "type": "string",
+                      "description": "Matches `X-Request-ID` if provided, otherwise auto-generated."
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "httpStatusCode",
+                    "traceId"
+                  ],
+                  "title": "DeviceDetailResponse"
+                },
                 "example": {
                   "data": {
                     "id": "550e8400-e29b-41d4-a716-446655440000",
@@ -2389,6 +3742,113 @@
             "description": "Paginated client list.",
             "content": {
               "application/json": {
+                "schema": {
+                  "description": "Paginated list of device clients.",
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "description": "Common envelope fields shared by all paginated collection responses.",
+                      "properties": {
+                        "total": {
+                          "type": "integer",
+                          "description": "Total number of records matching the query, ignoring pagination."
+                        },
+                        "offset": {
+                          "type": "integer",
+                          "description": "Number of records skipped (echoes the `offset` query parameter)."
+                        },
+                        "limit": {
+                          "type": "integer",
+                          "description": "Page size applied (echoes the `limit` query parameter)."
+                        },
+                        "httpStatusCode": {
+                          "type": "integer",
+                          "description": "HTTP status code."
+                        },
+                        "traceId": {
+                          "type": "string",
+                          "description": "Matches `X-Request-ID` if provided, otherwise auto-generated."
+                        }
+                      },
+                      "required": [
+                        "httpStatusCode",
+                        "traceId"
+                      ],
+                      "title": "PaginationMeta"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "data": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "description": "A client associated with a device.",
+                            "properties": {
+                              "mac": {
+                                "type": "string",
+                                "description": "MAC address in upper-case colon-separated format.",
+                                "example": "AA:BB:CC:DD:EE:FF"
+                              },
+                              "name": {
+                                "type": "string",
+                                "example": "John's iPhone"
+                              },
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "WIRED",
+                                  "WIRELESS"
+                                ],
+                                "example": "WIRELESS"
+                              },
+                              "connection_status": {
+                                "type": "string",
+                                "description": "- `ONLINE` — actively connected\n- `OFFLINE` — previously connected, no longer seen\n- `BLOCKED` — network access blocked; `is_blocked` will be `true`\n",
+                                "enum": [
+                                  "ONLINE",
+                                  "OFFLINE",
+                                  "BLOCKED"
+                                ],
+                                "example": "ONLINE"
+                              },
+                              "ip_address": {
+                                "type": "string",
+                                "description": "Empty when unknown.",
+                                "example": "192.168.1.100"
+                              },
+                              "is_blocked": {
+                                "type": "boolean",
+                                "example": false
+                              },
+                              "wifi_experience": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 100,
+                                "nullable": true,
+                                "description": "WiFi experience score (0-100). **Omitted** for wired clients.\n",
+                                "example": 85
+                              }
+                            },
+                            "required": [
+                              "mac",
+                              "name",
+                              "type",
+                              "connection_status",
+                              "ip_address",
+                              "is_blocked"
+                            ],
+                            "title": "DeviceClient"
+                          }
+                        }
+                      },
+                      "required": [
+                        "data"
+                      ]
+                    }
+                  ],
+                  "title": "DeviceClientListResponse"
+                },
                 "example": {
                   "data": [
                     {

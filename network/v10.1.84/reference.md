@@ -1,7 +1,7 @@
 # UniFi Network API - v10.1.84 - Referência
 
 > Espelho automático de [`developer.ui.com/network/v10.1.84`](https://developer.ui.com/network/v10.1.84).
-> OpenAPI `3.1.0` · 67 operações em 38 paths · atualizado na origem em `2026-06-27T02:40:39.930Z`.
+> OpenAPI `3.1.0` · 67 operações em 38 paths · atualizado na origem em `2026-07-08T04:28:37.045Z`.
 
 **OpenAPI completo (fonte da verdade):** [`openapi.json`](./openapi.json)
 
@@ -1312,7 +1312,7 @@ curl -X DELETE "https://api.ui.com/v1/connector/consoles/$CONSOLE_ID/network/int
 
 `GET /v1/sites/{siteId}/wifi/broadcasts`  ·  operationId: `getWifiBroadcastPage`
 
-$1d
+$20
 
 **Parâmetros**
 
@@ -2723,7 +2723,7 @@ curl -X PUT "https://api.ui.com/v1/connector/consoles/$CONSOLE_ID/network/integr
 
 `GET /v1/sites/{siteId}/acl-rules`  ·  operationId: `getAclRulePage`
 
-$1f
+$22
 
 **Parâmetros**
 
@@ -2988,7 +2988,7 @@ curl -X DELETE "https://api.ui.com/v1/connector/consoles/$CONSOLE_ID/network/int
 
 `GET /v1/sites/{siteId}/dns/policies`  ·  operationId: `getDnsPolicyPage`
 
-$1e
+$21
 
 **Parâmetros**
 

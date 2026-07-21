@@ -1,6 +1,6 @@
-# UniFi Network API - v10.3.58 - Referência
+# UniFi Network API - v10.4.57 - Referência
 
-> Espelho automático de [`developer.ui.com/network/v10.3.58`](https://developer.ui.com/network/v10.3.58).
+> Espelho automático de [`developer.ui.com/network/v10.4.57`](https://developer.ui.com/network/v10.4.57).
 > OpenAPI `3.1.0` · 73 operações em 44 paths · atualizado na origem em `2026-07-21T06:54:45.379Z`.
 
 **OpenAPI completo (fonte da verdade):** [`openapi.json`](./openapi.json)
@@ -1194,12 +1194,14 @@ Create a new Wifi Broadcast on the specified site.
 - `broadcastingDeviceFilter`: Defines the custom scope of devices that will broadcast this WiFi network. If null, the WiFi network will be broadcast by all Access Point capable devices.
   - _variantes por `type`: `DEVICES`→`IntegrationWifiDevicesFilterDto`, `DEVICE_TAGS`→`IntegrationWifiDeviceTagsFilterDto` (ver openapi.json)_
   - `type` **(obrigatório)**: `string`
+- `channel2gLockedTo6` **(obrigatório)**: `boolean` default=False - Locks 2.4GHz radio channel to 6 on all broadcasting devices
 - `clientFilteringPolicy`: `object` - Client connection filtering policy. Allow/restrict access to the WiFi network based on client device MAC addresses.
   - `action` **(obrigatório)**: `string` enum: ALLOW, BLOCK
   - `macAddressFilter` **(obrigatório)**: `array`
     - _array de_ `string`:
       - `string`
 - `clientIsolationEnabled` **(obrigatório)**: `boolean`
+- `dtimPeriod2gLockedTo3` **(obrigatório)**: `boolean` default=False - Locks DTIM period to 3 for 2.4GHz radio
 - `enabled` **(obrigatório)**: `boolean`
 - `hideName` **(obrigatório)**: `boolean`
 - `mdnsProxyConfiguration`
@@ -1235,12 +1237,14 @@ Create a new Wifi Broadcast on the specified site.
 - `broadcastingDeviceFilter`: Defines the custom scope of devices that will broadcast this WiFi network. If null, the WiFi network will be broadcast by all Access Point capable devices.
   - _variantes por `type`: `DEVICES`→`IntegrationWifiDevicesFilterDto`, `DEVICE_TAGS`→`IntegrationWifiDeviceTagsFilterDto` (ver openapi.json)_
   - `type` **(obrigatório)**: `string`
+- `channel2gLockedTo6` **(obrigatório)**: `boolean` - Locks 2.4GHz radio channel to 6 on all broadcasting devices
 - `clientFilteringPolicy`: `object` - Client connection filtering policy. Allow/restrict access to the WiFi network based on client device MAC addresses.
   - `action` **(obrigatório)**: `string` enum: ALLOW, BLOCK
   - `macAddressFilter` **(obrigatório)**: `array`
     - _array de_ `string`:
       - `string`
 - `clientIsolationEnabled` **(obrigatório)**: `boolean`
+- `dtimPeriod2gLockedTo3` **(obrigatório)**: `boolean` - Locks DTIM period to 3 for 2.4GHz radio
 - `enabled` **(obrigatório)**: `boolean`
 - `hideName` **(obrigatório)**: `boolean`
 - `id` **(obrigatório)**: `string` (uuid)
@@ -1310,12 +1314,14 @@ Retrieve detailed information about a specific Wifi.
 - `broadcastingDeviceFilter`: Defines the custom scope of devices that will broadcast this WiFi network. If null, the WiFi network will be broadcast by all Access Point capable devices.
   - _variantes por `type`: `DEVICES`→`IntegrationWifiDevicesFilterDto`, `DEVICE_TAGS`→`IntegrationWifiDeviceTagsFilterDto` (ver openapi.json)_
   - `type` **(obrigatório)**: `string`
+- `channel2gLockedTo6` **(obrigatório)**: `boolean` - Locks 2.4GHz radio channel to 6 on all broadcasting devices
 - `clientFilteringPolicy`: `object` - Client connection filtering policy. Allow/restrict access to the WiFi network based on client device MAC addresses.
   - `action` **(obrigatório)**: `string` enum: ALLOW, BLOCK
   - `macAddressFilter` **(obrigatório)**: `array`
     - _array de_ `string`:
       - `string`
 - `clientIsolationEnabled` **(obrigatório)**: `boolean`
+- `dtimPeriod2gLockedTo3` **(obrigatório)**: `boolean` - Locks DTIM period to 3 for 2.4GHz radio
 - `enabled` **(obrigatório)**: `boolean`
 - `hideName` **(obrigatório)**: `boolean`
 - `id` **(obrigatório)**: `string` (uuid)
@@ -1383,12 +1389,14 @@ Update an existing Wifi Broadcast on the specified site.
 - `broadcastingDeviceFilter`: Defines the custom scope of devices that will broadcast this WiFi network. If null, the WiFi network will be broadcast by all Access Point capable devices.
   - _variantes por `type`: `DEVICES`→`IntegrationWifiDevicesFilterDto`, `DEVICE_TAGS`→`IntegrationWifiDeviceTagsFilterDto` (ver openapi.json)_
   - `type` **(obrigatório)**: `string`
+- `channel2gLockedTo6` **(obrigatório)**: `boolean` default=False - Locks 2.4GHz radio channel to 6 on all broadcasting devices
 - `clientFilteringPolicy`: `object` - Client connection filtering policy. Allow/restrict access to the WiFi network based on client device MAC addresses.
   - `action` **(obrigatório)**: `string` enum: ALLOW, BLOCK
   - `macAddressFilter` **(obrigatório)**: `array`
     - _array de_ `string`:
       - `string`
 - `clientIsolationEnabled` **(obrigatório)**: `boolean`
+- `dtimPeriod2gLockedTo3` **(obrigatório)**: `boolean` default=False - Locks DTIM period to 3 for 2.4GHz radio
 - `enabled` **(obrigatório)**: `boolean`
 - `hideName` **(obrigatório)**: `boolean`
 - `mdnsProxyConfiguration`
@@ -1424,12 +1432,14 @@ Update an existing Wifi Broadcast on the specified site.
 - `broadcastingDeviceFilter`: Defines the custom scope of devices that will broadcast this WiFi network. If null, the WiFi network will be broadcast by all Access Point capable devices.
   - _variantes por `type`: `DEVICES`→`IntegrationWifiDevicesFilterDto`, `DEVICE_TAGS`→`IntegrationWifiDeviceTagsFilterDto` (ver openapi.json)_
   - `type` **(obrigatório)**: `string`
+- `channel2gLockedTo6` **(obrigatório)**: `boolean` - Locks 2.4GHz radio channel to 6 on all broadcasting devices
 - `clientFilteringPolicy`: `object` - Client connection filtering policy. Allow/restrict access to the WiFi network based on client device MAC addresses.
   - `action` **(obrigatório)**: `string` enum: ALLOW, BLOCK
   - `macAddressFilter` **(obrigatório)**: `array`
     - _array de_ `string`:
       - `string`
 - `clientIsolationEnabled` **(obrigatório)**: `boolean`
+- `dtimPeriod2gLockedTo3` **(obrigatório)**: `boolean` - Locks DTIM period to 3 for 2.4GHz radio
 - `enabled` **(obrigatório)**: `boolean`
 - `hideName` **(obrigatório)**: `boolean`
 - `id` **(obrigatório)**: `string` (uuid)

@@ -7,7 +7,7 @@ An **automatic, versioned** mirror of the official UniFi API documentation
 ([developer.ui.com](https://developer.ui.com)), ready for humans and AIs/LLMs (Markdown + OpenAPI).
 
 <!-- badges:start -->
-![files](https://img.shields.io/badge/files-95-blue) ![versions](https://img.shields.io/badge/versions-36_in_4_apps-orange) ![operations](https://img.shields.io/badge/operations-1436-blueviolet) ![updated](https://img.shields.io/badge/updated-2026--07--08-brightgreen)
+![files](https://img.shields.io/badge/files-97-blue) ![versions](https://img.shields.io/badge/versions-37_in_4_apps-orange) ![operations](https://img.shields.io/badge/operations-1509-blueviolet) ![updated](https://img.shields.io/badge/updated-2026--07--21-brightgreen)
 <!-- badges:end -->
 
 > ⚠️ **Unofficial** mirror, kept for reference and automation. The authoritative source is always [developer.ui.com](https://developer.ui.com).
@@ -65,57 +65,58 @@ The path after `/integration` is **identical** in both modes. **Site Manager** i
 <!-- catalog:start -->
 | App | Latest | Categories | Operations | Paths | OpenAPI | Reference | Official docs |
 |---|---|---:|---:|---:|---|---|---|
-| **network** | `v10.3.58` | 13 | 73 | 44 | [json](network/v10.3.58/openapi.json) | [md](network/v10.3.58/reference.md) | [docs](https://developer.ui.com/network/v10.3.58) |
+| **network** | `v10.4.57` | 13 | 73 | 44 | [json](network/v10.4.57/openapi.json) | [md](network/v10.4.57/reference.md) | [docs](https://developer.ui.com/network/v10.4.57) |
 | **protect** | `v7.1.87` | 22 | 73 | 54 | [json](protect/v7.1.87/openapi.json) | [md](protect/v7.1.87/reference.md) | [docs](https://developer.ui.com/protect/v7.1.87) |
 | **site-manager** | `v1.0.0` | 1 | 9 | 9 | [json](site-manager/v1.0.0/openapi.json) | [md](site-manager/v1.0.0/reference.md) | [docs](https://developer.ui.com/site-manager/v1.0.0) |
 | **mobility** | `v1.0.0` | 4 | 8 | 7 | [json](mobility/v1.0.0/openapi.json) | [md](mobility/v1.0.0/reference.md) | [docs](https://developer.ui.com/mobility/v1.0.0) |
 
 <details>
-<summary><b>📜 Full version history - 36 versions</b></summary>
+<summary><b>📜 Full version history - 37 versions</b></summary>
 
 **network**
 
 | Version | Categories | Operations | Paths | Updated | OpenAPI | Reference | Official docs |
 |---|---:|---:|---:|---|---|---|---|
-| `v10.3.58` ⭐ | 13 | 73 | 44 | 2026-07-08 | [json](network/v10.3.58/openapi.json) | [md](network/v10.3.58/reference.md) | [docs](https://developer.ui.com/network/v10.3.58) |
-| `v10.1.84` | 12 | 67 | 38 | 2026-07-08 | [json](network/v10.1.84/openapi.json) | [md](network/v10.1.84/reference.md) | [docs](https://developer.ui.com/network/v10.1.84) |
-| `v10.0.162` | 11 | 50 | 32 | 2026-07-08 | [json](network/v10.0.162/openapi.json) | [md](network/v10.0.162/reference.md) | [docs](https://developer.ui.com/network/v10.0.162) |
-| `v9.5.21` | 5 | 15 | 12 | 2026-07-08 | [json](network/v9.5.21/openapi.json) | [md](network/v9.5.21/reference.md) | [docs](https://developer.ui.com/network/v9.5.21) |
-| `v9.4.19` | 5 | 15 | 12 | 2026-07-08 | [json](network/v9.4.19/openapi.json) | [md](network/v9.4.19/reference.md) | [docs](https://developer.ui.com/network/v9.4.19) |
-| `v9.4.17` | 5 | 15 | 12 | 2026-07-08 | [json](network/v9.4.17/openapi.json) | [md](network/v9.4.17/reference.md) | [docs](https://developer.ui.com/network/v9.4.17) |
-| `v9.3.45` | 5 | 15 | 12 | 2026-07-08 | [json](network/v9.3.45/openapi.json) | [md](network/v9.3.45/reference.md) | [docs](https://developer.ui.com/network/v9.3.45) |
-| `v9.3.43` | 5 | 15 | 12 | 2026-07-08 | [json](network/v9.3.43/openapi.json) | [md](network/v9.3.43/reference.md) | [docs](https://developer.ui.com/network/v9.3.43) |
-| `v9.2.87` | 5 | 15 | 12 | 2026-07-08 | [json](network/v9.2.87/openapi.json) | [md](network/v9.2.87/reference.md) | [docs](https://developer.ui.com/network/v9.2.87) |
-| `v9.2.86` | 5 | 15 | 12 | 2026-07-08 | [json](network/v9.2.86/openapi.json) | [md](network/v9.2.86/reference.md) | [docs](https://developer.ui.com/network/v9.2.86) |
-| `v9.1.120` | 5 | 15 | 12 | 2026-07-08 | [json](network/v9.1.120/openapi.json) | [md](network/v9.1.120/reference.md) | [docs](https://developer.ui.com/network/v9.1.120) |
+| `v10.4.57` ⭐ | 13 | 73 | 44 | 2026-07-21 | [json](network/v10.4.57/openapi.json) | [md](network/v10.4.57/reference.md) | [docs](https://developer.ui.com/network/v10.4.57) |
+| `v10.3.58` | 13 | 73 | 44 | 2026-07-21 | [json](network/v10.3.58/openapi.json) | [md](network/v10.3.58/reference.md) | [docs](https://developer.ui.com/network/v10.3.58) |
+| `v10.1.84` | 12 | 67 | 38 | 2026-07-21 | [json](network/v10.1.84/openapi.json) | [md](network/v10.1.84/reference.md) | [docs](https://developer.ui.com/network/v10.1.84) |
+| `v10.0.162` | 11 | 50 | 32 | 2026-07-21 | [json](network/v10.0.162/openapi.json) | [md](network/v10.0.162/reference.md) | [docs](https://developer.ui.com/network/v10.0.162) |
+| `v9.5.21` | 5 | 15 | 12 | 2026-07-21 | [json](network/v9.5.21/openapi.json) | [md](network/v9.5.21/reference.md) | [docs](https://developer.ui.com/network/v9.5.21) |
+| `v9.4.19` | 5 | 15 | 12 | 2026-07-21 | [json](network/v9.4.19/openapi.json) | [md](network/v9.4.19/reference.md) | [docs](https://developer.ui.com/network/v9.4.19) |
+| `v9.4.17` | 5 | 15 | 12 | 2026-07-21 | [json](network/v9.4.17/openapi.json) | [md](network/v9.4.17/reference.md) | [docs](https://developer.ui.com/network/v9.4.17) |
+| `v9.3.45` | 5 | 15 | 12 | 2026-07-21 | [json](network/v9.3.45/openapi.json) | [md](network/v9.3.45/reference.md) | [docs](https://developer.ui.com/network/v9.3.45) |
+| `v9.3.43` | 5 | 15 | 12 | 2026-07-21 | [json](network/v9.3.43/openapi.json) | [md](network/v9.3.43/reference.md) | [docs](https://developer.ui.com/network/v9.3.43) |
+| `v9.2.87` | 5 | 15 | 12 | 2026-07-21 | [json](network/v9.2.87/openapi.json) | [md](network/v9.2.87/reference.md) | [docs](https://developer.ui.com/network/v9.2.87) |
+| `v9.2.86` | 5 | 15 | 12 | 2026-07-21 | [json](network/v9.2.86/openapi.json) | [md](network/v9.2.86/reference.md) | [docs](https://developer.ui.com/network/v9.2.86) |
+| `v9.1.120` | 5 | 15 | 12 | 2026-07-21 | [json](network/v9.1.120/openapi.json) | [md](network/v9.1.120/reference.md) | [docs](https://developer.ui.com/network/v9.1.120) |
 
 **protect**
 
 | Version | Categories | Operations | Paths | Updated | OpenAPI | Reference | Official docs |
 |---|---:|---:|---:|---|---|---|---|
-| `v7.1.87` ⭐ | 22 | 73 | 54 | 2026-07-08 | [json](protect/v7.1.87/openapi.json) | [md](protect/v7.1.87/reference.md) | [docs](https://developer.ui.com/protect/v7.1.87) |
-| `v7.1.83` | 22 | 73 | 54 | 2026-07-08 | [json](protect/v7.1.83/openapi.json) | [md](protect/v7.1.83/reference.md) | [docs](https://developer.ui.com/protect/v7.1.83) |
-| `v7.1.77` | 22 | 73 | 54 | 2026-07-08 | [json](protect/v7.1.77/openapi.json) | [md](protect/v7.1.77/reference.md) | [docs](https://developer.ui.com/protect/v7.1.77) |
-| `v7.1.76` | 22 | 73 | 54 | 2026-07-08 | [json](protect/v7.1.76/openapi.json) | [md](protect/v7.1.76/reference.md) | [docs](https://developer.ui.com/protect/v7.1.76) |
-| `v7.1.75` | 22 | 73 | 54 | 2026-07-08 | [json](protect/v7.1.75/openapi.json) | [md](protect/v7.1.75/reference.md) | [docs](https://developer.ui.com/protect/v7.1.75) |
-| `v7.1.74` | 22 | 73 | 54 | 2026-07-08 | [json](protect/v7.1.74/openapi.json) | [md](protect/v7.1.74/reference.md) | [docs](https://developer.ui.com/protect/v7.1.74) |
-| `v7.1.73` | 22 | 73 | 54 | 2026-07-08 | [json](protect/v7.1.73/openapi.json) | [md](protect/v7.1.73/reference.md) | [docs](https://developer.ui.com/protect/v7.1.73) |
-| `v7.1.69` | 22 | 73 | 54 | 2026-07-08 | [json](protect/v7.1.69/openapi.json) | [md](protect/v7.1.69/reference.md) | [docs](https://developer.ui.com/protect/v7.1.69) |
-| `v7.0.107` | 12 | 35 | 25 | 2026-07-08 | [json](protect/v7.0.107/openapi.json) | [md](protect/v7.0.107/reference.md) | [docs](https://developer.ui.com/protect/v7.0.107) |
-| `v7.0.104` | 12 | 35 | 25 | 2026-07-08 | [json](protect/v7.0.104/openapi.json) | [md](protect/v7.0.104/reference.md) | [docs](https://developer.ui.com/protect/v7.0.104) |
-| `v7.0.94` | 12 | 35 | 25 | 2026-07-08 | [json](protect/v7.0.94/openapi.json) | [md](protect/v7.0.94/reference.md) | [docs](https://developer.ui.com/protect/v7.0.94) |
-| `v6.2.88` | 12 | 35 | 25 | 2026-07-08 | [json](protect/v6.2.88/openapi.json) | [md](protect/v6.2.88/reference.md) | [docs](https://developer.ui.com/protect/v6.2.88) |
-| `v6.2.87` | 12 | 35 | 25 | 2026-07-08 | [json](protect/v6.2.87/openapi.json) | [md](protect/v6.2.87/reference.md) | [docs](https://developer.ui.com/protect/v6.2.87) |
-| `v6.2.83` | 12 | 35 | 25 | 2026-07-08 | [json](protect/v6.2.83/openapi.json) | [md](protect/v6.2.83/reference.md) | [docs](https://developer.ui.com/protect/v6.2.83) |
-| `v6.2.72` | 12 | 35 | 25 | 2026-07-08 | [json](protect/v6.2.72/openapi.json) | [md](protect/v6.2.72/reference.md) | [docs](https://developer.ui.com/protect/v6.2.72) |
-| `v6.1.79` | 12 | 35 | 25 | 2026-07-08 | [json](protect/v6.1.79/openapi.json) | [md](protect/v6.1.79/reference.md) | [docs](https://developer.ui.com/protect/v6.1.79) |
-| `v6.1.78` | 12 | 35 | 25 | 2026-07-08 | [json](protect/v6.1.78/openapi.json) | [md](protect/v6.1.78/reference.md) | [docs](https://developer.ui.com/protect/v6.1.78) |
-| `v6.1.75` | 12 | 35 | 25 | 2026-07-08 | [json](protect/v6.1.75/openapi.json) | [md](protect/v6.1.75/reference.md) | [docs](https://developer.ui.com/protect/v6.1.75) |
-| `v6.1.68` | 12 | 35 | 25 | 2026-07-08 | [json](protect/v6.1.68/openapi.json) | [md](protect/v6.1.68/reference.md) | [docs](https://developer.ui.com/protect/v6.1.68) |
-| `v6.1.65` | 12 | 35 | 25 | 2026-07-08 | [json](protect/v6.1.65/openapi.json) | [md](protect/v6.1.65/reference.md) | [docs](https://developer.ui.com/protect/v6.1.65) |
-| `v6.0.53` | 12 | 35 | 25 | 2026-07-08 | [json](protect/v6.0.53/openapi.json) | [md](protect/v6.0.53/reference.md) | [docs](https://developer.ui.com/protect/v6.0.53) |
-| `v6.0.47` | 12 | 35 | 25 | 2026-07-08 | [json](protect/v6.0.47/openapi.json) | [md](protect/v6.0.47/reference.md) | [docs](https://developer.ui.com/protect/v6.0.47) |
-| `v5.3.48` | 12 | 35 | 25 | 2026-07-08 | [json](protect/v5.3.48/openapi.json) | [md](protect/v5.3.48/reference.md) | [docs](https://developer.ui.com/protect/v5.3.48) |
+| `v7.1.87` ⭐ | 22 | 73 | 54 | 2026-07-21 | [json](protect/v7.1.87/openapi.json) | [md](protect/v7.1.87/reference.md) | [docs](https://developer.ui.com/protect/v7.1.87) |
+| `v7.1.83` | 22 | 73 | 54 | 2026-07-21 | [json](protect/v7.1.83/openapi.json) | [md](protect/v7.1.83/reference.md) | [docs](https://developer.ui.com/protect/v7.1.83) |
+| `v7.1.77` | 22 | 73 | 54 | 2026-07-21 | [json](protect/v7.1.77/openapi.json) | [md](protect/v7.1.77/reference.md) | [docs](https://developer.ui.com/protect/v7.1.77) |
+| `v7.1.76` | 22 | 73 | 54 | 2026-07-21 | [json](protect/v7.1.76/openapi.json) | [md](protect/v7.1.76/reference.md) | [docs](https://developer.ui.com/protect/v7.1.76) |
+| `v7.1.75` | 22 | 73 | 54 | 2026-07-21 | [json](protect/v7.1.75/openapi.json) | [md](protect/v7.1.75/reference.md) | [docs](https://developer.ui.com/protect/v7.1.75) |
+| `v7.1.74` | 22 | 73 | 54 | 2026-07-21 | [json](protect/v7.1.74/openapi.json) | [md](protect/v7.1.74/reference.md) | [docs](https://developer.ui.com/protect/v7.1.74) |
+| `v7.1.73` | 22 | 73 | 54 | 2026-07-21 | [json](protect/v7.1.73/openapi.json) | [md](protect/v7.1.73/reference.md) | [docs](https://developer.ui.com/protect/v7.1.73) |
+| `v7.1.69` | 22 | 73 | 54 | 2026-07-21 | [json](protect/v7.1.69/openapi.json) | [md](protect/v7.1.69/reference.md) | [docs](https://developer.ui.com/protect/v7.1.69) |
+| `v7.0.107` | 12 | 35 | 25 | 2026-07-21 | [json](protect/v7.0.107/openapi.json) | [md](protect/v7.0.107/reference.md) | [docs](https://developer.ui.com/protect/v7.0.107) |
+| `v7.0.104` | 12 | 35 | 25 | 2026-07-21 | [json](protect/v7.0.104/openapi.json) | [md](protect/v7.0.104/reference.md) | [docs](https://developer.ui.com/protect/v7.0.104) |
+| `v7.0.94` | 12 | 35 | 25 | 2026-07-21 | [json](protect/v7.0.94/openapi.json) | [md](protect/v7.0.94/reference.md) | [docs](https://developer.ui.com/protect/v7.0.94) |
+| `v6.2.88` | 12 | 35 | 25 | 2026-07-21 | [json](protect/v6.2.88/openapi.json) | [md](protect/v6.2.88/reference.md) | [docs](https://developer.ui.com/protect/v6.2.88) |
+| `v6.2.87` | 12 | 35 | 25 | 2026-07-21 | [json](protect/v6.2.87/openapi.json) | [md](protect/v6.2.87/reference.md) | [docs](https://developer.ui.com/protect/v6.2.87) |
+| `v6.2.83` | 12 | 35 | 25 | 2026-07-21 | [json](protect/v6.2.83/openapi.json) | [md](protect/v6.2.83/reference.md) | [docs](https://developer.ui.com/protect/v6.2.83) |
+| `v6.2.72` | 12 | 35 | 25 | 2026-07-21 | [json](protect/v6.2.72/openapi.json) | [md](protect/v6.2.72/reference.md) | [docs](https://developer.ui.com/protect/v6.2.72) |
+| `v6.1.79` | 12 | 35 | 25 | 2026-07-21 | [json](protect/v6.1.79/openapi.json) | [md](protect/v6.1.79/reference.md) | [docs](https://developer.ui.com/protect/v6.1.79) |
+| `v6.1.78` | 12 | 35 | 25 | 2026-07-21 | [json](protect/v6.1.78/openapi.json) | [md](protect/v6.1.78/reference.md) | [docs](https://developer.ui.com/protect/v6.1.78) |
+| `v6.1.75` | 12 | 35 | 25 | 2026-07-21 | [json](protect/v6.1.75/openapi.json) | [md](protect/v6.1.75/reference.md) | [docs](https://developer.ui.com/protect/v6.1.75) |
+| `v6.1.68` | 12 | 35 | 25 | 2026-07-21 | [json](protect/v6.1.68/openapi.json) | [md](protect/v6.1.68/reference.md) | [docs](https://developer.ui.com/protect/v6.1.68) |
+| `v6.1.65` | 12 | 35 | 25 | 2026-07-21 | [json](protect/v6.1.65/openapi.json) | [md](protect/v6.1.65/reference.md) | [docs](https://developer.ui.com/protect/v6.1.65) |
+| `v6.0.53` | 12 | 35 | 25 | 2026-07-21 | [json](protect/v6.0.53/openapi.json) | [md](protect/v6.0.53/reference.md) | [docs](https://developer.ui.com/protect/v6.0.53) |
+| `v6.0.47` | 12 | 35 | 25 | 2026-07-21 | [json](protect/v6.0.47/openapi.json) | [md](protect/v6.0.47/reference.md) | [docs](https://developer.ui.com/protect/v6.0.47) |
+| `v5.3.48` | 12 | 35 | 25 | 2026-07-21 | [json](protect/v5.3.48/openapi.json) | [md](protect/v5.3.48/reference.md) | [docs](https://developer.ui.com/protect/v5.3.48) |
 
 </details>
 <!-- catalog:end -->

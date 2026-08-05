@@ -2,8 +2,11 @@
 
 > Espelho automático e versionado da documentação oficial da API UniFi (https://developer.ui.com), pronto para consumo por humanos e por IAs/LLMs. Cada versão de cada aplicação tem o OpenAPI completo (`openapi.json`) e uma referência em Markdown (`reference.md`). Atualizado por CI.
 
-Aplicações: mobility, network, protect, site-manager.
+Aplicações: carrier-fabric, mobility, network, protect, site-manager.
 Modos de acesso: **Local** (`https://<console>/proxy/<app>/integration/...`, header `X-API-KEY`) e **Remoto/Cloud Connector** (`https://api.ui.com/v1/connector/consoles/{id}/<app>/integration/...`, header `X-API-Key`).
+
+## carrier-fabric (mais recente: v1.0.0)
+- [carrier-fabric v1.0.0 (latest)](https://developer.ui.com/carrier-fabric/v1.0.0): 11 operações - OpenAPI `carrier-fabric/v1.0.0/openapi.json` · referência `carrier-fabric/v1.0.0/reference.md`
 
 ## mobility (mais recente: v1.0.0)
 - [mobility v1.0.0 (latest)](https://developer.ui.com/mobility/v1.0.0): 8 operações - OpenAPI `mobility/v1.0.0/openapi.json` · referência `mobility/v1.0.0/reference.md`

@@ -2391,7 +2391,7 @@
     },
     "/v1/sd-wan-configs": {
       "get": {
-        "description": "Retrieves a list of all hub-and-spoke SD-WAN configurations associated with the UI account making the API call.",
+        "description": "Retrieves a list of all SD-WAN configurations associated with the UI account making the API call.",
         "operationId": "listSDWanConfigs",
         "responses": {
           "200": {

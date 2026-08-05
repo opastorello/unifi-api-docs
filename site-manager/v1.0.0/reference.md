@@ -1,7 +1,7 @@
 # UniFi Site Manager API - v1.0.0 - Referência
 
 > Espelho automático de [`developer.ui.com/site-manager/v1.0.0`](https://developer.ui.com/site-manager/v1.0.0).
-> OpenAPI `3.0.3` · 9 operações em 9 paths · atualizado na origem em `2026-07-21T06:54:45.379Z`.
+> OpenAPI `3.0.3` · 9 operações em 9 paths · atualizado na origem em `2026-08-04T14:16:46.226Z`.
 > Autenticação: header `X-API-Key`.
 
 **OpenAPI completo (fonte da verdade):** [`openapi.json`](./openapi.json)
@@ -277,7 +277,7 @@ curl -X POST "https://api.ui.com/v1/isp-metrics/{type}/query" \
 
 `GET https://api.ui.com/v1/sd-wan-configs`  ·  operationId: `listSDWanConfigs`
 
-Retrieves a list of all hub-and-spoke SD-WAN configurations associated with the UI account making the API call.
+Retrieves a list of all SD-WAN configurations associated with the UI account making the API call.
 
 **Resposta 200** - 200
 

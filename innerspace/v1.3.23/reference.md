@@ -1,7 +1,7 @@
 # UniFi Site Manager API - v1.3.23 - Referência
 
 > Espelho automático de [`developer.ui.com/innerspace/v1.3.23`](https://developer.ui.com/innerspace/v1.3.23).
-> OpenAPI `3.0.3` · 5 operações em 1 paths · atualizado na origem em `2026-08-06T02:10:23.136Z`.
+> OpenAPI `3.0.3` · 5 operações em 1 paths · atualizado na origem em `2026-08-06T02:11:15.183Z`.
 > Autenticação: header `X-API-Key`.
 
 **OpenAPI completo (fonte da verdade):** [`openapi.json`](./openapi.json)

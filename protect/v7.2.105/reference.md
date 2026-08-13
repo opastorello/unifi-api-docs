@@ -1,7 +1,7 @@
-# UniFi Protect API - v7.1.75 - Referência
+# UniFi Protect API - v7.2.105 - Referência
 
-> Espelho automático de [`developer.ui.com/protect/v7.1.75`](https://developer.ui.com/protect/v7.1.75).
-> OpenAPI `3.1.0` · 73 operações em 54 paths · atualizado na origem em `2026-08-12T11:31:34.156Z`.
+> Espelho automático de [`developer.ui.com/protect/v7.2.105`](https://developer.ui.com/protect/v7.2.105).
+> OpenAPI `3.1.0` · 74 operações em 55 paths · atualizado na origem em `2026-08-12T11:31:34.156Z`.
 
 **OpenAPI completo (fonte da verdade):** [`openapi.json`](./openapi.json)
 
@@ -82,6 +82,7 @@
 | Protect User information | `GET` | `/v1/users` | Get all users |
 | UniFi Identity User information | `GET` | `/v1/ulp-users/{id}` | Get identity user details |
 | UniFi Identity User information | `GET` | `/v1/ulp-users` | Get all identity users |
+| Point of sale event ingestion | `POST` | `/v1/pos/cameras/{id}/transactions` | Ingest a POS transaction |
 
 
 ---
@@ -97,7 +98,7 @@ Get generic information about the Protect application
 
 **Resposta 200** - Success response
 
-- `applicationVersion` **(obrigatório)**: `string` - Software version.
+- `applicationVersion` **(obrigatório)**: `string` - Protect application version
 
 **Erros possíveis:** `default`
 
@@ -144,6 +145,8 @@ Get detailed information about a specific viewer
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `liveview` **(obrigatório)**
   - _um de (variantes):_
@@ -203,6 +206,8 @@ Patch the settings for a specific viewer
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `liveview` **(obrigatório)**
   - _um de (variantes):_
@@ -249,6 +254,8 @@ Get detailed information about all viewers
         - `string`
       - **variante**:
         - `null`
+  - `type` **(obrigatório)**: `string|null` - The device model name.
+  - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
   - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
   - `liveview` **(obrigatório)**
     - _um de (variantes):_
@@ -520,6 +527,9 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string` - The NVR model name.
+              - `guid` **(obrigatório)**: `string|null` - GUID of the NVR
+              - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `doorbellSettings` **(obrigatório)**: `object`
                 - `defaultMessageText`: `string` - Default text to display on the LCD screen.
                 - `defaultMessageResetTimeoutMs`: `number` - Default timeout for resetting LCD screen to the default message.
@@ -544,6 +554,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `isMicEnabled` **(obrigatório)**: `boolean` - Whether or not the microphone on camera is enabled
               - `osdSettings` **(obrigatório)**: `object` - On Screen Display settings.
@@ -592,6 +604,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `cameraIds` **(obrigatório)**: `array` - The list of (doorbell-only) cameras which this chime is paired to.
                 - _array de_ `string`:
@@ -607,6 +621,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `lightModeSettings` **(obrigatório)**: `object` - Settings for when and how your light gets activated
                 - `mode`: When will floodlight turn on.
@@ -637,6 +653,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `liveview` **(obrigatório)**
                 - _um de (variantes):_
@@ -655,6 +673,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `volume` **(obrigatório)**: `integer` - Speaker volume: a number from 0-100.
               - `micVolume` **(obrigatório)**: `integer` - Mic volume: a number from 0-100.
@@ -674,6 +694,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `platform` **(obrigatório)**: `string|null` - The bridge platform
               - `clients` **(obrigatório)**: `array` - Array of IoT devices mac that bridge is reserving for
@@ -689,15 +711,26 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `mountType` **(obrigatório)**: `string` enum: door, window, garage, leak, none - Mounting type of the sensor.
               - `batteryStatus` **(obrigatório)**: `object` - [DEPRECATED] Use wirelessConnectionState.batteryStatus instead. Battery status.
                 - `percentage`: `number|null` - Battery charge level from 0 to 100 (%).
                 - `isLow`: `boolean` - Low battery charge level flag.
+              - `featureFlags`: `object` - Sensor feature flags.
+                - `temperature`: `object` - Matches `stats.temperature` and `temperatureSettings`.
+                - `humidity`: `object` - Matches `stats.humidity` and `humiditySettings`.
+                - `light`: `object` - Matches `stats.light` and `lightSettings`.
+                - `motion`: `object` - Matches motion state and `motionSettings`.
+                - `waterLeak`: `object` - Matches leak state and `leakSettings`.
+                - `open`: `object` - Matches entry/door-window/garage open state (`isOpened`).
+                - `tamper`: `object` - Matches tamper detection (`tamperingDetectedAt`).
+                - `smoke`: `object` - Matches smoke / CO alarm surfaces (`alarmSettings`, `alarmTriggeredAt`).
               - `stats` **(obrigatório)**: `object` - Sensor statistics.
                 - `light`: `object` - Ambient light value (Lux).
-                - `humidity`: `object` - Ambient light value (Lux).
-                - `temperature`: `object` - Ambient light value (Lux).
+                - `humidity`: `object` - Relative humidity value (%).
+                - `temperature`: `object` - Temperature value (Celsius).
               - `lightSettings` **(obrigatório)**: `object` - Ambient light sensor settings.
                 - `isEnabled`: `boolean` - Enable ambient light sensor.
                 - `margin`: `number` - Ambient light threshold detection hysteresis margin (Lux). Read-only value decided by sensor implementation.
@@ -751,6 +784,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `volume` **(obrigatório)**: `integer` - Volume: a number from 1-100.
               - `ledSettings` **(obrigatório)**: `object` - Status LED settings.
@@ -774,6 +809,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `awayState` **(obrigatório)**: `string` enum: ONLINE, RECENTLY_SEEN, NO_RECENT_HEARTBEAT, DEVICE_LOST - Fob presence/away state.
               - `buttonLabels` **(obrigatório)**: `string` enum: securityActions, positionHint - Label style applied when this fob is rendered in button selection lists.
@@ -793,6 +830,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `ledSettings` **(obrigatório)**: `object` - Status LED settings.
                 - `isEnabled` **(obrigatório)**: `boolean` - Enable status LED.
@@ -814,6 +853,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
             - **variante**:
               - `id` **(obrigatório)**: `string` - The primary key of device
@@ -825,6 +866,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
             - **variante**:
               - `id` **(obrigatório)**: `string` - The primary key of linkStation
@@ -836,6 +879,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `isAlarmHub` **(obrigatório)**: `boolean` - Whether the linkstation is an alarm hub.
               - `ledSettings` **(obrigatório)**: `object` - Status LED settings.
@@ -871,6 +916,9 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string` - The NVR model name.
+              - `guid`: `string|null` - GUID of the NVR
+              - `mac`: `string` - The primary MAC address of the device.
               - `doorbellSettings`: `object`
                 - `defaultMessageText`: `string` - Default text to display on the LCD screen.
                 - `defaultMessageResetTimeoutMs`: `number` - Default timeout for resetting LCD screen to the default message.
@@ -895,6 +943,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `isMicEnabled`: `boolean` - Whether or not the microphone on camera is enabled
               - `osdSettings`: `object` - On Screen Display settings.
@@ -943,6 +993,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `cameraIds`: `array` - The list of (doorbell-only) cameras which this chime is paired to.
                 - _array de_ `string`:
@@ -958,6 +1010,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `lightModeSettings`: `object` - Settings for when and how your light gets activated
                 - `mode`: When will floodlight turn on.
@@ -988,6 +1042,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `liveview`
                 - _um de (variantes):_
@@ -1006,6 +1062,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `volume`: `integer` - Speaker volume: a number from 0-100.
               - `micVolume`: `integer` - Mic volume: a number from 0-100.
@@ -1025,6 +1083,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `platform`: `string|null` - The bridge platform
               - `clients`: `array` - Array of IoT devices mac that bridge is reserving for
@@ -1040,15 +1100,26 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `mountType`: `string` enum: door, window, garage, leak, none - Mounting type of the sensor.
               - `batteryStatus`: `object` - [DEPRECATED] Use wirelessConnectionState.batteryStatus instead. Battery status.
                 - `percentage`: `number|null` - Battery charge level from 0 to 100 (%).
                 - `isLow`: `boolean` - Low battery charge level flag.
+              - `featureFlags`: `object` - Sensor feature flags.
+                - `temperature`: `object` - Matches `stats.temperature` and `temperatureSettings`.
+                - `humidity`: `object` - Matches `stats.humidity` and `humiditySettings`.
+                - `light`: `object` - Matches `stats.light` and `lightSettings`.
+                - `motion`: `object` - Matches motion state and `motionSettings`.
+                - `waterLeak`: `object` - Matches leak state and `leakSettings`.
+                - `open`: `object` - Matches entry/door-window/garage open state (`isOpened`).
+                - `tamper`: `object` - Matches tamper detection (`tamperingDetectedAt`).
+                - `smoke`: `object` - Matches smoke / CO alarm surfaces (`alarmSettings`, `alarmTriggeredAt`).
               - `stats`: `object` - Sensor statistics.
                 - `light`: `object` - Ambient light value (Lux).
-                - `humidity`: `object` - Ambient light value (Lux).
-                - `temperature`: `object` - Ambient light value (Lux).
+                - `humidity`: `object` - Relative humidity value (%).
+                - `temperature`: `object` - Temperature value (Celsius).
               - `lightSettings`: `object` - Ambient light sensor settings.
                 - `isEnabled`: `boolean` - Enable ambient light sensor.
                 - `margin`: `number` - Ambient light threshold detection hysteresis margin (Lux). Read-only value decided by sensor implementation.
@@ -1102,6 +1173,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `volume`: `integer` - Volume: a number from 1-100.
               - `ledSettings`: `object` - Status LED settings.
@@ -1125,6 +1198,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `awayState`: `string` enum: ONLINE, RECENTLY_SEEN, NO_RECENT_HEARTBEAT, DEVICE_LOST - Fob presence/away state.
               - `buttonLabels`: `string` enum: securityActions, positionHint - Label style applied when this fob is rendered in button selection lists.
@@ -1144,6 +1219,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `ledSettings`: `object` - Status LED settings.
                 - `isEnabled` **(obrigatório)**: `boolean` - Enable status LED.
@@ -1165,6 +1242,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
             - **variante**:
               - `id` **(obrigatório)**: `string` - The primary key of device
@@ -1176,6 +1255,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
             - **variante**:
               - `id` **(obrigatório)**: `string` - The primary key of linkStation
@@ -1187,6 +1268,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `isAlarmHub`: `boolean` - Whether the linkstation is an alarm hub.
               - `ledSettings`: `object` - Status LED settings.
@@ -1275,6 +1358,9 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string` - The NVR model name.
+              - `guid` **(obrigatório)**: `string|null` - GUID of the NVR
+              - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `doorbellSettings` **(obrigatório)**: `object`
                 - `defaultMessageText`: `string` - Default text to display on the LCD screen.
                 - `defaultMessageResetTimeoutMs`: `number` - Default timeout for resetting LCD screen to the default message.
@@ -1304,6 +1390,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `isMicEnabled` **(obrigatório)**: `boolean` - Whether or not the microphone on camera is enabled
               - `osdSettings` **(obrigatório)**: `object` - On Screen Display settings.
@@ -1357,6 +1445,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `cameraIds` **(obrigatório)**: `array` - The list of (doorbell-only) cameras which this chime is paired to.
                 - _array de_ `string`:
@@ -1377,6 +1467,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `lightModeSettings` **(obrigatório)**: `object` - Settings for when and how your light gets activated
                 - `mode`: When will floodlight turn on.
@@ -1412,6 +1504,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `liveview` **(obrigatório)**
                 - _um de (variantes):_
@@ -1435,6 +1529,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `volume` **(obrigatório)**: `integer` - Speaker volume: a number from 0-100.
               - `micVolume` **(obrigatório)**: `integer` - Mic volume: a number from 0-100.
@@ -1459,6 +1555,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `platform` **(obrigatório)**: `string|null` - The bridge platform
               - `clients` **(obrigatório)**: `array` - Array of IoT devices mac that bridge is reserving for
@@ -1479,15 +1577,26 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `mountType` **(obrigatório)**: `string` enum: door, window, garage, leak, none - Mounting type of the sensor.
               - `batteryStatus` **(obrigatório)**: `object` - [DEPRECATED] Use wirelessConnectionState.batteryStatus instead. Battery status.
                 - `percentage`: `number|null` - Battery charge level from 0 to 100 (%).
                 - `isLow`: `boolean` - Low battery charge level flag.
+              - `featureFlags`: `object` - Sensor feature flags.
+                - `temperature`: `object` - Matches `stats.temperature` and `temperatureSettings`.
+                - `humidity`: `object` - Matches `stats.humidity` and `humiditySettings`.
+                - `light`: `object` - Matches `stats.light` and `lightSettings`.
+                - `motion`: `object` - Matches motion state and `motionSettings`.
+                - `waterLeak`: `object` - Matches leak state and `leakSettings`.
+                - `open`: `object` - Matches entry/door-window/garage open state (`isOpened`).
+                - `tamper`: `object` - Matches tamper detection (`tamperingDetectedAt`).
+                - `smoke`: `object` - Matches smoke / CO alarm surfaces (`alarmSettings`, `alarmTriggeredAt`).
               - `stats` **(obrigatório)**: `object` - Sensor statistics.
                 - `light`: `object` - Ambient light value (Lux).
-                - `humidity`: `object` - Ambient light value (Lux).
-                - `temperature`: `object` - Ambient light value (Lux).
+                - `humidity`: `object` - Relative humidity value (%).
+                - `temperature`: `object` - Temperature value (Celsius).
               - `lightSettings` **(obrigatório)**: `object` - Ambient light sensor settings.
                 - `isEnabled`: `boolean` - Enable ambient light sensor.
                 - `margin`: `number` - Ambient light threshold detection hysteresis margin (Lux). Read-only value decided by sensor implementation.
@@ -1546,6 +1655,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `volume` **(obrigatório)**: `integer` - Volume: a number from 1-100.
               - `ledSettings` **(obrigatório)**: `object` - Status LED settings.
@@ -1574,6 +1685,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `awayState` **(obrigatório)**: `string` enum: ONLINE, RECENTLY_SEEN, NO_RECENT_HEARTBEAT, DEVICE_LOST - Fob presence/away state.
               - `buttonLabels` **(obrigatório)**: `string` enum: securityActions, positionHint - Label style applied when this fob is rendered in button selection lists.
@@ -1598,6 +1711,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `ledSettings` **(obrigatório)**: `object` - Status LED settings.
                 - `isEnabled` **(obrigatório)**: `boolean` - Enable status LED.
@@ -1624,6 +1739,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
             - **variante**:
               - `id` **(obrigatório)**
@@ -1640,6 +1757,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
             - **variante**:
               - `id` **(obrigatório)**
@@ -1656,6 +1775,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type` **(obrigatório)**: `string|null` - The device model name.
+              - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
               - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
               - `isAlarmHub` **(obrigatório)**: `boolean` - Whether the linkstation is an alarm hub.
               - `ledSettings` **(obrigatório)**: `object` - Status LED settings.
@@ -1696,6 +1817,9 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string` - The NVR model name.
+              - `guid`: `string|null` - GUID of the NVR
+              - `mac`: `string` - The primary MAC address of the device.
               - `doorbellSettings`: `object`
                 - `defaultMessageText`: `string` - Default text to display on the LCD screen.
                 - `defaultMessageResetTimeoutMs`: `number` - Default timeout for resetting LCD screen to the default message.
@@ -1725,6 +1849,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `isMicEnabled`: `boolean` - Whether or not the microphone on camera is enabled
               - `osdSettings`: `object` - On Screen Display settings.
@@ -1778,6 +1904,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `cameraIds`: `array` - The list of (doorbell-only) cameras which this chime is paired to.
                 - _array de_ `string`:
@@ -1798,6 +1926,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `lightModeSettings`: `object` - Settings for when and how your light gets activated
                 - `mode`: When will floodlight turn on.
@@ -1833,6 +1963,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `liveview`
                 - _um de (variantes):_
@@ -1856,6 +1988,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `volume`: `integer` - Speaker volume: a number from 0-100.
               - `micVolume`: `integer` - Mic volume: a number from 0-100.
@@ -1880,6 +2014,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `platform`: `string|null` - The bridge platform
               - `clients`: `array` - Array of IoT devices mac that bridge is reserving for
@@ -1900,15 +2036,26 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `mountType`: `string` enum: door, window, garage, leak, none - Mounting type of the sensor.
               - `batteryStatus`: `object` - [DEPRECATED] Use wirelessConnectionState.batteryStatus instead. Battery status.
                 - `percentage`: `number|null` - Battery charge level from 0 to 100 (%).
                 - `isLow`: `boolean` - Low battery charge level flag.
+              - `featureFlags`: `object` - Sensor feature flags.
+                - `temperature`: `object` - Matches `stats.temperature` and `temperatureSettings`.
+                - `humidity`: `object` - Matches `stats.humidity` and `humiditySettings`.
+                - `light`: `object` - Matches `stats.light` and `lightSettings`.
+                - `motion`: `object` - Matches motion state and `motionSettings`.
+                - `waterLeak`: `object` - Matches leak state and `leakSettings`.
+                - `open`: `object` - Matches entry/door-window/garage open state (`isOpened`).
+                - `tamper`: `object` - Matches tamper detection (`tamperingDetectedAt`).
+                - `smoke`: `object` - Matches smoke / CO alarm surfaces (`alarmSettings`, `alarmTriggeredAt`).
               - `stats`: `object` - Sensor statistics.
                 - `light`: `object` - Ambient light value (Lux).
-                - `humidity`: `object` - Ambient light value (Lux).
-                - `temperature`: `object` - Ambient light value (Lux).
+                - `humidity`: `object` - Relative humidity value (%).
+                - `temperature`: `object` - Temperature value (Celsius).
               - `lightSettings`: `object` - Ambient light sensor settings.
                 - `isEnabled`: `boolean` - Enable ambient light sensor.
                 - `margin`: `number` - Ambient light threshold detection hysteresis margin (Lux). Read-only value decided by sensor implementation.
@@ -1967,6 +2114,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `volume`: `integer` - Volume: a number from 1-100.
               - `ledSettings`: `object` - Status LED settings.
@@ -1995,6 +2144,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `awayState`: `string` enum: ONLINE, RECENTLY_SEEN, NO_RECENT_HEARTBEAT, DEVICE_LOST - Fob presence/away state.
               - `buttonLabels`: `string` enum: securityActions, positionHint - Label style applied when this fob is rendered in button selection lists.
@@ -2019,6 +2170,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `ledSettings`: `object` - Status LED settings.
                 - `isEnabled` **(obrigatório)**: `boolean` - Enable status LED.
@@ -2045,6 +2198,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
             - **variante**:
               - `id` **(obrigatório)**
@@ -2061,6 +2216,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
             - **variante**:
               - `id` **(obrigatório)**
@@ -2077,6 +2234,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                     - `string`
                   - **variante**:
                     - `null`
+              - `type`: `string|null` - The device model name.
+              - `guid`: `string|null` - Stable identifier for the device model.
               - `mac`: `string` - The primary MAC address of the device.
               - `isAlarmHub`: `boolean` - Whether the linkstation is an alarm hub.
               - `ledSettings`: `object` - Status LED settings.
@@ -2262,7 +2421,7 @@ A WebSocket subscription that broadcasts Protect events
           - `device` **(obrigatório)**: `string` - The primary key of device
           - `metadata` **(obrigatório)**: `object`
             - `sensorType` **(obrigatório)**: `object` - Name of the metric measured by the sensor
-              - `text` **(obrigatório)**: `string` enum: temperature, light, humidity, aqi, vape, tvoc, pm1p0, pm2p5, pm4p0, pm10p0, co2, voc
+              - `text` **(obrigatório)**: `string` enum: temperature, light, humidity, aqi, vape, tvoc, pm1p0, pm2p5, pm4p0, pm10p0, nox, co2
             - `sensorValue` **(obrigatório)**: `object`
               - `text` **(obrigatório)**: `number` - Decimal value of the metric measured by the sensor
             - `status` **(obrigatório)**: `object`
@@ -2391,7 +2550,7 @@ A WebSocket subscription that broadcasts Protect events
           - `device` **(obrigatório)**: `string` - The primary key of device
           - `metadata` **(obrigatório)**: `object`
             - `button` **(obrigatório)**: `object` - The button that was pressed
-              - `text` **(obrigatório)**: `string` enum: function, alarmHubButton, arm, disarm, night, panic, left, right, input1, input2
+              - `text` **(obrigatório)**: `string` enum: function, alarmHubButton, arm, disarm, night, panic, left, right, input1, input2, main
         - **variante**:
           - `id` **(obrigatório)**: `string` - The primary key of event
           - `modelKey` **(obrigatório)**: `string` - The model key of the event
@@ -2448,6 +2607,20 @@ A WebSocket subscription that broadcasts Protect events
             - `inputState` **(obrigatório)**: `object` - The state of the relay input circuit
               - `text` **(obrigatório)**: `string` enum: circuitClosed, circuitOpen
             - `inputChannel` **(obrigatório)**: `object` - The channel index of the relay input
+              - `text` **(obrigatório)**: `string`
+        - **variante**:
+          - `id` **(obrigatório)**: `string` - The primary key of event
+          - `modelKey` **(obrigatório)**: `string` - The model key of the event
+          - `type` **(obrigatório)**: `string`
+          - `start` **(obrigatório)**: `number` - Unix timestamp of the start time of the event.
+          - `end`: `number|null` - Unix timestamp of the end time of the event.
+          - `device` **(obrigatório)**: `string` - The primary key of device
+          - `metadata` **(obrigatório)**: `object`
+            - `inputState` **(obrigatório)**: `object` - The state of the relay input circuit
+              - `text` **(obrigatório)**: `string` enum: circuitClosed, circuitOpen
+            - `inputToken`: `object` - The ONVIF token of the camera digital input
+              - `text` **(obrigatório)**: `string`
+            - `inputChannel`: `object` - The channel index of the relay input
               - `text` **(obrigatório)**: `string`
         - **variante**:
           - `id` **(obrigatório)**: `string` - The primary key of event
@@ -2546,7 +2719,7 @@ A WebSocket subscription that broadcasts Protect events
             - `status` **(obrigatório)**: `object` - The status of the alarm hub input
               - `text` **(obrigatório)**: `string`
             - `button` **(obrigatório)**: `object` - The button that was pressed
-              - `text` **(obrigatório)**: `string` enum: function, alarmHubButton, arm, disarm, night, panic, left, right, input1, input2
+              - `text` **(obrigatório)**: `string` enum: function, alarmHubButton, arm, disarm, night, panic, left, right, input1, input2, main
             - `alarmType` **(obrigatório)**: `object` - A type of sensor alarm
               - `text` **(obrigatório)**: `string` enum: smoke, CO, glassBreak, sensorButtonPress, tamper, short, cut
             - `deviceId` **(obrigatório)**: `object` - The device ID of the alarm hub
@@ -2570,6 +2743,20 @@ A WebSocket subscription that broadcasts Protect events
             - `deviceId` **(obrigatório)**: `object` - The device ID of the alarm hub
               - `text` **(obrigatório)**: `string`
             - `deviceName` **(obrigatório)**: `object` - The configured name of the input
+              - `text` **(obrigatório)**: `string`
+        - **variante**:
+          - `id` **(obrigatório)**: `string` - The primary key of event
+          - `modelKey` **(obrigatório)**: `string` - The model key of the event
+          - `type` **(obrigatório)**: `string`
+          - `start` **(obrigatório)**: `number` - Unix timestamp of the start time of the event.
+          - `end`: `number|null` - Unix timestamp of the end time of the event.
+          - `device` **(obrigatório)**: `string` - The primary key of device
+          - `metadata`: `object`
+            - `status` **(obrigatório)**: `object` - The physical tamper state of the alarm hub
+              - `text` **(obrigatório)**: `string` enum: tampered, restored
+            - `deviceId` **(obrigatório)**: `object` - The device ID of the alarm hub
+              - `text` **(obrigatório)**: `string`
+            - `deviceName`: `object` - The configured name of the alarm hub
               - `text` **(obrigatório)**: `string`
         - **variante**:
           - `id` **(obrigatório)**: `string` - The primary key of event
@@ -2632,7 +2819,7 @@ A WebSocket subscription that broadcasts Protect events
           - `device` **(obrigatório)**: `string` - The primary key of device
           - `metadata` **(obrigatório)**: `object`
             - `sensorType` **(obrigatório)**: `object` - Name of the metric measured by the sensor
-              - `text` **(obrigatório)**: `string` enum: temperature, light, humidity, aqi, vape, tvoc, pm1p0, pm2p5, pm4p0, pm10p0, co2, voc
+              - `text` **(obrigatório)**: `string` enum: temperature, light, humidity, aqi, vape, tvoc, pm1p0, pm2p5, pm4p0, pm10p0, nox, co2
             - `sensorValue` **(obrigatório)**: `object`
               - `text` **(obrigatório)**: `number` - Decimal value of the metric measured by the sensor
             - `status` **(obrigatório)**: `object`
@@ -2761,7 +2948,7 @@ A WebSocket subscription that broadcasts Protect events
           - `device` **(obrigatório)**: `string` - The primary key of device
           - `metadata` **(obrigatório)**: `object`
             - `button` **(obrigatório)**: `object` - The button that was pressed
-              - `text` **(obrigatório)**: `string` enum: function, alarmHubButton, arm, disarm, night, panic, left, right, input1, input2
+              - `text` **(obrigatório)**: `string` enum: function, alarmHubButton, arm, disarm, night, panic, left, right, input1, input2, main
         - **variante**:
           - `id` **(obrigatório)**: `string` - The primary key of event
           - `modelKey` **(obrigatório)**: `string` - The model key of the event
@@ -2818,6 +3005,20 @@ A WebSocket subscription that broadcasts Protect events
             - `inputState` **(obrigatório)**: `object` - The state of the relay input circuit
               - `text` **(obrigatório)**: `string` enum: circuitClosed, circuitOpen
             - `inputChannel` **(obrigatório)**: `object` - The channel index of the relay input
+              - `text` **(obrigatório)**: `string`
+        - **variante**:
+          - `id` **(obrigatório)**: `string` - The primary key of event
+          - `modelKey` **(obrigatório)**: `string` - The model key of the event
+          - `type` **(obrigatório)**: `string`
+          - `start` **(obrigatório)**: `number` - Unix timestamp of the start time of the event.
+          - `end`: `number|null` - Unix timestamp of the end time of the event.
+          - `device` **(obrigatório)**: `string` - The primary key of device
+          - `metadata` **(obrigatório)**: `object`
+            - `inputState` **(obrigatório)**: `object` - The state of the relay input circuit
+              - `text` **(obrigatório)**: `string` enum: circuitClosed, circuitOpen
+            - `inputToken`: `object` - The ONVIF token of the camera digital input
+              - `text` **(obrigatório)**: `string`
+            - `inputChannel`: `object` - The channel index of the relay input
               - `text` **(obrigatório)**: `string`
         - **variante**:
           - `id` **(obrigatório)**: `string` - The primary key of event
@@ -2916,7 +3117,7 @@ A WebSocket subscription that broadcasts Protect events
             - `status` **(obrigatório)**: `object` - The status of the alarm hub input
               - `text` **(obrigatório)**: `string`
             - `button` **(obrigatório)**: `object` - The button that was pressed
-              - `text` **(obrigatório)**: `string` enum: function, alarmHubButton, arm, disarm, night, panic, left, right, input1, input2
+              - `text` **(obrigatório)**: `string` enum: function, alarmHubButton, arm, disarm, night, panic, left, right, input1, input2, main
             - `alarmType` **(obrigatório)**: `object` - A type of sensor alarm
               - `text` **(obrigatório)**: `string` enum: smoke, CO, glassBreak, sensorButtonPress, tamper, short, cut
             - `deviceId` **(obrigatório)**: `object` - The device ID of the alarm hub
@@ -2940,6 +3141,20 @@ A WebSocket subscription that broadcasts Protect events
             - `deviceId` **(obrigatório)**: `object` - The device ID of the alarm hub
               - `text` **(obrigatório)**: `string`
             - `deviceName` **(obrigatório)**: `object` - The configured name of the input
+              - `text` **(obrigatório)**: `string`
+        - **variante**:
+          - `id` **(obrigatório)**: `string` - The primary key of event
+          - `modelKey` **(obrigatório)**: `string` - The model key of the event
+          - `type` **(obrigatório)**: `string`
+          - `start` **(obrigatório)**: `number` - Unix timestamp of the start time of the event.
+          - `end`: `number|null` - Unix timestamp of the end time of the event.
+          - `device` **(obrigatório)**: `string` - The primary key of device
+          - `metadata`: `object`
+            - `status` **(obrigatório)**: `object` - The physical tamper state of the alarm hub
+              - `text` **(obrigatório)**: `string` enum: tampered, restored
+            - `deviceId` **(obrigatório)**: `object` - The device ID of the alarm hub
+              - `text` **(obrigatório)**: `string`
+            - `deviceName`: `object` - The configured name of the alarm hub
               - `text` **(obrigatório)**: `string`
         - **variante**:
           - `id` **(obrigatório)**: `string` - The primary key of event
@@ -3498,6 +3713,8 @@ Get detailed information about a specific light
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `lightModeSettings` **(obrigatório)**: `object` - Settings for when and how your light gets activated
   - `mode`: When will floodlight turn on.
@@ -3596,6 +3813,8 @@ Patch the settings for a specific light
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `lightModeSettings` **(obrigatório)**: `object` - Settings for when and how your light gets activated
   - `mode`: When will floodlight turn on.
@@ -3666,6 +3885,8 @@ Get detailed information about all lights
         - `string`
       - **variante**:
         - `null`
+  - `type` **(obrigatório)**: `string|null` - The device model name.
+  - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
   - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
   - `lightModeSettings` **(obrigatório)**: `object` - Settings for when and how your light gets activated
     - `mode`: When will floodlight turn on.
@@ -3744,6 +3965,8 @@ Get detailed information about a specific camera
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `isMicEnabled` **(obrigatório)**: `boolean` - Whether or not the microphone on camera is enabled
 - `osdSettings` **(obrigatório)**: `object` - On Screen Display settings.
@@ -3876,6 +4099,8 @@ Patch the settings for a specific camera
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `isMicEnabled` **(obrigatório)**: `boolean` - Whether or not the microphone on camera is enabled
 - `osdSettings` **(obrigatório)**: `object` - On Screen Display settings.
@@ -3962,6 +4187,8 @@ Get detailed information about all cameras
         - `string`
       - **variante**:
         - `null`
+  - `type` **(obrigatório)**: `string|null` - The device model name.
+  - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
   - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
   - `isMicEnabled` **(obrigatório)**: `boolean` - Whether or not the microphone on camera is enabled
   - `osdSettings` **(obrigatório)**: `object` - On Screen Display settings.
@@ -4196,6 +4423,8 @@ Disable the microphone for a specific camera. This action cannot be undone unles
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `isMicEnabled` **(obrigatório)**: `boolean` - Whether or not the microphone on camera is enabled
 - `osdSettings` **(obrigatório)**: `object` - On Screen Display settings.
@@ -4326,11 +4555,30 @@ Get detailed information about a specific sensor
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `mountType` **(obrigatório)**: `string` enum: door, window, garage, leak, none - Mounting type of the sensor.
 - `batteryStatus` **(obrigatório)**: `object` - [DEPRECATED] Use wirelessConnectionState.batteryStatus instead. Battery status.
   - `percentage`: `number|null` - Battery charge level from 0 to 100 (%).
   - `isLow`: `boolean` - Low battery charge level flag.
+- `featureFlags`: `object` - Sensor feature flags.
+  - `temperature`: `object` - Matches `stats.temperature` and `temperatureSettings`.
+    - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+  - `humidity`: `object` - Matches `stats.humidity` and `humiditySettings`.
+    - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+  - `light`: `object` - Matches `stats.light` and `lightSettings`.
+    - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+  - `motion`: `object` - Matches motion state and `motionSettings`.
+    - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+  - `waterLeak`: `object` - Matches leak state and `leakSettings`.
+    - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+  - `open`: `object` - Matches entry/door-window/garage open state (`isOpened`).
+    - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+  - `tamper`: `object` - Matches tamper detection (`tamperingDetectedAt`).
+    - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+  - `smoke`: `object` - Matches smoke / CO alarm surfaces (`alarmSettings`, `alarmTriggeredAt`).
+    - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
 - `stats` **(obrigatório)**: `object` - Sensor statistics.
   - `light`: `object` - Ambient light value (Lux).
     - `value`
@@ -4340,7 +4588,7 @@ Get detailed information about a specific sensor
         - **variante**:
           - `null`
     - `status`: `string` enum: neutral, low, safe, high, unknown - What range does the measured metric fall into
-  - `humidity`: `object` - Ambient light value (Lux).
+  - `humidity`: `object` - Relative humidity value (%).
     - `value`
       - _um de (variantes):_
         - **variante**:
@@ -4348,7 +4596,7 @@ Get detailed information about a specific sensor
         - **variante**:
           - `null`
     - `status`: `string` enum: neutral, low, safe, high, unknown - What range does the measured metric fall into
-  - `temperature`: `object` - Ambient light value (Lux).
+  - `temperature`: `object` - Temperature value (Celsius).
     - `value`
       - _um de (variantes):_
         - **variante**:
@@ -4481,11 +4729,30 @@ Patch the settings for a specific sensor
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `mountType` **(obrigatório)**: `string` enum: door, window, garage, leak, none - Mounting type of the sensor.
 - `batteryStatus` **(obrigatório)**: `object` - [DEPRECATED] Use wirelessConnectionState.batteryStatus instead. Battery status.
   - `percentage`: `number|null` - Battery charge level from 0 to 100 (%).
   - `isLow`: `boolean` - Low battery charge level flag.
+- `featureFlags`: `object` - Sensor feature flags.
+  - `temperature`: `object` - Matches `stats.temperature` and `temperatureSettings`.
+    - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+  - `humidity`: `object` - Matches `stats.humidity` and `humiditySettings`.
+    - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+  - `light`: `object` - Matches `stats.light` and `lightSettings`.
+    - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+  - `motion`: `object` - Matches motion state and `motionSettings`.
+    - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+  - `waterLeak`: `object` - Matches leak state and `leakSettings`.
+    - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+  - `open`: `object` - Matches entry/door-window/garage open state (`isOpened`).
+    - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+  - `tamper`: `object` - Matches tamper detection (`tamperingDetectedAt`).
+    - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+  - `smoke`: `object` - Matches smoke / CO alarm surfaces (`alarmSettings`, `alarmTriggeredAt`).
+    - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
 - `stats` **(obrigatório)**: `object` - Sensor statistics.
   - `light`: `object` - Ambient light value (Lux).
     - `value`
@@ -4495,7 +4762,7 @@ Patch the settings for a specific sensor
         - **variante**:
           - `null`
     - `status`: `string` enum: neutral, low, safe, high, unknown - What range does the measured metric fall into
-  - `humidity`: `object` - Ambient light value (Lux).
+  - `humidity`: `object` - Relative humidity value (%).
     - `value`
       - _um de (variantes):_
         - **variante**:
@@ -4503,7 +4770,7 @@ Patch the settings for a specific sensor
         - **variante**:
           - `null`
     - `status`: `string` enum: neutral, low, safe, high, unknown - What range does the measured metric fall into
-  - `temperature`: `object` - Ambient light value (Lux).
+  - `temperature`: `object` - Temperature value (Celsius).
     - `value`
       - _um de (variantes):_
         - **variante**:
@@ -4601,11 +4868,30 @@ Get detailed information about all sensors
         - `string`
       - **variante**:
         - `null`
+  - `type` **(obrigatório)**: `string|null` - The device model name.
+  - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
   - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
   - `mountType` **(obrigatório)**: `string` enum: door, window, garage, leak, none - Mounting type of the sensor.
   - `batteryStatus` **(obrigatório)**: `object` - [DEPRECATED] Use wirelessConnectionState.batteryStatus instead. Battery status.
     - `percentage`: `number|null` - Battery charge level from 0 to 100 (%).
     - `isLow`: `boolean` - Low battery charge level flag.
+  - `featureFlags`: `object` - Sensor feature flags.
+    - `temperature`: `object` - Matches `stats.temperature` and `temperatureSettings`.
+      - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+    - `humidity`: `object` - Matches `stats.humidity` and `humiditySettings`.
+      - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+    - `light`: `object` - Matches `stats.light` and `lightSettings`.
+      - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+    - `motion`: `object` - Matches motion state and `motionSettings`.
+      - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+    - `waterLeak`: `object` - Matches leak state and `leakSettings`.
+      - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+    - `open`: `object` - Matches entry/door-window/garage open state (`isOpened`).
+      - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+    - `tamper`: `object` - Matches tamper detection (`tamperingDetectedAt`).
+      - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
+    - `smoke`: `object` - Matches smoke / CO alarm surfaces (`alarmSettings`, `alarmTriggeredAt`).
+      - `channelCount` **(obrigatório)**: `integer` - If a capability key is absent (`undefined`), the capability should be treated as not supported. When present, a positive value indicates how many independent…
   - `stats` **(obrigatório)**: `object` - Sensor statistics.
     - `light`: `object` - Ambient light value (Lux).
       - `value`
@@ -4615,7 +4901,7 @@ Get detailed information about all sensors
           - **variante**:
             - `null`
       - `status`: `string` enum: neutral, low, safe, high, unknown - What range does the measured metric fall into
-    - `humidity`: `object` - Ambient light value (Lux).
+    - `humidity`: `object` - Relative humidity value (%).
       - `value`
         - _um de (variantes):_
           - **variante**:
@@ -4623,7 +4909,7 @@ Get detailed information about all sensors
           - **variante**:
             - `null`
       - `status`: `string` enum: neutral, low, safe, high, unknown - What range does the measured metric fall into
-    - `temperature`: `object` - Ambient light value (Lux).
+    - `temperature`: `object` - Temperature value (Celsius).
       - `value`
         - _um de (variantes):_
           - **variante**:
@@ -4729,6 +5015,8 @@ Get detailed information about a specific siren
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `volume` **(obrigatório)**: `integer` - Volume: a number from 1-100.
 - `ledSettings` **(obrigatório)**: `object` - Status LED settings.
@@ -4812,6 +5100,8 @@ Patch the settings for a specific siren
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `volume` **(obrigatório)**: `integer` - Volume: a number from 1-100.
 - `ledSettings` **(obrigatório)**: `object` - Status LED settings.
@@ -4885,6 +5175,8 @@ Get detailed information about all sirens
         - `string`
       - **variante**:
         - `null`
+  - `type` **(obrigatório)**: `string|null` - The device model name.
+  - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
   - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
   - `volume` **(obrigatório)**: `integer` - Volume: a number from 1-100.
   - `ledSettings` **(obrigatório)**: `object` - Status LED settings.
@@ -5080,13 +5372,15 @@ Get detailed information about a specific fob
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `awayState` **(obrigatório)**: `string` enum: ONLINE, RECENTLY_SEEN, NO_RECENT_HEARTBEAT, DEVICE_LOST - Fob presence/away state.
 - `buttonLabels` **(obrigatório)**: `string` enum: securityActions, positionHint - Label style applied when this fob is rendered in button selection lists.
 - `featureFlags` **(obrigatório)**: `object` - Feature flags for the fob.
   - `buttons` **(obrigatório)**: `array` - Available button types on the fob.
     - _array de_ `string`:
-      - `string` enum: function, alarmHubButton, arm, disarm, night, panic, left, right, input1, input2
+      - `string` enum: function, alarmHubButton, arm, disarm, night, panic, left, right, input1, input2, main
 - `wirelessConnectionState` **(obrigatório)**: `object` - Wireless connection state including signal quality, battery status, and bridge connection.
   - `signalState` **(obrigatório)**: `object` - Signal state.
     - `signalQuality` **(obrigatório)**: `number|null` - Percent representation of Bluetooth signal strength.
@@ -5145,13 +5439,15 @@ Patch the settings for a specific fob
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `awayState` **(obrigatório)**: `string` enum: ONLINE, RECENTLY_SEEN, NO_RECENT_HEARTBEAT, DEVICE_LOST - Fob presence/away state.
 - `buttonLabels` **(obrigatório)**: `string` enum: securityActions, positionHint - Label style applied when this fob is rendered in button selection lists.
 - `featureFlags` **(obrigatório)**: `object` - Feature flags for the fob.
   - `buttons` **(obrigatório)**: `array` - Available button types on the fob.
     - _array de_ `string`:
-      - `string` enum: function, alarmHubButton, arm, disarm, night, panic, left, right, input1, input2
+      - `string` enum: function, alarmHubButton, arm, disarm, night, panic, left, right, input1, input2, main
 - `wirelessConnectionState` **(obrigatório)**: `object` - Wireless connection state including signal quality, battery status, and bridge connection.
   - `signalState` **(obrigatório)**: `object` - Signal state.
     - `signalQuality` **(obrigatório)**: `number|null` - Percent representation of Bluetooth signal strength.
@@ -5203,13 +5499,15 @@ Get detailed information about all fobs
         - `string`
       - **variante**:
         - `null`
+  - `type` **(obrigatório)**: `string|null` - The device model name.
+  - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
   - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
   - `awayState` **(obrigatório)**: `string` enum: ONLINE, RECENTLY_SEEN, NO_RECENT_HEARTBEAT, DEVICE_LOST - Fob presence/away state.
   - `buttonLabels` **(obrigatório)**: `string` enum: securityActions, positionHint - Label style applied when this fob is rendered in button selection lists.
   - `featureFlags` **(obrigatório)**: `object` - Feature flags for the fob.
     - `buttons` **(obrigatório)**: `array` - Available button types on the fob.
       - _array de_ `string`:
-        - `string` enum: function, alarmHubButton, arm, disarm, night, panic, left, right, input1, input2
+        - `string` enum: function, alarmHubButton, arm, disarm, night, panic, left, right, input1, input2, main
   - `wirelessConnectionState` **(obrigatório)**: `object` - Wireless connection state including signal quality, battery status, and bridge connection.
     - `signalState` **(obrigatório)**: `object` - Signal state.
       - `signalQuality` **(obrigatório)**: `number|null` - Percent representation of Bluetooth signal strength.
@@ -5269,6 +5567,8 @@ Get detailed information about a specific relay
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `ledSettings` **(obrigatório)**: `object` - Status LED settings.
   - `isEnabled` **(obrigatório)**: `boolean` - Enable status LED.
@@ -5349,6 +5649,8 @@ Patch the settings for a specific relay
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `ledSettings` **(obrigatório)**: `object` - Status LED settings.
   - `isEnabled` **(obrigatório)**: `boolean` - Enable status LED.
@@ -5420,6 +5722,8 @@ Get detailed information about all relays
         - `string`
       - **variante**:
         - `null`
+  - `type` **(obrigatório)**: `string|null` - The device model name.
+  - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
   - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
   - `ledSettings` **(obrigatório)**: `object` - Status LED settings.
     - `isEnabled` **(obrigatório)**: `boolean` - Enable status LED.
@@ -5538,6 +5842,8 @@ Get detailed information about a specific speaker
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `volume` **(obrigatório)**: `integer` - Speaker volume: a number from 0-100.
 - `micVolume` **(obrigatório)**: `integer` - Mic volume: a number from 0-100.
@@ -5595,6 +5901,8 @@ Patch the settings for a specific speaker
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `volume` **(obrigatório)**: `integer` - Speaker volume: a number from 0-100.
 - `micVolume` **(obrigatório)**: `integer` - Mic volume: a number from 0-100.
@@ -5642,6 +5950,8 @@ Get detailed information about all speakers
         - `string`
       - **variante**:
         - `null`
+  - `type` **(obrigatório)**: `string|null` - The device model name.
+  - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
   - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
   - `volume` **(obrigatório)**: `integer` - Speaker volume: a number from 0-100.
   - `micVolume` **(obrigatório)**: `integer` - Mic volume: a number from 0-100.
@@ -5734,6 +6044,8 @@ Get detailed information about a specific bridge
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `platform` **(obrigatório)**: `string|null` - The bridge platform
 - `clients` **(obrigatório)**: `array` - Array of IoT devices mac that bridge is reserving for
@@ -5785,6 +6097,8 @@ Patch the settings for a specific bridge
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `platform` **(obrigatório)**: `string|null` - The bridge platform
 - `clients` **(obrigatório)**: `array` - Array of IoT devices mac that bridge is reserving for
@@ -5829,6 +6143,8 @@ Get detailed information about all bridges
         - `string`
       - **variante**:
         - `null`
+  - `type` **(obrigatório)**: `string|null` - The device model name.
+  - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
   - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
   - `platform` **(obrigatório)**: `string|null` - The bridge platform
   - `clients` **(obrigatório)**: `array` - Array of IoT devices mac that bridge is reserving for
@@ -5881,6 +6197,8 @@ Get detailed information about a specific link station (non-alarm hub gateways)
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `isAlarmHub` **(obrigatório)**: `boolean` - Whether the linkstation is an alarm hub.
 - `ledSettings` **(obrigatório)**: `object` - Status LED settings.
@@ -5971,6 +6289,8 @@ Patch the settings for a specific link station
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `isAlarmHub` **(obrigatório)**: `boolean` - Whether the linkstation is an alarm hub.
 - `ledSettings` **(obrigatório)**: `object` - Status LED settings.
@@ -6054,6 +6374,8 @@ Get detailed information about all link stations (non-alarm hub gateways)
         - `string`
       - **variante**:
         - `null`
+  - `type` **(obrigatório)**: `string|null` - The device model name.
+  - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
   - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
   - `isAlarmHub` **(obrigatório)**: `boolean` - Whether the linkstation is an alarm hub.
   - `ledSettings` **(obrigatório)**: `object` - Status LED settings.
@@ -6145,6 +6467,8 @@ Get detailed information about a specific alarm hub
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `isAlarmHub` **(obrigatório)**: `boolean` - Whether the linkstation is an alarm hub.
 - `ledSettings` **(obrigatório)**: `object` - Status LED settings.
@@ -6235,6 +6559,8 @@ Patch the settings for a specific alarm hub
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `isAlarmHub` **(obrigatório)**: `boolean` - Whether the linkstation is an alarm hub.
 - `ledSettings` **(obrigatório)**: `object` - Status LED settings.
@@ -6318,6 +6644,8 @@ Get detailed information about all alarm hubs
         - `string`
       - **variante**:
         - `null`
+  - `type` **(obrigatório)**: `string|null` - The device model name.
+  - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
   - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
   - `isAlarmHub` **(obrigatório)**: `boolean` - Whether the linkstation is an alarm hub.
   - `ledSettings` **(obrigatório)**: `object` - Status LED settings.
@@ -6442,6 +6770,9 @@ Get detailed information about the NVR
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string` - The NVR model name.
+- `guid` **(obrigatório)**: `string|null` - GUID of the NVR
+- `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `doorbellSettings` **(obrigatório)**: `object`
   - `defaultMessageText`: `string` - Default text to display on the LCD screen.
   - `defaultMessageResetTimeoutMs`: `number` - Default timeout for resetting LCD screen to the default message.
@@ -6585,6 +6916,8 @@ Get detailed information about a specific chime
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `cameraIds` **(obrigatório)**: `array` - The list of (doorbell-only) cameras which this chime is paired to.
   - _array de_ `string`:
@@ -6649,6 +6982,8 @@ Patch the settings for a specific chime
       - `string`
     - **variante**:
       - `null`
+- `type` **(obrigatório)**: `string|null` - The device model name.
+- `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
 - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
 - `cameraIds` **(obrigatório)**: `array` - The list of (doorbell-only) cameras which this chime is paired to.
   - _array de_ `string`:
@@ -6697,6 +7032,8 @@ Get detailed information about all chimes
         - `string`
       - **variante**:
         - `null`
+  - `type` **(obrigatório)**: `string|null` - The device model name.
+  - `guid` **(obrigatório)**: `string|null` - Stable identifier for the device model.
   - `mac` **(obrigatório)**: `string` - The primary MAC address of the device.
   - `cameraIds` **(obrigatório)**: `array` - The list of (doorbell-only) cameras which this chime is paired to.
     - _array de_ `string`:
@@ -6826,6 +7163,7 @@ Get detailed information about a specific UniFi Identity user.
 - `firstName` **(obrigatório)**: `string` - The first name of ulp user
 - `lastName` **(obrigatório)**: `string` - The last name of ulp user
 - `fullName` **(obrigatório)**: `string` - Fullname of ulp user
+- `email` **(obrigatório)**: `string` - Email of ulp user, empty string when none is set in UniFi Identity
 - `status` **(obrigatório)**: `string` enum: ACTIVE, DEACTIVATED - Active status of ulp user
 - `modelKey` **(obrigatório)**: `string` - The model key of the ulpUser
 
@@ -6859,6 +7197,7 @@ Get all UniFi Identity users with enrolled credentials (NFC cards, fingerprints)
   - `firstName` **(obrigatório)**: `string` - The first name of ulp user
   - `lastName` **(obrigatório)**: `string` - The last name of ulp user
   - `fullName` **(obrigatório)**: `string` - Fullname of ulp user
+  - `email` **(obrigatório)**: `string` - Email of ulp user, empty string when none is set in UniFi Identity
   - `status` **(obrigatório)**: `string` enum: ACTIVE, DEACTIVATED - Active status of ulp user
   - `modelKey` **(obrigatório)**: `string` - The model key of the ulpUser
 
@@ -6875,5 +7214,64 @@ curl -X GET "https://$UNIFI_HOST/proxy/protect/integration/v1/ulp-users" \
 # Remoto (Cloud Connector)
 curl -X GET "https://api.ui.com/v1/connector/consoles/$CONSOLE_ID/protect/integration/v1/ulp-users" \
      -H "X-API-Key: $UNIFI_SM_KEY"
+```
+</details>
+
+
+---
+
+## Point of sale event ingestion
+
+
+### Ingest a POS transaction
+
+`POST /v1/pos/cameras/{id}/transactions`  ·  operationId: ``
+
+Records a point of sale transaction as a camera event so the transaction details can be overlaid on recorded footage. Requires write access to the target camera. Footage capture is best-effort: the overlay only appears where the target camera was recording the transaction window (e.g. cameras in detections or adaptive recording modes), and a backdated timestamp may fall outside retained footage. A 200 response confirms the event was recorded, not that video exists for the window.
+
+**Parâmetros**
+
+| Parâmetro | Em | Obrig. | Tipo | Descrição |
+|---|---|---|---|---|
+| `id` | path | sim | string |  |
+
+**Corpo da requisição** (`application/json`)
+
+- `type` **(obrigatório)**: enum: sale, refund - Transaction type
+- `externalId` **(obrigatório)**: `string` - Caller-supplied transaction id, unique per camera. Used for best-effort idempotency within a short window (in-memory, per-process; it resets on restart, so a…
+- `amount` **(obrigatório)**: `number` - Transaction total amount
+- `currency`: `string` - Uppercase ISO 4217 currency code, e.g. USD
+- `lineItems`: `array` - Purchased line items
+  - _array de_ `object`:
+    - `title` **(obrigatório)**: `string` - Line item title
+    - `quantity` **(obrigatório)**: `integer` - Line item quantity
+- `location`: `object`
+  - `id` **(obrigatório)**: `string` - Location or register identifier
+  - `name`: `string` - Human-readable location or register name
+- `paymentTypes`: `array` - Payment method names
+  - _array de_ `string`:
+    - `string`
+- `timestamp`: `integer` - Transaction time in epoch milliseconds. Must be within the last 24 hours and no more than 5 minutes ahead of server time; out-of-range values are rejected. A…
+
+**Resposta 200** - Success response
+
+- `created` **(obrigatório)**: `boolean` - True when a new event was created; false when an event with the same externalId was already ingested (eventId echoes the existing one). Idempotency is best-e…
+- `eventId`: `string` - Id of the created (or previously created) event
+
+**Erros possíveis:** `409`, `default`
+
+<details><summary>Exemplo cURL</summary>
+
+```bash
+# Local
+curl -X POST "https://$UNIFI_HOST/proxy/protect/integration/v1/pos/cameras/{id}/transactions" \
+     -H "X-API-KEY: $UNIFI_API_KEY" \
+     -H "Content-Type: application/json" -d '{ ... }'
+```
+```bash
+# Remoto (Cloud Connector)
+curl -X POST "https://api.ui.com/v1/connector/consoles/$CONSOLE_ID/protect/integration/v1/pos/cameras/{id}/transactions" \
+     -H "X-API-Key: $UNIFI_SM_KEY" \
+     -H "Content-Type: application/json" -d '{ ... }'
 ```
 </details>

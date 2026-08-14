@@ -1186,7 +1186,7 @@ curl -X DELETE "https://api.ui.com/v1/connector/consoles/$CONSOLE_ID/network/int
 
 `GET /v1/sites/{siteId}/wifi/broadcasts`  ·  operationId: `getWifiBroadcastPage`
 
-$21
+$1f
 
 **Parâmetros**
 
@@ -1999,7 +1999,7 @@ curl -X DELETE "https://api.ui.com/v1/connector/consoles/$CONSOLE_ID/network/int
 
 `GET /v1/sites/{siteId}/acl-rules`  ·  operationId: `getAclRulePage`
 
-$22
+$20
 
 **Parâmetros**
 

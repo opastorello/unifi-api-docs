@@ -1,7 +1,7 @@
 # UniFi Mobility API - v1.0.0 - Referência
 
 > Espelho automático de [`developer.ui.com/mobility/v1.0.0`](https://developer.ui.com/mobility/v1.0.0).
-> OpenAPI `3.0.3` · 8 operações em 7 paths · atualizado na origem em `2026-08-12T11:31:34.156Z`.
+> OpenAPI `3.0.3` · 8 operações em 7 paths · atualizado na origem em `2026-08-23T23:42:01.050Z`.
 > Autenticação: header `X-API-Key`.
 
 **OpenAPI completo (fonte da verdade):** [`openapi.json`](./openapi.json)

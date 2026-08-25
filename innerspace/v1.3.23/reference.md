@@ -26,7 +26,7 @@
 
 `GET https://api.ui.com/v1/connector/consoles/{id}/*path`  ·  operationId: `ConnectorGet`
 
-$21
+$20
 
 **Parâmetros**
 
@@ -55,7 +55,7 @@ curl -X GET "https://api.ui.com/v1/connector/consoles/{id}/*path" \
 
 `POST https://api.ui.com/v1/connector/consoles/{id}/*path`  ·  operationId: `ConnectorPost`
 
-$23
+$22
 
 **Parâmetros**
 
@@ -89,7 +89,7 @@ curl -X POST "https://api.ui.com/v1/connector/consoles/{id}/*path" \
 
 `PUT https://api.ui.com/v1/connector/consoles/{id}/*path`  ·  operationId: `ConnectorPut`
 
-$24
+$23
 
 **Parâmetros**
 
@@ -123,7 +123,7 @@ curl -X PUT "https://api.ui.com/v1/connector/consoles/{id}/*path" \
 
 `DELETE https://api.ui.com/v1/connector/consoles/{id}/*path`  ·  operationId: `ConnectorDelete`
 
-$20
+$1f
 
 **Parâmetros**
 
@@ -152,7 +152,7 @@ curl -X DELETE "https://api.ui.com/v1/connector/consoles/{id}/*path" \
 
 `PATCH https://api.ui.com/v1/connector/consoles/{id}/*path`  ·  operationId: `ConnectorPatch`
 
-$22
+$21
 
 **Parâmetros**
 

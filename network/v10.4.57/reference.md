@@ -1,7 +1,7 @@
 # UniFi Network API - v10.4.57 - Referência
 
 > Espelho automático de [`developer.ui.com/network/v10.4.57`](https://developer.ui.com/network/v10.4.57).
-> OpenAPI `3.1.0` · 73 operações em 44 paths · atualizado na origem em `2026-08-23T23:42:01.050Z`.
+> OpenAPI `3.1.0` · 73 operações em 44 paths · atualizado na origem em `2026-08-22T21:50:52.083Z`.
 
 **OpenAPI completo (fonte da verdade):** [`openapi.json`](./openapi.json)
 

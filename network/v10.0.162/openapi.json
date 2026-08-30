@@ -18,7 +18,7 @@
     },
     {
       "name": "Filtering",
-      "description": "$1e"
+      "description": "$20"
     },
     {
       "name": "Error Handling",
@@ -2148,7 +2148,7 @@
           "WiFi Broadcasts"
         ],
         "summary": "List Wifi Broadcasts",
-        "description": "$1f",
+        "description": "$21",
         "operationId": "getWifiBroadcastPage",
         "parameters": [
           {
@@ -4293,7 +4293,7 @@
           "Access Control (ACL Rules)"
         ],
         "summary": "List ACL Rules",
-        "description": "$20",
+        "description": "$22",
         "operationId": "getAclRulePage",
         "parameters": [
           {

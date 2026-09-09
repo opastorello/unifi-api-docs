@@ -1,7 +1,7 @@
 # UniFi Site Manager API - v1.0.0 - Referência
 
 > Espelho automático de [`developer.ui.com/site-manager/v1.0.0`](https://developer.ui.com/site-manager/v1.0.0).
-> OpenAPI `3.0.3` · 9 operações em 9 paths · atualizado na origem em `2026-09-07T08:03:32.089Z`.
+> OpenAPI `3.0.3` · 9 operações em 9 paths · atualizado na origem em `2026-09-08T11:51:55.681Z`.
 > Autenticação: header `X-API-Key`.
 
 **OpenAPI completo (fonte da verdade):** [`openapi.json`](./openapi.json)

@@ -1,6 +1,6 @@
-# UniFi Protect API - v7.3.47 - Referência
+# UniFi Protect API - v7.3.53 - Referência
 
-> Espelho automático de [`developer.ui.com/protect/v7.3.47`](https://developer.ui.com/protect/v7.3.47).
+> Espelho automático de [`developer.ui.com/protect/v7.3.53`](https://developer.ui.com/protect/v7.3.53).
 > OpenAPI `3.1.0` · 74 operações em 55 paths · atualizado na origem em `2026-09-14T17:05:13.304Z`.
 
 **OpenAPI completo (fonte da verdade):** [`openapi.json`](./openapi.json)
@@ -824,8 +824,6 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
               - `keypadSettings` **(obrigatório)**: `object` - On-device keypad feedback settings. Only meaningful when featureFlags.hasKeypad.
                 - `beepEnabled` **(obrigatório)**: `boolean` - Whether a keypress beeps.
                 - `beepVolume` **(obrigatório)**: `integer` - Keypress beep volume, 0-100%.
-                - `backlightEnabled` **(obrigatório)**: `boolean` - Whether a keypress lights the keypad backlight.
-                - `backlightBrightness` **(obrigatório)**: `integer` - Keypad backlight brightness, 0-100%.
               - `wirelessConnectionState` **(obrigatório)**: `object` - Wireless connection state including signal quality, battery status, and bridge connection.
                 - `signalState` **(obrigatório)**: `object` - Signal state.
                 - `batteryStatus` **(obrigatório)**: `object` - Battery status.
@@ -1226,8 +1224,6 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
               - `keypadSettings`: `object` - On-device keypad feedback settings. Only meaningful when featureFlags.hasKeypad.
                 - `beepEnabled` **(obrigatório)**: `boolean` - Whether a keypress beeps.
                 - `beepVolume` **(obrigatório)**: `integer` - Keypress beep volume, 0-100%.
-                - `backlightEnabled` **(obrigatório)**: `boolean` - Whether a keypress lights the keypad backlight.
-                - `backlightBrightness` **(obrigatório)**: `integer` - Keypad backlight brightness, 0-100%.
               - `wirelessConnectionState`: `object` - Wireless connection state including signal quality, battery status, and bridge connection.
                 - `signalState` **(obrigatório)**: `object` - Signal state.
                 - `batteryStatus` **(obrigatório)**: `object` - Battery status.
@@ -1726,8 +1722,6 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
               - `keypadSettings` **(obrigatório)**: `object` - On-device keypad feedback settings. Only meaningful when featureFlags.hasKeypad.
                 - `beepEnabled` **(obrigatório)**: `boolean` - Whether a keypress beeps.
                 - `beepVolume` **(obrigatório)**: `integer` - Keypress beep volume, 0-100%.
-                - `backlightEnabled` **(obrigatório)**: `boolean` - Whether a keypress lights the keypad backlight.
-                - `backlightBrightness` **(obrigatório)**: `integer` - Keypad backlight brightness, 0-100%.
               - `wirelessConnectionState` **(obrigatório)**: `object` - Wireless connection state including signal quality, battery status, and bridge connection.
                 - `signalState` **(obrigatório)**: `object` - Signal state.
                 - `batteryStatus` **(obrigatório)**: `object` - Battery status.
@@ -2198,8 +2192,6 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
               - `keypadSettings`: `object` - On-device keypad feedback settings. Only meaningful when featureFlags.hasKeypad.
                 - `beepEnabled` **(obrigatório)**: `boolean` - Whether a keypress beeps.
                 - `beepVolume` **(obrigatório)**: `integer` - Keypress beep volume, 0-100%.
-                - `backlightEnabled` **(obrigatório)**: `boolean` - Whether a keypress lights the keypad backlight.
-                - `backlightBrightness` **(obrigatório)**: `integer` - Keypad backlight brightness, 0-100%.
               - `wirelessConnectionState`: `object` - Wireless connection state including signal quality, battery status, and bridge connection.
                 - `signalState` **(obrigatório)**: `object` - Signal state.
                 - `batteryStatus` **(obrigatório)**: `object` - Battery status.
@@ -5443,8 +5435,6 @@ Get detailed information about a specific fob
 - `keypadSettings` **(obrigatório)**: `object` - On-device keypad feedback settings. Only meaningful when featureFlags.hasKeypad.
   - `beepEnabled` **(obrigatório)**: `boolean` - Whether a keypress beeps.
   - `beepVolume` **(obrigatório)**: `integer` - Keypress beep volume, 0-100%.
-  - `backlightEnabled` **(obrigatório)**: `boolean` - Whether a keypress lights the keypad backlight.
-  - `backlightBrightness` **(obrigatório)**: `integer` - Keypad backlight brightness, 0-100%.
 - `wirelessConnectionState` **(obrigatório)**: `object` - Wireless connection state including signal quality, battery status, and bridge connection.
   - `signalState` **(obrigatório)**: `object` - Signal state.
     - `signalQuality` **(obrigatório)**: `number|null` - Percent representation of Bluetooth signal strength.
@@ -5520,8 +5510,6 @@ Patch the settings for a specific fob
 - `keypadSettings` **(obrigatório)**: `object` - On-device keypad feedback settings. Only meaningful when featureFlags.hasKeypad.
   - `beepEnabled` **(obrigatório)**: `boolean` - Whether a keypress beeps.
   - `beepVolume` **(obrigatório)**: `integer` - Keypress beep volume, 0-100%.
-  - `backlightEnabled` **(obrigatório)**: `boolean` - Whether a keypress lights the keypad backlight.
-  - `backlightBrightness` **(obrigatório)**: `integer` - Keypad backlight brightness, 0-100%.
 - `wirelessConnectionState` **(obrigatório)**: `object` - Wireless connection state including signal quality, battery status, and bridge connection.
   - `signalState` **(obrigatório)**: `object` - Signal state.
     - `signalQuality` **(obrigatório)**: `number|null` - Percent representation of Bluetooth signal strength.
@@ -5590,8 +5578,6 @@ Get detailed information about all fobs
   - `keypadSettings` **(obrigatório)**: `object` - On-device keypad feedback settings. Only meaningful when featureFlags.hasKeypad.
     - `beepEnabled` **(obrigatório)**: `boolean` - Whether a keypress beeps.
     - `beepVolume` **(obrigatório)**: `integer` - Keypress beep volume, 0-100%.
-    - `backlightEnabled` **(obrigatório)**: `boolean` - Whether a keypress lights the keypad backlight.
-    - `backlightBrightness` **(obrigatório)**: `integer` - Keypad backlight brightness, 0-100%.
   - `wirelessConnectionState` **(obrigatório)**: `object` - Wireless connection state including signal quality, battery status, and bridge connection.
     - `signalState` **(obrigatório)**: `object` - Signal state.
       - `signalQuality` **(obrigatório)**: `number|null` - Percent representation of Bluetooth signal strength.

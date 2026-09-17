@@ -1,7 +1,7 @@
 # UniFi Protect API - v7.3.47 - Referência
 
 > Espelho automático de [`developer.ui.com/protect/v7.3.47`](https://developer.ui.com/protect/v7.3.47).
-> OpenAPI `3.1.0` · 74 operações em 55 paths · atualizado na origem em `2026-09-14T17:05:13.304Z`.
+> OpenAPI `3.1.0` · 74 operações em 55 paths · atualizado na origem em `2026-09-14T17:05:13.239Z`.
 
 **OpenAPI completo (fonte da verdade):** [`openapi.json`](./openapi.json)
 

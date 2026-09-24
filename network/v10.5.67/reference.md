@@ -1,6 +1,6 @@
-# UniFi Network API - v10.4.57 - Referência
+# UniFi Network API - v10.5.67 - Referência
 
-> Espelho automático de [`developer.ui.com/network/v10.4.57`](https://developer.ui.com/network/v10.4.57).
+> Espelho automático de [`developer.ui.com/network/v10.5.67`](https://developer.ui.com/network/v10.5.67).
 > OpenAPI `3.1.0` · 73 operações em 44 paths · atualizado na origem em `2026-09-24T09:17:02.488Z`.
 
 **OpenAPI completo (fonte da verdade):** [`openapi.json`](./openapi.json)
@@ -1115,7 +1115,7 @@ Supports configuration of security, band steering, multicast filtering, and capt
 
 `GET /v1/sites/{siteId}/wifi/broadcasts`  ·  operationId: `getWifiBroadcastPage`
 
-$22
+$20
 
 **Parâmetros**
 
@@ -2543,7 +2543,7 @@ that enforce traffic filtering across devices and networks.
 
 `GET /v1/sites/{siteId}/acl-rules`  ·  operationId: `getAclRulePage`
 
-$20
+$1e
 
 **Parâmetros**
 
@@ -3354,7 +3354,7 @@ Endpoints for managing DNS Policies within a site.
 
 `GET /v1/sites/{siteId}/dns/policies`  ·  operationId: `getDnsPolicyPage`
 
-$21
+$1f
 
 **Parâmetros**
 
@@ -3994,7 +3994,7 @@ Returns all device tags defined within a site, which can be used for WiFi Broadc
 |---|---|---|---|---|
 | `offset` | query | não | integer (int32) | (default 0) |
 | `limit` | query | não | integer (int32) | (default 25) |
-| `filter` | query | não |  |  |
+| `filter` | query | não | object |  |
 | `siteId` | path | sim | string (uuid) |  |
 
 **Resposta 200** - OK

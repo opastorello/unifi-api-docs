@@ -1,6 +1,6 @@
-# UniFi Network API - v10.4.57 - Referência
+# UniFi Network API - v10.6.102 - Referência
 
-> Espelho automático de [`developer.ui.com/network/v10.4.57`](https://developer.ui.com/network/v10.4.57).
+> Espelho automático de [`developer.ui.com/network/v10.6.102`](https://developer.ui.com/network/v10.6.102).
 > OpenAPI `3.1.0` · 73 operações em 44 paths · atualizado na origem em `2026-09-24T09:17:02.488Z`.
 
 **OpenAPI completo (fonte da verdade):** [`openapi.json`](./openapi.json)
@@ -1115,7 +1115,7 @@ Supports configuration of security, band steering, multicast filtering, and capt
 
 `GET /v1/sites/{siteId}/wifi/broadcasts`  ·  operationId: `getWifiBroadcastPage`
 
-$22
+$20
 
 **Parâmetros**
 
@@ -2543,7 +2543,7 @@ that enforce traffic filtering across devices and networks.
 
 `GET /v1/sites/{siteId}/acl-rules`  ·  operationId: `getAclRulePage`
 
-$20
+$1e
 
 **Parâmetros**
 
@@ -2913,11 +2913,6 @@ Retrieve a paginated list of all LAGs (Link Aggregation Groups) on a site.
   - _array de_ `object`:
     - _variantes por `type`: `LOCAL`→`IntegrationLocalLagGlobalDto`, `MULTI_CHASSIS`→`IntegrationMcLagGlobalDto`, `SWITCH_STACK`→`IntegrationSwitchStackLagGlobalDto` (ver openapi.json)_
     - `id` **(obrigatório)**: `string` (uuid)
-    - `members` **(obrigatório)**: `array`
-      - _array de_ `object`:
-        - `deviceId` **(obrigatório)**: `string` (uuid)
-        - `portIdxs` **(obrigatório)**: `array`
-          - _array de_ `integer`:
     - `metadata` **(obrigatório)**
       - _variantes por `origin`: `DERIVED`→`Derived entity metadata`, `ORCHESTRATED`→`Orchestrated entity metadata`, `SYSTEM_DEFINED`→`System defined entity metadata`, `USER_DEFINED`→`User defined entity metadata` (ver openapi.json)_
       - `origin` **(obrigatório)**: `string`
@@ -2970,12 +2965,6 @@ Retrieve LAG details.
 
 - _variantes por `type`: `LOCAL`→`IntegrationLocalLagGlobalDto`, `MULTI_CHASSIS`→`IntegrationMcLagGlobalDto`, `SWITCH_STACK`→`IntegrationSwitchStackLagGlobalDto` (ver openapi.json)_
 - `id` **(obrigatório)**: `string` (uuid)
-- `members` **(obrigatório)**: `array`
-  - _array de_ `object`:
-    - `deviceId` **(obrigatório)**: `string` (uuid)
-    - `portIdxs` **(obrigatório)**: `array`
-      - _array de_ `integer`:
-        - `integer` (int32)
 - `metadata` **(obrigatório)**
   - _variantes por `origin`: `DERIVED`→`Derived entity metadata`, `ORCHESTRATED`→`Orchestrated entity metadata`, `SYSTEM_DEFINED`→`System defined entity metadata`, `USER_DEFINED`→`User defined entity metadata` (ver openapi.json)_
   - `origin` **(obrigatório)**: `string`
@@ -3192,7 +3181,8 @@ Retrieve a paginated list of all Switch Stacks on a site.
 |-|-|-|
 |`id`|`UUID`|`eq` `ne` `in` `notIn`|
 |`name`|`STRING`|`eq` `ne` `in` `notIn` `like`|
-|`members.deviceId`|`SET(UUID)`|`contains` `containsAny` `containsAll` `containsExactly`|
+|`units.id`|`SET(INTEGER)`|`contains` `containsAny` `containsAll` `containsExactly`|
+|`units.macAddress`|`SET(STRING)`|`contains` `containsAny` `containsAll` `containsExactly`|
 |`metadata.origin`|`STRING`|`eq` `ne` `in` `notIn`|
 </details>
 
@@ -3210,6 +3200,7 @@ Retrieve a paginated list of all Switch Stacks on a site.
 - `count` **(obrigatório)**: `integer` (int32) ex: `10`
 - `data` **(obrigatório)**: `array`
   - _array de_ `object`:
+    - `deviceId`: `string` (uuid)
     - `id` **(obrigatório)**: `string` (uuid)
     - `lags` **(obrigatório)**: `array`
       - _array de_ `object`:
@@ -3231,9 +3222,6 @@ Retrieve a paginated list of all Switch Stacks on a site.
           - `origin` **(obrigatório)**: `string`
           - _variantes por `origin`: `DERIVED`→`IntegrationDerivedSiteToSiteTunnelMetadata`, `USER_DEFINED`→`User defined entity metadata` (ver openapi.json)_
           - `origin` **(obrigatório)**: `string`
-    - `members` **(obrigatório)**: `array`
-      - _array de_ `object`:
-        - `deviceId` **(obrigatório)**: `string` (uuid)
     - `metadata` **(obrigatório)**
       - _variantes por `origin`: `DERIVED`→`Derived entity metadata`, `ORCHESTRATED`→`Orchestrated entity metadata`, `SYSTEM_DEFINED`→`System defined entity metadata`, `USER_DEFINED`→`User defined entity metadata` (ver openapi.json)_
       - `origin` **(obrigatório)**: `string`
@@ -3250,6 +3238,12 @@ Retrieve a paginated list of all Switch Stacks on a site.
       - _variantes por `origin`: `DERIVED`→`IntegrationDerivedSiteToSiteTunnelMetadata`, `USER_DEFINED`→`User defined entity metadata` (ver openapi.json)_
       - `origin` **(obrigatório)**: `string`
     - `name` **(obrigatório)**: `string`
+    - `units` **(obrigatório)**: `array`
+      - _array de_ `object`:
+        - `id` **(obrigatório)**: `integer` (int32)
+        - `macAddress` **(obrigatório)**: `string`
+        - `order`: `integer` (int32)
+        - `role`: `string` enum: ACTIVE_CONTROLLER, BACKUP_CONTROLLER, MEMBER
 - `limit` **(obrigatório)**: `integer` (int32) ex: `25`
 - `offset` **(obrigatório)**: `integer` (int64) ex: `0`
 - `totalCount` **(obrigatório)**: `integer` (int64) ex: `1000`
@@ -3284,15 +3278,17 @@ Retrieve Switch Stack details.
 
 **Resposta 200** - OK
 
+- `deviceId`: `string` (uuid)
 - `id` **(obrigatório)**: `string` (uuid)
 - `lags` **(obrigatório)**: `array`
   - _array de_ `object`:
     - `id` **(obrigatório)**: `string` (uuid)
     - `members` **(obrigatório)**: `array`
       - _array de_ `object`:
-        - `deviceId` **(obrigatório)**: `string` (uuid)
         - `portIdxs` **(obrigatório)**: `array`
           - _array de_ `integer`:
+        - `unitId` **(obrigatório)**: `integer` (int32)
+        - `unitMacAddress` **(obrigatório)**: `string`
     - `metadata` **(obrigatório)**
       - _variantes por `origin`: `DERIVED`→`Derived entity metadata`, `ORCHESTRATED`→`Orchestrated entity metadata`, `SYSTEM_DEFINED`→`System defined entity metadata`, `USER_DEFINED`→`User defined entity metadata` (ver openapi.json)_
       - `origin` **(obrigatório)**: `string`
@@ -3308,9 +3304,6 @@ Retrieve Switch Stack details.
       - `origin` **(obrigatório)**: `string`
       - _variantes por `origin`: `DERIVED`→`IntegrationDerivedSiteToSiteTunnelMetadata`, `USER_DEFINED`→`User defined entity metadata` (ver openapi.json)_
       - `origin` **(obrigatório)**: `string`
-- `members` **(obrigatório)**: `array`
-  - _array de_ `object`:
-    - `deviceId` **(obrigatório)**: `string` (uuid)
 - `metadata` **(obrigatório)**
   - _variantes por `origin`: `DERIVED`→`Derived entity metadata`, `ORCHESTRATED`→`Orchestrated entity metadata`, `SYSTEM_DEFINED`→`System defined entity metadata`, `USER_DEFINED`→`User defined entity metadata` (ver openapi.json)_
   - `origin` **(obrigatório)**: `string`
@@ -3327,6 +3320,12 @@ Retrieve Switch Stack details.
   - _variantes por `origin`: `DERIVED`→`IntegrationDerivedSiteToSiteTunnelMetadata`, `USER_DEFINED`→`User defined entity metadata` (ver openapi.json)_
   - `origin` **(obrigatório)**: `string`
 - `name` **(obrigatório)**: `string`
+- `units` **(obrigatório)**: `array`
+  - _array de_ `object`:
+    - `id` **(obrigatório)**: `integer` (int32)
+    - `macAddress` **(obrigatório)**: `string`
+    - `order`: `integer` (int32)
+    - `role`: `string` enum: ACTIVE_CONTROLLER, BACKUP_CONTROLLER, MEMBER
 
 <details><summary>Exemplo cURL</summary>
 
@@ -3354,7 +3353,7 @@ Endpoints for managing DNS Policies within a site.
 
 `GET /v1/sites/{siteId}/dns/policies`  ·  operationId: `getDnsPolicyPage`
 
-$21
+$1f
 
 **Parâmetros**
 
@@ -3994,7 +3993,7 @@ Returns all device tags defined within a site, which can be used for WiFi Broadc
 |---|---|---|---|---|
 | `offset` | query | não | integer (int32) | (default 0) |
 | `limit` | query | não | integer (int32) | (default 25) |
-| `filter` | query | não |  |  |
+| `filter` | query | não | object |  |
 | `siteId` | path | sim | string (uuid) |  |
 
 **Resposta 200** - OK

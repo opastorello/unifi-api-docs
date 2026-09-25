@@ -7,7 +7,7 @@ An **automatic, versioned** mirror of the official UniFi API documentation
 ([developer.ui.com](https://developer.ui.com)), ready for humans and AIs/LLMs (Markdown + OpenAPI).
 
 <!-- badges:start -->
-![files](https://img.shields.io/badge/files-117-blue) ![versions](https://img.shields.io/badge/versions-47_in_6_apps-orange) ![operations](https://img.shields.io/badge/operations-2114-blueviolet) ![updated](https://img.shields.io/badge/updated-2026--09--24-brightgreen)
+![files](https://img.shields.io/badge/files-119-blue) ![versions](https://img.shields.io/badge/versions-48_in_6_apps-orange) ![operations](https://img.shields.io/badge/operations-2188-blueviolet) ![updated](https://img.shields.io/badge/updated-2026--09--24-brightgreen)
 <!-- badges:end -->
 
 > ⚠️ **Unofficial** mirror, kept for reference and automation. The authoritative source is always [developer.ui.com](https://developer.ui.com).
@@ -66,14 +66,14 @@ The path after `/integration` is **identical** in both modes. **Site Manager** i
 | App | Latest | Categories | Operations | Paths | OpenAPI | Reference | Official docs |
 |---|---|---:|---:|---:|---|---|---|
 | **network** | `v10.6.106` | 13 | 73 | 44 | [json](network/v10.6.106/openapi.json) | [md](network/v10.6.106/reference.md) | [docs](https://developer.ui.com/network/v10.6.106) |
-| **protect** | `v7.3.60` | 23 | 74 | 55 | [json](protect/v7.3.60/openapi.json) | [md](protect/v7.3.60/reference.md) | [docs](https://developer.ui.com/protect/v7.3.60) |
+| **protect** | `v7.3.68` | 23 | 74 | 55 | [json](protect/v7.3.68/openapi.json) | [md](protect/v7.3.68/reference.md) | [docs](https://developer.ui.com/protect/v7.3.68) |
 | **site-manager** | `v1.0.0` | 1 | 9 | 9 | [json](site-manager/v1.0.0/openapi.json) | [md](site-manager/v1.0.0/reference.md) | [docs](https://developer.ui.com/site-manager/v1.0.0) |
 | **mobility** | `v1.0.0` | 4 | 8 | 7 | [json](mobility/v1.0.0/openapi.json) | [md](mobility/v1.0.0/reference.md) | [docs](https://developer.ui.com/mobility/v1.0.0) |
 | **carrier-fabric** | `v1.0.0` | 3 | 11 | 8 | [json](carrier-fabric/v1.0.0/openapi.json) | [md](carrier-fabric/v1.0.0/reference.md) | [docs](https://developer.ui.com/carrier-fabric/v1.0.0) |
 | **innerspace** | `v1.3.23` | 1 | 5 | 1 | [json](innerspace/v1.3.23/openapi.json) | [md](innerspace/v1.3.23/reference.md) | [docs](https://developer.ui.com/innerspace/v1.3.23) |
 
 <details>
-<summary><b>📜 Full version history - 47 versions</b></summary>
+<summary><b>📜 Full version history - 48 versions</b></summary>
 
 **network**
 
@@ -99,7 +99,8 @@ The path after `/integration` is **identical** in both modes. **Site Manager** i
 
 | Version | Categories | Operations | Paths | Updated | OpenAPI | Reference | Official docs |
 |---|---:|---:|---:|---|---|---|---|
-| `v7.3.60` ⭐ | 23 | 74 | 55 | 2026-09-24 | [json](protect/v7.3.60/openapi.json) | [md](protect/v7.3.60/reference.md) | [docs](https://developer.ui.com/protect/v7.3.60) |
+| `v7.3.68` ⭐ | 23 | 74 | 55 | 2026-09-24 | [json](protect/v7.3.68/openapi.json) | [md](protect/v7.3.68/reference.md) | [docs](https://developer.ui.com/protect/v7.3.68) |
+| `v7.3.60` | 23 | 74 | 55 | 2026-09-24 | [json](protect/v7.3.60/openapi.json) | [md](protect/v7.3.60/reference.md) | [docs](https://developer.ui.com/protect/v7.3.60) |
 | `v7.3.56` | 23 | 74 | 55 | 2026-09-24 | [json](protect/v7.3.56/openapi.json) | [md](protect/v7.3.56/reference.md) | [docs](https://developer.ui.com/protect/v7.3.56) |
 | `v7.3.53` | 23 | 74 | 55 | 2026-09-24 | [json](protect/v7.3.53/openapi.json) | [md](protect/v7.3.53/reference.md) | [docs](https://developer.ui.com/protect/v7.3.53) |
 | `v7.3.47` | 23 | 74 | 55 | 2026-09-24 | [json](protect/v7.3.47/openapi.json) | [md](protect/v7.3.47/reference.md) | [docs](https://developer.ui.com/protect/v7.3.47) |

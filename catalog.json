@@ -1,6 +1,6 @@
 {
   "source": "https://developer.ui.com",
-  "source_lastmod": "2026-09-24T09:17:02.488Z",
+  "source_lastmod": "2026-09-24T14:04:57.178Z",
   "apps": {
     "carrier-fabric": {
       "latest": "v1.0.0",
@@ -13,7 +13,7 @@
           "paths": 8,
           "categories": 3,
           "spec_version": "1.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         }
       ]
     },
@@ -28,7 +28,7 @@
           "paths": 1,
           "categories": 1,
           "spec_version": "1.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         }
       ]
     },
@@ -43,7 +43,7 @@
           "paths": 7,
           "categories": 4,
           "spec_version": "1.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         }
       ]
     },
@@ -58,7 +58,7 @@
           "paths": 44,
           "categories": 13,
           "spec_version": "10.6.106",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v10.6.102",
@@ -68,7 +68,7 @@
           "paths": 44,
           "categories": 13,
           "spec_version": "10.6.102",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v10.5.67",
@@ -78,7 +78,7 @@
           "paths": 44,
           "categories": 13,
           "spec_version": "10.5.67",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v10.4.57",
@@ -88,7 +88,7 @@
           "paths": 44,
           "categories": 13,
           "spec_version": "10.4.57",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v10.3.58",
@@ -98,7 +98,7 @@
           "paths": 44,
           "categories": 13,
           "spec_version": "10.3.58",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v10.1.84",
@@ -108,7 +108,7 @@
           "paths": 38,
           "categories": 12,
           "spec_version": "10.1.84",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v10.0.162",
@@ -118,7 +118,7 @@
           "paths": 32,
           "categories": 11,
           "spec_version": "10.0.162",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v9.5.21",
@@ -128,7 +128,7 @@
           "paths": 12,
           "categories": 5,
           "spec_version": "9.5.21",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v9.4.19",
@@ -138,7 +138,7 @@
           "paths": 12,
           "categories": 5,
           "spec_version": "9.4.19",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v9.4.17",
@@ -148,7 +148,7 @@
           "paths": 12,
           "categories": 5,
           "spec_version": "9.4.17",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v9.3.45",
@@ -158,7 +158,7 @@
           "paths": 12,
           "categories": 5,
           "spec_version": "9.3.45",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v9.3.43",
@@ -168,7 +168,7 @@
           "paths": 12,
           "categories": 5,
           "spec_version": "9.3.43",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v9.2.87",
@@ -178,7 +178,7 @@
           "paths": 12,
           "categories": 5,
           "spec_version": "9.2.87",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v9.2.86",
@@ -188,7 +188,7 @@
           "paths": 12,
           "categories": 5,
           "spec_version": "9.2.86",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v9.1.120",
@@ -198,13 +198,23 @@
           "paths": 12,
           "categories": 5,
           "spec_version": "9.1.120",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         }
       ]
     },
     "protect": {
-      "latest": "v7.3.60",
+      "latest": "v7.3.68",
       "versions": [
+        {
+          "version": "v7.3.68",
+          "openapi": "protect/v7.3.68/openapi.json",
+          "reference": "protect/v7.3.68/reference.md",
+          "operations": 74,
+          "paths": 55,
+          "categories": 23,
+          "spec_version": "0.0.0",
+          "lastmod": "2026-09-24T14:04:57.178Z"
+        },
         {
           "version": "v7.3.60",
           "openapi": "protect/v7.3.60/openapi.json",
@@ -213,7 +223,7 @@
           "paths": 55,
           "categories": 23,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v7.3.56",
@@ -223,7 +233,7 @@
           "paths": 55,
           "categories": 23,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v7.3.53",
@@ -233,7 +243,7 @@
           "paths": 55,
           "categories": 23,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v7.3.47",
@@ -243,7 +253,7 @@
           "paths": 55,
           "categories": 23,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v7.2.105",
@@ -253,7 +263,7 @@
           "paths": 55,
           "categories": 23,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v7.1.87",
@@ -263,7 +273,7 @@
           "paths": 54,
           "categories": 22,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v7.1.83",
@@ -273,7 +283,7 @@
           "paths": 54,
           "categories": 22,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v7.1.77",
@@ -283,7 +293,7 @@
           "paths": 54,
           "categories": 22,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v7.1.76",
@@ -293,7 +303,7 @@
           "paths": 54,
           "categories": 22,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v7.1.75",
@@ -303,7 +313,7 @@
           "paths": 54,
           "categories": 22,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v7.1.74",
@@ -313,7 +323,7 @@
           "paths": 54,
           "categories": 22,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v7.1.73",
@@ -323,7 +333,7 @@
           "paths": 54,
           "categories": 22,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v7.1.69",
@@ -333,7 +343,7 @@
           "paths": 54,
           "categories": 22,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v7.0.107",
@@ -343,7 +353,7 @@
           "paths": 25,
           "categories": 12,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v7.0.104",
@@ -353,7 +363,7 @@
           "paths": 25,
           "categories": 12,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v7.0.94",
@@ -363,7 +373,7 @@
           "paths": 25,
           "categories": 12,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v6.2.88",
@@ -373,7 +383,7 @@
           "paths": 25,
           "categories": 12,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v6.2.87",
@@ -383,7 +393,7 @@
           "paths": 25,
           "categories": 12,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v6.2.83",
@@ -393,7 +403,7 @@
           "paths": 25,
           "categories": 12,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v6.2.72",
@@ -403,7 +413,7 @@
           "paths": 25,
           "categories": 12,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v6.1.79",
@@ -413,7 +423,7 @@
           "paths": 25,
           "categories": 12,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v6.1.78",
@@ -423,7 +433,7 @@
           "paths": 25,
           "categories": 12,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v6.1.75",
@@ -433,7 +443,7 @@
           "paths": 25,
           "categories": 12,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v6.1.68",
@@ -443,7 +453,7 @@
           "paths": 25,
           "categories": 12,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v6.1.65",
@@ -453,7 +463,7 @@
           "paths": 25,
           "categories": 12,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v6.0.53",
@@ -463,7 +473,7 @@
           "paths": 25,
           "categories": 12,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v6.0.47",
@@ -473,7 +483,7 @@
           "paths": 25,
           "categories": 12,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         },
         {
           "version": "v5.3.48",
@@ -483,7 +493,7 @@
           "paths": 25,
           "categories": 12,
           "spec_version": "0.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         }
       ]
     },
@@ -498,7 +508,7 @@
           "paths": 9,
           "categories": 1,
           "spec_version": "1.0.0",
-          "lastmod": "2026-09-24T09:17:02.488Z"
+          "lastmod": "2026-09-24T14:04:57.178Z"
         }
       ]
     }

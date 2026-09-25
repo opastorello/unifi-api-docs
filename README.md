@@ -7,7 +7,7 @@ Espelho **automático e versionado** da documentação oficial da API UniFi
 ([developer.ui.com](https://developer.ui.com)), pronto para humanos e IAs/LLMs (Markdown + OpenAPI).
 
 <!-- badges:start -->
-![arquivos](https://img.shields.io/badge/arquivos-117-blue) ![versoes](https://img.shields.io/badge/versoes-47_em_6_apps-orange) ![operacoes](https://img.shields.io/badge/operacoes-2114-blueviolet) ![atualizado](https://img.shields.io/badge/atualizado-2026--09--24-brightgreen)
+![arquivos](https://img.shields.io/badge/arquivos-119-blue) ![versoes](https://img.shields.io/badge/versoes-48_em_6_apps-orange) ![operacoes](https://img.shields.io/badge/operacoes-2188-blueviolet) ![atualizado](https://img.shields.io/badge/atualizado-2026--09--24-brightgreen)
 <!-- badges:end -->
 
 > ⚠️ Espelho **não oficial**, mantido para consulta e automação. A fonte autoritativa é sempre [developer.ui.com](https://developer.ui.com).
@@ -68,14 +68,14 @@ O caminho após `/integration` é **idêntico** nos dois modos. O **Site Manager
 | App | Última versão | Categorias | Operações | Paths | OpenAPI | Referência | Doc oficial |
 |---|---|---:|---:|---:|---|---|---|
 | **network** | `v10.6.106` | 13 | 73 | 44 | [json](network/v10.6.106/openapi.json) | [md](network/v10.6.106/reference.md) | [origem](https://developer.ui.com/network/v10.6.106) |
-| **protect** | `v7.3.60` | 23 | 74 | 55 | [json](protect/v7.3.60/openapi.json) | [md](protect/v7.3.60/reference.md) | [origem](https://developer.ui.com/protect/v7.3.60) |
+| **protect** | `v7.3.68` | 23 | 74 | 55 | [json](protect/v7.3.68/openapi.json) | [md](protect/v7.3.68/reference.md) | [origem](https://developer.ui.com/protect/v7.3.68) |
 | **site-manager** | `v1.0.0` | 1 | 9 | 9 | [json](site-manager/v1.0.0/openapi.json) | [md](site-manager/v1.0.0/reference.md) | [origem](https://developer.ui.com/site-manager/v1.0.0) |
 | **mobility** | `v1.0.0` | 4 | 8 | 7 | [json](mobility/v1.0.0/openapi.json) | [md](mobility/v1.0.0/reference.md) | [origem](https://developer.ui.com/mobility/v1.0.0) |
 | **carrier-fabric** | `v1.0.0` | 3 | 11 | 8 | [json](carrier-fabric/v1.0.0/openapi.json) | [md](carrier-fabric/v1.0.0/reference.md) | [origem](https://developer.ui.com/carrier-fabric/v1.0.0) |
 | **innerspace** | `v1.3.23` | 1 | 5 | 1 | [json](innerspace/v1.3.23/openapi.json) | [md](innerspace/v1.3.23/reference.md) | [origem](https://developer.ui.com/innerspace/v1.3.23) |
 
 <details>
-<summary><b>📜 Histórico completo - 47 versões</b></summary>
+<summary><b>📜 Histórico completo - 48 versões</b></summary>
 
 **network**
 
@@ -101,7 +101,8 @@ O caminho após `/integration` é **idêntico** nos dois modos. O **Site Manager
 
 | Versão | Categorias | Operações | Paths | Modificado | OpenAPI | Referência | Doc oficial |
 |---|---:|---:|---:|---|---|---|---|
-| `v7.3.60` ⭐ | 23 | 74 | 55 | 2026-09-24 | [json](protect/v7.3.60/openapi.json) | [md](protect/v7.3.60/reference.md) | [origem](https://developer.ui.com/protect/v7.3.60) |
+| `v7.3.68` ⭐ | 23 | 74 | 55 | 2026-09-24 | [json](protect/v7.3.68/openapi.json) | [md](protect/v7.3.68/reference.md) | [origem](https://developer.ui.com/protect/v7.3.68) |
+| `v7.3.60` | 23 | 74 | 55 | 2026-09-24 | [json](protect/v7.3.60/openapi.json) | [md](protect/v7.3.60/reference.md) | [origem](https://developer.ui.com/protect/v7.3.60) |
 | `v7.3.56` | 23 | 74 | 55 | 2026-09-24 | [json](protect/v7.3.56/openapi.json) | [md](protect/v7.3.56/reference.md) | [origem](https://developer.ui.com/protect/v7.3.56) |
 | `v7.3.53` | 23 | 74 | 55 | 2026-09-24 | [json](protect/v7.3.53/openapi.json) | [md](protect/v7.3.53/reference.md) | [origem](https://developer.ui.com/protect/v7.3.53) |
 | `v7.3.47` | 23 | 74 | 55 | 2026-09-24 | [json](protect/v7.3.47/openapi.json) | [md](protect/v7.3.47/reference.md) | [origem](https://developer.ui.com/protect/v7.3.47) |

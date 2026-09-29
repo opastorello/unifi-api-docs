@@ -29880,7 +29880,7 @@
     },
     "/v1/sites/{siteId}/acl-rules": {
       "get": {
-        "description": "$20",
+        "description": "$1f",
         "operationId": "getAclRulePage",
         "parameters": [
           {
@@ -32759,7 +32759,7 @@
     },
     "/v1/sites/{siteId}/dns/policies": {
       "get": {
-        "description": "$21",
+        "description": "$20",
         "operationId": "getDnsPolicyPage",
         "parameters": [
           {
@@ -40803,7 +40803,7 @@
     },
     "/v1/sites/{siteId}/wifi/broadcasts": {
       "get": {
-        "description": "$22",
+        "description": "$21",
         "operationId": "getWifiBroadcastPage",
         "parameters": [
           {

@@ -1,6 +1,6 @@
-# UniFi Protect API - v7.2.105 - Referência
+# UniFi Protect API - v7.3.70 - Referência
 
-> Espelho automático de [`developer.ui.com/protect/v7.2.105`](https://developer.ui.com/protect/v7.2.105).
+> Espelho automático de [`developer.ui.com/protect/v7.3.70`](https://developer.ui.com/protect/v7.3.70).
 > OpenAPI `3.1.0` · 74 operações em 55 paths · atualizado na origem em `2026-09-29T02:51:57.899Z`.
 
 **OpenAPI completo (fonte da verdade):** [`openapi.json`](./openapi.json)
@@ -816,6 +816,14 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
               - `buttonLabels` **(obrigatório)**: `string` enum: securityActions, positionHint - Label style applied when this fob is rendered in button selection lists.
               - `featureFlags` **(obrigatório)**: `object` - Feature flags for the fob.
                 - `buttons` **(obrigatório)**: `array` - Available button types on the fob.
+                - `hasKeypad` **(obrigatório)**: `boolean` - Whether the device has a PIN keypad.
+              - `armControlSettings` **(obrigatório)**: `object` - Which external arm profiles this fob may arm and disarm, per mode button.
+                - `enabled` **(obrigatório)**: `boolean` - Whether this fob may arm and disarm external arm profiles.
+                - `armProfileId` **(obrigatório)**: `string|null` - External arm profile armed by the Arm button, and disarmed by the Disarm button.
+                - `nightProfileId` **(obrigatório)**: `string|null` - External arm profile armed by the Night button, and disarmed by the Disarm button.
+              - `keypadSettings` **(obrigatório)**: `object` - On-device keypad feedback settings. Only meaningful when featureFlags.hasKeypad.
+                - `beepEnabled` **(obrigatório)**: `boolean` - Whether a keypress beeps.
+                - `beepVolume` **(obrigatório)**: `integer` - Keypress beep volume, 0-100%.
               - `wirelessConnectionState` **(obrigatório)**: `object` - Wireless connection state including signal quality, battery status, and bridge connection.
                 - `signalState` **(obrigatório)**: `object` - Signal state.
                 - `batteryStatus` **(obrigatório)**: `object` - Battery status.
@@ -892,6 +900,7 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                 - `buckboost` **(obrigatório)**: `string` enum: on, off
                 - `connector`: `object`
                 - `cover`: `object`
+                - `deviceTamperStatus`: `string` enum: tampered, restored
                 - `currentMeterChannelStatus` **(obrigatório)**: `object`
                 - `currentMeterStatus` **(obrigatório)**: `object`
                 - `inputPower`: `object`
@@ -903,6 +912,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                 - `outputTerminalStatus`: `object`
                 - `emergencyTerminalStatus`: `object|null`
                 - `auxiliaryPowerTerminalStatus`: `object`
+              - `threadState` **(obrigatório)**: `object` - Thread mesh runtime state. Populated only on Thread-capable gateway SKUs.
+                - `network` **(obrigatório)**
       - **variante**:
         - `type` **(obrigatório)**: `string`
         - `item` **(obrigatório)**
@@ -1205,6 +1216,14 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
               - `buttonLabels`: `string` enum: securityActions, positionHint - Label style applied when this fob is rendered in button selection lists.
               - `featureFlags`: `object` - Feature flags for the fob.
                 - `buttons` **(obrigatório)**: `array` - Available button types on the fob.
+                - `hasKeypad` **(obrigatório)**: `boolean` - Whether the device has a PIN keypad.
+              - `armControlSettings`: `object` - Which external arm profiles this fob may arm and disarm, per mode button.
+                - `enabled` **(obrigatório)**: `boolean` - Whether this fob may arm and disarm external arm profiles.
+                - `armProfileId` **(obrigatório)**: `string|null` - External arm profile armed by the Arm button, and disarmed by the Disarm button.
+                - `nightProfileId` **(obrigatório)**: `string|null` - External arm profile armed by the Night button, and disarmed by the Disarm button.
+              - `keypadSettings`: `object` - On-device keypad feedback settings. Only meaningful when featureFlags.hasKeypad.
+                - `beepEnabled` **(obrigatório)**: `boolean` - Whether a keypress beeps.
+                - `beepVolume` **(obrigatório)**: `integer` - Keypress beep volume, 0-100%.
               - `wirelessConnectionState`: `object` - Wireless connection state including signal quality, battery status, and bridge connection.
                 - `signalState` **(obrigatório)**: `object` - Signal state.
                 - `batteryStatus` **(obrigatório)**: `object` - Battery status.
@@ -1281,6 +1300,7 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                 - `buckboost` **(obrigatório)**: `string` enum: on, off
                 - `connector`: `object`
                 - `cover`: `object`
+                - `deviceTamperStatus`: `string` enum: tampered, restored
                 - `currentMeterChannelStatus` **(obrigatório)**: `object`
                 - `currentMeterStatus` **(obrigatório)**: `object`
                 - `inputPower`: `object`
@@ -1292,6 +1312,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                 - `outputTerminalStatus`: `object`
                 - `emergencyTerminalStatus`: `object|null`
                 - `auxiliaryPowerTerminalStatus`: `object`
+              - `threadState`: `object` - Thread mesh runtime state. Populated only on Thread-capable gateway SKUs.
+                - `network` **(obrigatório)**
       - **variante**:
         - `type` **(obrigatório)**: `string`
         - `item` **(obrigatório)**
@@ -1692,6 +1714,14 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
               - `buttonLabels` **(obrigatório)**: `string` enum: securityActions, positionHint - Label style applied when this fob is rendered in button selection lists.
               - `featureFlags` **(obrigatório)**: `object` - Feature flags for the fob.
                 - `buttons` **(obrigatório)**: `array` - Available button types on the fob.
+                - `hasKeypad` **(obrigatório)**: `boolean` - Whether the device has a PIN keypad.
+              - `armControlSettings` **(obrigatório)**: `object` - Which external arm profiles this fob may arm and disarm, per mode button.
+                - `enabled` **(obrigatório)**: `boolean` - Whether this fob may arm and disarm external arm profiles.
+                - `armProfileId` **(obrigatório)**: `string|null` - External arm profile armed by the Arm button, and disarmed by the Disarm button.
+                - `nightProfileId` **(obrigatório)**: `string|null` - External arm profile armed by the Night button, and disarmed by the Disarm button.
+              - `keypadSettings` **(obrigatório)**: `object` - On-device keypad feedback settings. Only meaningful when featureFlags.hasKeypad.
+                - `beepEnabled` **(obrigatório)**: `boolean` - Whether a keypress beeps.
+                - `beepVolume` **(obrigatório)**: `integer` - Keypress beep volume, 0-100%.
               - `wirelessConnectionState` **(obrigatório)**: `object` - Wireless connection state including signal quality, battery status, and bridge connection.
                 - `signalState` **(obrigatório)**: `object` - Signal state.
                 - `batteryStatus` **(obrigatório)**: `object` - Battery status.
@@ -1788,6 +1818,7 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                 - `buckboost` **(obrigatório)**: `string` enum: on, off
                 - `connector`: `object`
                 - `cover`: `object`
+                - `deviceTamperStatus`: `string` enum: tampered, restored
                 - `currentMeterChannelStatus` **(obrigatório)**: `object`
                 - `currentMeterStatus` **(obrigatório)**: `object`
                 - `inputPower`: `object`
@@ -1799,6 +1830,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                 - `outputTerminalStatus`: `object`
                 - `emergencyTerminalStatus`: `object|null`
                 - `auxiliaryPowerTerminalStatus`: `object`
+              - `threadState` **(obrigatório)**: `object` - Thread mesh runtime state. Populated only on Thread-capable gateway SKUs.
+                - `network` **(obrigatório)**
       - **variante**:
         - `type` **(obrigatório)**: `string`
         - `item` **(obrigatório)**
@@ -2151,6 +2184,14 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
               - `buttonLabels`: `string` enum: securityActions, positionHint - Label style applied when this fob is rendered in button selection lists.
               - `featureFlags`: `object` - Feature flags for the fob.
                 - `buttons` **(obrigatório)**: `array` - Available button types on the fob.
+                - `hasKeypad` **(obrigatório)**: `boolean` - Whether the device has a PIN keypad.
+              - `armControlSettings`: `object` - Which external arm profiles this fob may arm and disarm, per mode button.
+                - `enabled` **(obrigatório)**: `boolean` - Whether this fob may arm and disarm external arm profiles.
+                - `armProfileId` **(obrigatório)**: `string|null` - External arm profile armed by the Arm button, and disarmed by the Disarm button.
+                - `nightProfileId` **(obrigatório)**: `string|null` - External arm profile armed by the Night button, and disarmed by the Disarm button.
+              - `keypadSettings`: `object` - On-device keypad feedback settings. Only meaningful when featureFlags.hasKeypad.
+                - `beepEnabled` **(obrigatório)**: `boolean` - Whether a keypress beeps.
+                - `beepVolume` **(obrigatório)**: `integer` - Keypress beep volume, 0-100%.
               - `wirelessConnectionState`: `object` - Wireless connection state including signal quality, battery status, and bridge connection.
                 - `signalState` **(obrigatório)**: `object` - Signal state.
                 - `batteryStatus` **(obrigatório)**: `object` - Battery status.
@@ -2247,6 +2288,7 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                 - `buckboost` **(obrigatório)**: `string` enum: on, off
                 - `connector`: `object`
                 - `cover`: `object`
+                - `deviceTamperStatus`: `string` enum: tampered, restored
                 - `currentMeterChannelStatus` **(obrigatório)**: `object`
                 - `currentMeterStatus` **(obrigatório)**: `object`
                 - `inputPower`: `object`
@@ -2258,6 +2300,8 @@ A WebSocket subscription which broadcasts all changes happening to Protect-manag
                 - `outputTerminalStatus`: `object`
                 - `emergencyTerminalStatus`: `object|null`
                 - `auxiliaryPowerTerminalStatus`: `object`
+              - `threadState`: `object` - Thread mesh runtime state. Populated only on Thread-capable gateway SKUs.
+                - `network` **(obrigatório)**
       - **variante**:
         - `type` **(obrigatório)**: `string`
         - `item` **(obrigatório)**
@@ -2758,6 +2802,7 @@ A WebSocket subscription that broadcasts Protect events
               - `text` **(obrigatório)**: `string`
             - `deviceName`: `object` - The configured name of the alarm hub
               - `text` **(obrigatório)**: `string`
+            - `userName`: `string`
         - **variante**:
           - `id` **(obrigatório)**: `string` - The primary key of event
           - `modelKey` **(obrigatório)**: `string` - The model key of the event
@@ -3156,6 +3201,7 @@ A WebSocket subscription that broadcasts Protect events
               - `text` **(obrigatório)**: `string`
             - `deviceName`: `object` - The configured name of the alarm hub
               - `text` **(obrigatório)**: `string`
+            - `userName`: `string`
         - **variante**:
           - `id` **(obrigatório)**: `string` - The primary key of event
           - `modelKey` **(obrigatório)**: `string` - The model key of the event
@@ -5381,6 +5427,14 @@ Get detailed information about a specific fob
   - `buttons` **(obrigatório)**: `array` - Available button types on the fob.
     - _array de_ `string`:
       - `string` enum: function, alarmHubButton, arm, disarm, night, panic, left, right, input1, input2, main
+  - `hasKeypad` **(obrigatório)**: `boolean` - Whether the device has a PIN keypad.
+- `armControlSettings` **(obrigatório)**: `object` - Which external arm profiles this fob may arm and disarm, per mode button.
+  - `enabled` **(obrigatório)**: `boolean` - Whether this fob may arm and disarm external arm profiles.
+  - `armProfileId` **(obrigatório)**: `string|null` - External arm profile armed by the Arm button, and disarmed by the Disarm button.
+  - `nightProfileId` **(obrigatório)**: `string|null` - External arm profile armed by the Night button, and disarmed by the Disarm button.
+- `keypadSettings` **(obrigatório)**: `object` - On-device keypad feedback settings. Only meaningful when featureFlags.hasKeypad.
+  - `beepEnabled` **(obrigatório)**: `boolean` - Whether a keypress beeps.
+  - `beepVolume` **(obrigatório)**: `integer` - Keypress beep volume, 0-100%.
 - `wirelessConnectionState` **(obrigatório)**: `object` - Wireless connection state including signal quality, battery status, and bridge connection.
   - `signalState` **(obrigatório)**: `object` - Signal state.
     - `signalQuality` **(obrigatório)**: `number|null` - Percent representation of Bluetooth signal strength.
@@ -5448,6 +5502,14 @@ Patch the settings for a specific fob
   - `buttons` **(obrigatório)**: `array` - Available button types on the fob.
     - _array de_ `string`:
       - `string` enum: function, alarmHubButton, arm, disarm, night, panic, left, right, input1, input2, main
+  - `hasKeypad` **(obrigatório)**: `boolean` - Whether the device has a PIN keypad.
+- `armControlSettings` **(obrigatório)**: `object` - Which external arm profiles this fob may arm and disarm, per mode button.
+  - `enabled` **(obrigatório)**: `boolean` - Whether this fob may arm and disarm external arm profiles.
+  - `armProfileId` **(obrigatório)**: `string|null` - External arm profile armed by the Arm button, and disarmed by the Disarm button.
+  - `nightProfileId` **(obrigatório)**: `string|null` - External arm profile armed by the Night button, and disarmed by the Disarm button.
+- `keypadSettings` **(obrigatório)**: `object` - On-device keypad feedback settings. Only meaningful when featureFlags.hasKeypad.
+  - `beepEnabled` **(obrigatório)**: `boolean` - Whether a keypress beeps.
+  - `beepVolume` **(obrigatório)**: `integer` - Keypress beep volume, 0-100%.
 - `wirelessConnectionState` **(obrigatório)**: `object` - Wireless connection state including signal quality, battery status, and bridge connection.
   - `signalState` **(obrigatório)**: `object` - Signal state.
     - `signalQuality` **(obrigatório)**: `number|null` - Percent representation of Bluetooth signal strength.
@@ -5508,6 +5570,14 @@ Get detailed information about all fobs
     - `buttons` **(obrigatório)**: `array` - Available button types on the fob.
       - _array de_ `string`:
         - `string` enum: function, alarmHubButton, arm, disarm, night, panic, left, right, input1, input2, main
+    - `hasKeypad` **(obrigatório)**: `boolean` - Whether the device has a PIN keypad.
+  - `armControlSettings` **(obrigatório)**: `object` - Which external arm profiles this fob may arm and disarm, per mode button.
+    - `enabled` **(obrigatório)**: `boolean` - Whether this fob may arm and disarm external arm profiles.
+    - `armProfileId` **(obrigatório)**: `string|null` - External arm profile armed by the Arm button, and disarmed by the Disarm button.
+    - `nightProfileId` **(obrigatório)**: `string|null` - External arm profile armed by the Night button, and disarmed by the Disarm button.
+  - `keypadSettings` **(obrigatório)**: `object` - On-device keypad feedback settings. Only meaningful when featureFlags.hasKeypad.
+    - `beepEnabled` **(obrigatório)**: `boolean` - Whether a keypress beeps.
+    - `beepVolume` **(obrigatório)**: `integer` - Keypress beep volume, 0-100%.
   - `wirelessConnectionState` **(obrigatório)**: `object` - Wireless connection state including signal quality, battery status, and bridge connection.
     - `signalState` **(obrigatório)**: `object` - Signal state.
       - `signalQuality` **(obrigatório)**: `number|null` - Percent representation of Bluetooth signal strength.
@@ -6224,6 +6294,7 @@ Get detailed information about a specific link station (non-alarm hub gateways)
   - `cover`: `object`
     - `distance`: `integer`
     - `status`: `string` enum: open, close
+  - `deviceTamperStatus`: `string` enum: tampered, restored
   - `currentMeterChannelStatus` **(obrigatório)**: `object`
   - `currentMeterStatus` **(obrigatório)**: `object`
   - `inputPower`: `object`
@@ -6244,6 +6315,21 @@ Get detailed information about a specific link station (non-alarm hub gateways)
     - `terminalStatus` **(obrigatório)**: `string` enum: disabled, idle, not-connected, tamper, triggered, cut, short, partially-connected
     - `idleSubState`: `string` enum: open, closed
   - `auxiliaryPowerTerminalStatus`: `object`
+- `threadState` **(obrigatório)**: `object` - Thread mesh runtime state. Populated only on Thread-capable gateway SKUs.
+  - `network` **(obrigatório)**
+    - _um de (variantes):_
+      - **variante**:
+        - `status` **(obrigatório)**: `string` enum: ready, error
+        - `role` **(obrigatório)**: `string|null` enum: disabled, detached, child, router, leader
+        - `networkName` **(obrigatório)**: `string|null`
+        - `channel` **(obrigatório)**: `integer|null`
+        - `panId` **(obrigatório)**: `string|null`
+        - `extendedPanId` **(obrigatório)**: `string|null`
+        - `joinedDeviceCount` **(obrigatório)**: `integer`
+        - `errorReason` **(obrigatório)**: `string|null`
+        - `lastUpdatedAt` **(obrigatório)**: `number` - Wall-clock unix-epoch milliseconds when the gateway last refreshed this status.
+      - **variante**:
+        - `null`
 
 **Erros possíveis:** `default`
 
@@ -6316,6 +6402,7 @@ Patch the settings for a specific link station
   - `cover`: `object`
     - `distance`: `integer`
     - `status`: `string` enum: open, close
+  - `deviceTamperStatus`: `string` enum: tampered, restored
   - `currentMeterChannelStatus` **(obrigatório)**: `object`
   - `currentMeterStatus` **(obrigatório)**: `object`
   - `inputPower`: `object`
@@ -6336,6 +6423,21 @@ Patch the settings for a specific link station
     - `terminalStatus` **(obrigatório)**: `string` enum: disabled, idle, not-connected, tamper, triggered, cut, short, partially-connected
     - `idleSubState`: `string` enum: open, closed
   - `auxiliaryPowerTerminalStatus`: `object`
+- `threadState` **(obrigatório)**: `object` - Thread mesh runtime state. Populated only on Thread-capable gateway SKUs.
+  - `network` **(obrigatório)**
+    - _um de (variantes):_
+      - **variante**:
+        - `status` **(obrigatório)**: `string` enum: ready, error
+        - `role` **(obrigatório)**: `string|null` enum: disabled, detached, child, router, leader
+        - `networkName` **(obrigatório)**: `string|null`
+        - `channel` **(obrigatório)**: `integer|null`
+        - `panId` **(obrigatório)**: `string|null`
+        - `extendedPanId` **(obrigatório)**: `string|null`
+        - `joinedDeviceCount` **(obrigatório)**: `integer`
+        - `errorReason` **(obrigatório)**: `string|null`
+        - `lastUpdatedAt` **(obrigatório)**: `number` - Wall-clock unix-epoch milliseconds when the gateway last refreshed this status.
+      - **variante**:
+        - `null`
 
 **Erros possíveis:** `default`
 
@@ -6401,6 +6503,7 @@ Get detailed information about all link stations (non-alarm hub gateways)
     - `cover`: `object`
       - `distance`: `integer`
       - `status`: `string` enum: open, close
+    - `deviceTamperStatus`: `string` enum: tampered, restored
     - `currentMeterChannelStatus` **(obrigatório)**: `object`
     - `currentMeterStatus` **(obrigatório)**: `object`
     - `inputPower`: `object`
@@ -6421,6 +6524,21 @@ Get detailed information about all link stations (non-alarm hub gateways)
       - `terminalStatus` **(obrigatório)**: `string` enum: disabled, idle, not-connected, tamper, triggered, cut, short, partially-connected
       - `idleSubState`: `string` enum: open, closed
     - `auxiliaryPowerTerminalStatus`: `object`
+  - `threadState` **(obrigatório)**: `object` - Thread mesh runtime state. Populated only on Thread-capable gateway SKUs.
+    - `network` **(obrigatório)**
+      - _um de (variantes):_
+        - **variante**:
+          - `status` **(obrigatório)**: `string` enum: ready, error
+          - `role` **(obrigatório)**: `string|null` enum: disabled, detached, child, router, leader
+          - `networkName` **(obrigatório)**: `string|null`
+          - `channel` **(obrigatório)**: `integer|null`
+          - `panId` **(obrigatório)**: `string|null`
+          - `extendedPanId` **(obrigatório)**: `string|null`
+          - `joinedDeviceCount` **(obrigatório)**: `integer`
+          - `errorReason` **(obrigatório)**: `string|null`
+          - `lastUpdatedAt` **(obrigatório)**: `number` - Wall-clock unix-epoch milliseconds when the gateway last refreshed this status.
+        - **variante**:
+          - `null`
 
 **Erros possíveis:** `default`
 
@@ -6494,6 +6612,7 @@ Get detailed information about a specific alarm hub
   - `cover`: `object`
     - `distance`: `integer`
     - `status`: `string` enum: open, close
+  - `deviceTamperStatus`: `string` enum: tampered, restored
   - `currentMeterChannelStatus` **(obrigatório)**: `object`
   - `currentMeterStatus` **(obrigatório)**: `object`
   - `inputPower`: `object`
@@ -6514,6 +6633,21 @@ Get detailed information about a specific alarm hub
     - `terminalStatus` **(obrigatório)**: `string` enum: disabled, idle, not-connected, tamper, triggered, cut, short, partially-connected
     - `idleSubState`: `string` enum: open, closed
   - `auxiliaryPowerTerminalStatus`: `object`
+- `threadState` **(obrigatório)**: `object` - Thread mesh runtime state. Populated only on Thread-capable gateway SKUs.
+  - `network` **(obrigatório)**
+    - _um de (variantes):_
+      - **variante**:
+        - `status` **(obrigatório)**: `string` enum: ready, error
+        - `role` **(obrigatório)**: `string|null` enum: disabled, detached, child, router, leader
+        - `networkName` **(obrigatório)**: `string|null`
+        - `channel` **(obrigatório)**: `integer|null`
+        - `panId` **(obrigatório)**: `string|null`
+        - `extendedPanId` **(obrigatório)**: `string|null`
+        - `joinedDeviceCount` **(obrigatório)**: `integer`
+        - `errorReason` **(obrigatório)**: `string|null`
+        - `lastUpdatedAt` **(obrigatório)**: `number` - Wall-clock unix-epoch milliseconds when the gateway last refreshed this status.
+      - **variante**:
+        - `null`
 
 **Erros possíveis:** `default`
 
@@ -6586,6 +6720,7 @@ Patch the settings for a specific alarm hub
   - `cover`: `object`
     - `distance`: `integer`
     - `status`: `string` enum: open, close
+  - `deviceTamperStatus`: `string` enum: tampered, restored
   - `currentMeterChannelStatus` **(obrigatório)**: `object`
   - `currentMeterStatus` **(obrigatório)**: `object`
   - `inputPower`: `object`
@@ -6606,6 +6741,21 @@ Patch the settings for a specific alarm hub
     - `terminalStatus` **(obrigatório)**: `string` enum: disabled, idle, not-connected, tamper, triggered, cut, short, partially-connected
     - `idleSubState`: `string` enum: open, closed
   - `auxiliaryPowerTerminalStatus`: `object`
+- `threadState` **(obrigatório)**: `object` - Thread mesh runtime state. Populated only on Thread-capable gateway SKUs.
+  - `network` **(obrigatório)**
+    - _um de (variantes):_
+      - **variante**:
+        - `status` **(obrigatório)**: `string` enum: ready, error
+        - `role` **(obrigatório)**: `string|null` enum: disabled, detached, child, router, leader
+        - `networkName` **(obrigatório)**: `string|null`
+        - `channel` **(obrigatório)**: `integer|null`
+        - `panId` **(obrigatório)**: `string|null`
+        - `extendedPanId` **(obrigatório)**: `string|null`
+        - `joinedDeviceCount` **(obrigatório)**: `integer`
+        - `errorReason` **(obrigatório)**: `string|null`
+        - `lastUpdatedAt` **(obrigatório)**: `number` - Wall-clock unix-epoch milliseconds when the gateway last refreshed this status.
+      - **variante**:
+        - `null`
 
 **Erros possíveis:** `default`
 
@@ -6671,6 +6821,7 @@ Get detailed information about all alarm hubs
     - `cover`: `object`
       - `distance`: `integer`
       - `status`: `string` enum: open, close
+    - `deviceTamperStatus`: `string` enum: tampered, restored
     - `currentMeterChannelStatus` **(obrigatório)**: `object`
     - `currentMeterStatus` **(obrigatório)**: `object`
     - `inputPower`: `object`
@@ -6691,6 +6842,21 @@ Get detailed information about all alarm hubs
       - `terminalStatus` **(obrigatório)**: `string` enum: disabled, idle, not-connected, tamper, triggered, cut, short, partially-connected
       - `idleSubState`: `string` enum: open, closed
     - `auxiliaryPowerTerminalStatus`: `object`
+  - `threadState` **(obrigatório)**: `object` - Thread mesh runtime state. Populated only on Thread-capable gateway SKUs.
+    - `network` **(obrigatório)**
+      - _um de (variantes):_
+        - **variante**:
+          - `status` **(obrigatório)**: `string` enum: ready, error
+          - `role` **(obrigatório)**: `string|null` enum: disabled, detached, child, router, leader
+          - `networkName` **(obrigatório)**: `string|null`
+          - `channel` **(obrigatório)**: `integer|null`
+          - `panId` **(obrigatório)**: `string|null`
+          - `extendedPanId` **(obrigatório)**: `string|null`
+          - `joinedDeviceCount` **(obrigatório)**: `integer`
+          - `errorReason` **(obrigatório)**: `string|null`
+          - `lastUpdatedAt` **(obrigatório)**: `number` - Wall-clock unix-epoch milliseconds when the gateway last refreshed this status.
+        - **variante**:
+          - `null`
 
 **Erros possíveis:** `default`
 

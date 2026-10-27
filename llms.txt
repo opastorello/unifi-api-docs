@@ -14,8 +14,10 @@ Modos de acesso: **Local** (`https://<console>/proxy/<app>/integration/...`, hea
 ## mobility (mais recente: v1.0.0)
 - [mobility v1.0.0 (latest)](https://developer.ui.com/mobility/v1.0.0): 8 operações - OpenAPI `mobility/v1.0.0/openapi.json` · referência `mobility/v1.0.0/reference.md`
 
-## network (mais recente: v10.6.106)
-- [network v10.6.106 (latest)](https://developer.ui.com/network/v10.6.106): 73 operações - OpenAPI `network/v10.6.106/openapi.json` · referência `network/v10.6.106/reference.md`
+## network (mais recente: v11.0.97)
+- [network v11.0.97 (latest)](https://developer.ui.com/network/v11.0.97): 73 operações - OpenAPI `network/v11.0.97/openapi.json` · referência `network/v11.0.97/reference.md`
+- [network v10.6.109](https://developer.ui.com/network/v10.6.109): 73 operações - OpenAPI `network/v10.6.109/openapi.json` · referência `network/v10.6.109/reference.md`
+- [network v10.6.106](https://developer.ui.com/network/v10.6.106): 73 operações - OpenAPI `network/v10.6.106/openapi.json` · referência `network/v10.6.106/reference.md`
 - [network v10.6.102](https://developer.ui.com/network/v10.6.102): 73 operações - OpenAPI `network/v10.6.102/openapi.json` · referência `network/v10.6.102/reference.md`
 - [network v10.5.67](https://developer.ui.com/network/v10.5.67): 73 operações - OpenAPI `network/v10.5.67/openapi.json` · referência `network/v10.5.67/reference.md`
 - [network v10.4.57](https://developer.ui.com/network/v10.4.57): 73 operações - OpenAPI `network/v10.4.57/openapi.json` · referência `network/v10.4.57/reference.md`

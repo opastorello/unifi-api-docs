@@ -18,7 +18,7 @@
     },
     {
       "name": "Filtering",
-      "description": "$1d"
+      "description": "$3a"
     },
     {
       "name": "Error Handling",
@@ -2148,7 +2148,7 @@
           "WiFi Broadcasts"
         ],
         "summary": "List Wifi Broadcasts",
-        "description": "$1e",
+        "description": "$3b",
         "operationId": "getWifiBroadcastPage",
         "parameters": [
           {
@@ -4293,7 +4293,7 @@
           "Access Control (ACL Rules)"
         ],
         "summary": "List ACL Rules",
-        "description": "$1f",
+        "description": "$3c",
         "operationId": "getAclRulePage",
         "parameters": [
           {

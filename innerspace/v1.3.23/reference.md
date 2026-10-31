@@ -1,7 +1,7 @@
 # UniFi Site Manager API - v1.3.23 - Referência
 
 > Espelho automático de [`developer.ui.com/innerspace/v1.3.23`](https://developer.ui.com/innerspace/v1.3.23).
-> OpenAPI `3.0.3` · 5 operações em 1 paths · atualizado na origem em `2026-10-30T06:12:52.364Z`.
+> OpenAPI `3.0.3` · 5 operações em 1 paths · atualizado na origem em `2026-10-30T06:12:19.274Z`.
 > Autenticação: header `X-API-Key`.
 
 **OpenAPI completo (fonte da verdade):** [`openapi.json`](./openapi.json)
@@ -26,7 +26,7 @@
 
 `GET https://api.ui.com/v1/connector/consoles/{id}/*path`  ·  operationId: `ConnectorGet`
 
-$1f
+$3d
 
 **Parâmetros**
 
@@ -55,7 +55,7 @@ curl -X GET "https://api.ui.com/v1/connector/consoles/{id}/*path" \
 
 `POST https://api.ui.com/v1/connector/consoles/{id}/*path`  ·  operationId: `ConnectorPost`
 
-$21
+$3f
 
 **Parâmetros**
 
@@ -89,7 +89,7 @@ curl -X POST "https://api.ui.com/v1/connector/consoles/{id}/*path" \
 
 `PUT https://api.ui.com/v1/connector/consoles/{id}/*path`  ·  operationId: `ConnectorPut`
 
-$22
+$40
 
 **Parâmetros**
 
@@ -123,7 +123,7 @@ curl -X PUT "https://api.ui.com/v1/connector/consoles/{id}/*path" \
 
 `DELETE https://api.ui.com/v1/connector/consoles/{id}/*path`  ·  operationId: `ConnectorDelete`
 
-$1e
+$3c
 
 **Parâmetros**
 
@@ -152,7 +152,7 @@ curl -X DELETE "https://api.ui.com/v1/connector/consoles/{id}/*path" \
 
 `PATCH https://api.ui.com/v1/connector/consoles/{id}/*path`  ·  operationId: `ConnectorPatch`
 
-$20
+$3e
 
 **Parâmetros**
 

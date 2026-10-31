@@ -16,7 +16,7 @@
   "paths": {
     "/v1/connector/consoles/{id}/*path": {
       "delete": {
-        "description": "$1e",
+        "description": "$3c",
         "operationId": "ConnectorDelete",
         "parameters": [
           {
@@ -376,7 +376,7 @@
         "x-position": 13
       },
       "get": {
-        "description": "$1f",
+        "description": "$3d",
         "operationId": "ConnectorGet",
         "parameters": [
           {
@@ -751,7 +751,7 @@
         "x-position": 11
       },
       "patch": {
-        "description": "$20",
+        "description": "$3e",
         "operationId": "ConnectorPatch",
         "parameters": [
           {
@@ -1129,7 +1129,7 @@
         "x-position": 14
       },
       "post": {
-        "description": "$21",
+        "description": "$3f",
         "operationId": "ConnectorPost",
         "parameters": [
           {
@@ -1502,7 +1502,7 @@
         "x-position": 10
       },
       "put": {
-        "description": "$22",
+        "description": "$40",
         "operationId": "ConnectorPut",
         "parameters": [
           {

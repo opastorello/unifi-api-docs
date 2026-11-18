@@ -1,7 +1,7 @@
 # UniFi Network API - v10.4.57 - Referência
 
 > Espelho automático de [`developer.ui.com/network/v10.4.57`](https://developer.ui.com/network/v10.4.57).
-> OpenAPI `3.1.0` · 73 operações em 44 paths · atualizado na origem em `2026-11-12T19:41:22.411Z`.
+> OpenAPI `3.1.0` · 73 operações em 44 paths · atualizado na origem em `2026-11-17T18:51:35.212Z`.
 
 **OpenAPI completo (fonte da verdade):** [`openapi.json`](./openapi.json)
 
@@ -1115,7 +1115,7 @@ Supports configuration of security, band steering, multicast filtering, and capt
 
 `GET /v1/sites/{siteId}/wifi/broadcasts`  ·  operationId: `getWifiBroadcastPage`
 
-$3e
+$3c
 
 **Parâmetros**
 
@@ -2543,7 +2543,7 @@ that enforce traffic filtering across devices and networks.
 
 `GET /v1/sites/{siteId}/acl-rules`  ·  operationId: `getAclRulePage`
 
-$3c
+$3a
 
 **Parâmetros**
 
@@ -3354,7 +3354,7 @@ Endpoints for managing DNS Policies within a site.
 
 `GET /v1/sites/{siteId}/dns/policies`  ·  operationId: `getDnsPolicyPage`
 
-$3d
+$3b
 
 **Parâmetros**
 

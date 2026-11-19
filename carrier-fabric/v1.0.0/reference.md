@@ -1,7 +1,7 @@
 # UniFi Carrier / ISP Fabric - Subscriber API - v1.0.0 - Referência
 
 > Espelho automático de [`developer.ui.com/carrier-fabric/v1.0.0`](https://developer.ui.com/carrier-fabric/v1.0.0).
-> OpenAPI `3.0.3` · 11 operações em 8 paths · atualizado na origem em `2026-11-17T18:51:35.212Z`.
+> OpenAPI `3.0.3` · 11 operações em 8 paths · atualizado na origem em `2026-11-17T19:07:19.567Z`.
 > Autenticação: header `X-API-Key`.
 
 **OpenAPI completo (fonte da verdade):** [`openapi.json`](./openapi.json)

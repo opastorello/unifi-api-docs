@@ -17,12 +17,14 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(BASE, "_site")
 ORIGIN = "https://developer.ui.com"
 SITE_URL = "https://opastorello.github.io/unifi-api-docs/"
-APP_ORDER = ["network", "protect", "site-manager", "mobility"]
+APP_ORDER = ["network", "protect", "site-manager", "mobility", "innerspace", "carrier-fabric"]
 APP_LABEL = {"network": "Network", "protect": "Protect",
-             "site-manager": "Site Manager", "mobility": "Mobility"}
-APP_ICON = {"network": "🌐", "protect": "🎥", "site-manager": "☁️", "mobility": "📱"}
+             "site-manager": "Site Manager", "mobility": "Mobility",
+             "innerspace": "InnerSpace", "carrier-fabric": "Carrier Fabric"}
+APP_ICON = {"network": "🌐", "protect": "🎥", "site-manager": "☁️", "mobility": "📱", "innerspace": "📍", "carrier-fabric": "🏢"}
 APP_ACCENT = {"network": "214,100%,60%", "protect": "270,70%,62%",
-              "site-manager": "190,85%,46%", "mobility": "150,55%,45%"}
+              "site-manager": "190,85%,46%", "mobility": "150,55%,45%",
+              "innerspace": "265,60%,62%", "carrier-fabric": "30,85%,55%"}
 FONT = '<link rel="stylesheet" href="https://fonts.svc.ui.com/ui-sans-all.css">'
 THEME_KEY, LANG_KEY = "uad-theme", "uad-lang"
 
@@ -37,7 +39,7 @@ THEME_INIT = f"""<script>
 # dicionario de traducoes (consumido por JS no client)
 I18N = {
   "pt": {
-    "sub": "Referência interativa e versionada — Network · Protect · Site Manager · Mobility",
+    "sub": "Referência interativa e versionada — Network · Protect · Site Manager · Mobility · InnerSpace · Carrier Fabric",
     "apps": "apps", "versions": "versões", "operations": "operações", "source": "origem",
     "warnPre": "Espelho não oficial — fonte autoritativa:",
     "connTitle": "🔌 Dois modos de acesso (o diferencial)",
@@ -59,10 +61,12 @@ I18N = {
       "protect": "Cameras, viewers, live views, PTZ, lights, arm-profiles e eventos (WebSocket).",
       "site-manager": "Nuvem multi-site: hosts, sites, devices, ISP metrics, SD-WAN e Cloud Connector.",
       "mobility": "UniFi Connect / Mobility: workspaces, devices e clientes.",
+      "innerspace": "InnerSpace: acesso via Cloud Connector do Site Manager (cloud, X-API-Key).",
+      "carrier-fabric": "Carrier / ISP Fabric: API de assinantes (chave tipo ISP, cloud, X-API-Key).",
     },
   },
   "en": {
-    "sub": "Interactive, versioned reference — Network · Protect · Site Manager · Mobility",
+    "sub": "Interactive, versioned reference — Network · Protect · Site Manager · Mobility · InnerSpace · Carrier Fabric",
     "apps": "apps", "versions": "versions", "operations": "operations", "source": "source",
     "warnPre": "Unofficial mirror — authoritative source:",
     "connTitle": "🔌 Two access modes (the differentiator)",
@@ -84,6 +88,8 @@ I18N = {
       "protect": "Cameras, viewers, live views, PTZ, lights, arm-profiles and events (WebSocket).",
       "site-manager": "Multi-site cloud: hosts, sites, devices, ISP metrics, SD-WAN and Cloud Connector.",
       "mobility": "UniFi Connect / Mobility: workspaces, devices and clients.",
+      "innerspace": "InnerSpace: access through the Site Manager Cloud Connector (cloud, X-API-Key).",
+      "carrier-fabric": "Carrier / ISP Fabric: subscriber API (ISP-type key, cloud, X-API-Key).",
     },
   },
 }
@@ -259,7 +265,7 @@ PAGE = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>UniFi API Docs — interactive reference (all versions)</title>
-<meta name="description" content="Interactive, versioned reference for the UniFi APIs: Network, Protect, Site Manager and Mobility. Local and Remote (Cloud Connector). OpenAPI + Scalar.">
+<meta name="description" content="Interactive, versioned reference for the UniFi APIs: Network, Protect, Site Manager, Mobility, InnerSpace and Carrier Fabric. Local and Remote (Cloud Connector). OpenAPI + Scalar.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>📡</text></svg>">
 {font}
 {theme_init}

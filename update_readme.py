@@ -8,7 +8,7 @@ import re
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ORIGIN = "https://developer.ui.com"
 SKIP_DIRS = {".git", "__pycache__", ".github", "_site"}
-APP_ORDER = ["network", "protect", "site-manager", "mobility"]
+APP_ORDER = ["network", "protect", "site-manager", "mobility", "innerspace", "carrier-fabric"]
 
 L = {
     "pt": {

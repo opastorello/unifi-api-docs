@@ -1,7 +1,7 @@
 ---
 name: unifi-api
 description: >
-  Consultar a API oficial da UniFi (Site Manager, Network, Protect, Mobility) -
+  Consultar a API oficial da UniFi (Site Manager, Network, Protect, Mobility, InnerSpace, Carrier Fabric) -
   endpoints, parâmetros, schemas, autenticação e acesso local vs remoto (Cloud Connector).
   Use ao integrar com consoles UniFi, gerar chamadas HTTP, ou tirar dúvidas sobre versões da API.
 ---
@@ -10,7 +10,7 @@ description: >
 
 ## Visão geral
 
-A Ubiquiti expõe uma API REST oficial dividida em **4 aplicações**, cada uma versionada:
+A Ubiquiti expõe uma API REST oficial dividida em **6 aplicações**, cada uma versionada:
 
 | App | O que cobre | Base (server) | Versionamento |
 |---|---|---|---|
@@ -18,6 +18,8 @@ A Ubiquiti expõe uma API REST oficial dividida em **4 aplicações**, cada uma 
 | **network** | Rede de cada site: sites, devices, clients, networks/VLANs, WiFi, firewall, ACL, switching, DNS, hotspot, VPN, DPI | `/integration` (por console) | `v9.x`–`v10.x` |
 | **protect** | Vídeo: cameras, viewers, live views, PTZ, lights, arm-profiles, eventos (WebSocket) | `/integration` (por console) | `v5.x`–`v7.x` |
 | **mobility** | UniFi Connect / Mobility | `/integration` (por console) | `v1.0.0` |
+| **innerspace** | InnerSpace via Cloud Connector do Site Manager (passthrough `/v1/connector/consoles/{id}/*path`) | `https://api.ui.com` | `v1.x` |
+| **carrier-fabric** | Carrier / ISP Fabric: API de assinantes (`/v1/carrier/subscribers`), chave tipo ISP | `https://api.ui.com` (staging: `https://api.stg.ui.com`) | `v1.0.0` |
 
 > **Como achar o que precisa neste repositório:** comece por **`catalog.json`** (apps → versões →
 > contagens) ou **`llms.txt`**. Para uma versão, leia **`<app>/<versão>/openapi.json`** (spec

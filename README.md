@@ -71,8 +71,8 @@ O caminho após `/integration` é **idêntico** nos dois modos. O **Site Manager
 | **protect** | `v7.4.102` | 23 | 83 | 61 | [json](protect/v7.4.102/openapi.json) | [md](protect/v7.4.102/reference.md) | [origem](https://developer.ui.com/protect/v7.4.102) |
 | **site-manager** | `v1.0.0` | 1 | 9 | 9 | [json](site-manager/v1.0.0/openapi.json) | [md](site-manager/v1.0.0/reference.md) | [origem](https://developer.ui.com/site-manager/v1.0.0) |
 | **mobility** | `v1.0.0` | 4 | 8 | 7 | [json](mobility/v1.0.0/openapi.json) | [md](mobility/v1.0.0/reference.md) | [origem](https://developer.ui.com/mobility/v1.0.0) |
-| **carrier-fabric** | `v1.0.0` | 3 | 11 | 8 | [json](carrier-fabric/v1.0.0/openapi.json) | [md](carrier-fabric/v1.0.0/reference.md) | [origem](https://developer.ui.com/carrier-fabric/v1.0.0) |
 | **innerspace** | `v1.3.23` | 1 | 5 | 1 | [json](innerspace/v1.3.23/openapi.json) | [md](innerspace/v1.3.23/reference.md) | [origem](https://developer.ui.com/innerspace/v1.3.23) |
+| **carrier-fabric** | `v1.0.0` | 3 | 11 | 8 | [json](carrier-fabric/v1.0.0/openapi.json) | [md](carrier-fabric/v1.0.0/reference.md) | [origem](https://developer.ui.com/carrier-fabric/v1.0.0) |
 
 <details>
 <summary><b>📜 Histórico completo - 50 versões</b></summary>

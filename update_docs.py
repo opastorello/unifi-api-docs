@@ -479,7 +479,7 @@ def build_indexes(results, catalog, dry):
 def main():
     ap = argparse.ArgumentParser(description="Atualiza o espelho da documentação da API UniFi")
     ap.add_argument("--dry-run", action="store_true")
-    ap.add_argument("--app", help="limita a um app (network, protect, site-manager, mobility)")
+    ap.add_argument("--app", help="limita a um app (network, protect, site-manager, mobility, innerspace, carrier-fabric)")
     ap.add_argument("--version", help="limita a uma versão (requer --app)")
     ap.add_argument("--latest-only", action="store_true", help="só a versão mais recente de cada app")
     ap.add_argument("--workers", type=int, default=WORKERS)
